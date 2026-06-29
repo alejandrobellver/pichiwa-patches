@@ -30,11 +30,10 @@ To start using this template, follow these steps:
 2. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp)
 3. Set up the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the 
    [group of the project](patches/build.gradle.kts#L1), and the [About](patches/build.gradle.kts#L5-L11))
-4. Set up the [README.md](README.md) file[^1] (e.g, title, description, license, 
-   summary of the patches that are included in the repository), the [issue templates](.github/ISSUE_TEMPLATE)[^2]
-   and the [contribution guidelines](CONTRIBUTING.md)[^3].
+4. Set up the [README.md](README.md) file (e.g, title, description, license, 
+   summary of the patches that are included in the repository), the [issue templates](.github/ISSUE_TEMPLATE).
 5. Choose a name for your patches project. Keep in mind you must use a unique name that does not 
-   imply or suggest authorship by the Morphe open source project. If unsure, then simply name these
+   imply authorship by the Morphe open source project. If unsure, then simply name these
    patches after yourself ("UserXYZ Morphe patches"). See the [NOTICE](NOTICE) for details. 
 6. (Optional): Add `patches-bundle.png` to the project if you want a custom icon to show in
    Morphe Manager instead of your GitHub profile avatar.
@@ -83,11 +82,6 @@ patches to Morphe (update the links below after creating your new patches repo):
 Click here to add these patches to Morphe: https://morphe.software/add-source?github=xyz-user/xyz-patches
 
 Or manually add this repository url as a patch source in Morphe: https://github.com/xyz-user/xyz-patches
-
-### 📙 Contributing
-
-Thank you for considering contributing to UserXYZ Morphe Patches.  
-You can find the contribution guidelines [here](CONTRIBUTING.md).
 
 ### 🛠️ Building
 
