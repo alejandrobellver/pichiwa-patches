@@ -14,6 +14,8 @@ val examplePatch = bytecodePatch(
 ) {
     compatibleWith(COMPATIBILITY_EXAMPLE)
 
+    dependsOn(internalPatch)
+
     extendWith("extensions/extension.mpe")
 
     // Business logic of the patch to disable ads in the app.
