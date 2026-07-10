@@ -1,14 +1,13 @@
-group = "app.template"
+group = "app.pichiwa"
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
-        contact = "na"
-        website = "na"
+        name = "PichiWA Patches"
+        description = "Parches Morphe para WhatsApp — privacidad, anti-view-once, y más"
+        source = "git@github.com:PichiWHO/pichiwa-patches.git"
+        author = "Pichi"
+        contact = "https://github.com/PichiWHO/pichiwa-patches"
+        website = "https://github.com/PichiWHO/pichiwa-patches"
         license = "GPLv3"
     }
 }

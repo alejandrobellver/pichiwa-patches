@@ -1,86 +1,68 @@
-# 👋🧩 Morphe Patches template
+# PichiWA Patches
 
-Template repository for Morphe Patches.
+Morphe patches for WhatsApp.
+
+## ⚠️ Disclaimer
+
+Using patches on WhatsApp may result in temporary or permanent suspension of your account.
+Meta (WhatsApp) can detect client modifications. Use these patches at your own risk.
 
 ## ❓ About
 
-Patches for apps I like.
+Privacy and quality-of-life patches for WhatsApp:
 
-TODO: Update this about section with a brief introduction/summary about this repo and what it offers.
+- **Hide Read Receipts** — Read messages without sending blue ticks
+- **Hide Typing** — Type without showing "typing..."
+- **Hide Recording** — Record voice notes discreetly
+- **Anti-View Once** — View once media without limits, take screenshots
+- **Download Status** — Save photo/video status updates
+- **No Forward Limit** — Forward messages to unlimited contacts
+- **HD Media** — Send images/videos without compression
+- **Remove Updates Tab** — Hide the status/updates tab
+- **Remove Communities Tab** — Hide the communities tab
 
-## 🩹 Patches list
+## 🩹 Patches
 
-<!-- PATCHES_START EXPANDED -->
+| Patch | Description |
+|-------|-------------|
+| HideReadReceipts | Hides blue ticks when reading messages |
+| HideTypingIndicator | Hides "typing..." indicator |
+| AntiViewOnce | View once media without limits, allow screenshots |
+| DownloadStatus | Download photo/video status updates |
+| RemoveForwardLimit | Remove forward message limit |
+| MediaQuality | Send HD images/videos without compression |
+| RemoveUpdatesTab | Remove the Updates tab |
+| RemoveCommunitiesTab | Remove the Communities tab |
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release.
-     
-     If you wish for the patches list to be collapsed, then remove the word 'EXPANDED' from the comment tag above.
+### How to use
 
-     If you wish to manually keep this list updated then remove the PATCHES_START and PATCHES_END 
-     comment blocks entirely. -->
+Add in Morphe: [Morphe add-source link](https://morphe.software/add-source?github=PichiWHO/pichiwa-patches)
 
-#### A list of your patches will automatically be shown here after your first patches release is created.
+Or manually add the repo URL as a patch source in Morphe.
 
-&nbsp;
+## 🛠️ Development
 
-## 🚀 Get started
+```bash
+# Build the .mpp bundle
+./gradlew buildAndroid
 
-To start using this template, follow these steps:
+# Output is at:
+# patches/build/libs/patches-*.mpp
+```
 
-1. [Setup](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-development/README.md) your development environment including adding a GitHub PAT as described [here](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/2_1_setup.md#-prepare-the-environment).
-2. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp). Select create a new repository, and **enable 'Include all branches'** 
-3. Enable "Allow GitHub Actions to create and approve pull requests" in your repo Settings > Actions > General > Workflow permissions
-4. Update the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the 
-   [group of the project](patches/build.gradle.kts#L1), and the [About](patches/build.gradle.kts#L6-L11))
-5. Update the [README.md](README.md) file to be specific of your repo, and update the links in the [issue templates](.github/ISSUE_TEMPLATE).
-6. Choose a name for your patches project. Keep in mind you must use a name that does not 
-   imply authorship by the Morphe open source project. If unsure, then simply name these
-   patches after yourself ("UserXYZ Morphe patches"). See the [NOTICE](NOTICE) for details. 
-7. (Optional): Add `patches-bundle.png` to the project if you want a custom icon to show in
-   Morphe Manager instead of your GitHub profile avatar.
+### Branches
 
-🎉 You are now ready to start creating patches!
+- `dev` — Active development (automatic pre-releases)
+- `main` — Stable releases
 
-## 🧑‍💻 Usage
+### Semantic commits
 
-To develop and release your Patches using this template:
-
-- Do all development work in the `dev` branch.
-- For local development work build your patches using the gradle task `./gradlew buildAndroid` to generate the mpp file found in `patches/build/libs/patches-*.mpp`. Apply your patches locally using Morphe CLI tool like any other patch bundle.
-- Always use [Semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages for commits. To keep it simple use only 3 commit message types: `feat: Added a new feature`, `fix: Some problem now fixed`, `chore: Random change you do not want in the user facing changelog`
-- Commits of `fix:` and `feat:` will automatically generate new pre-releases and `chore:` will not create a new release.
-- Users can apply your dev branch releases by enabling `pre-release` in Morphe Manager patch sources.
-- When your dev branch is ready and you want a stable release, merge dev branch to main (do not squash, and only merge).
-- **Always use semantic release (release.yml)**. Do not manually upload or creating releases by hand because many files must be updated and release.yml handles everything.
-
-## 🤓 Tips
-- See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md)
-  for more examples of creating patches and fingerprints.
-- Do not manually edit any generated files such as: `patches-list.json`, `patches-bundle.json`, `CHANGELOG.md`.
-  These files will be automatically updated in the release action.
-- Do not force push any semantic release commits or you will break the release. To 'redo' the last release then:
-  - Git drop the last dev/main semantic release commit you want to redo.
-  - Delete the release from the release area of this repo and delete the tag   
-  - Make any other changes you wish to do
-  - Force push dev/main branch
-  - A new replacement release will be created by `release.yml`
-
-
-<!-- The patches end tag is intentionally placed here so the first release will cleanup 
-     this readme of all developer instructions above. -->
-<!-- PATCHES_END -->
-
-#### How to use these patches
-
-Click here to add these patches to Morphe: https://morphe.software/add-source?github=xyz-user/xyz-patches
-
-Or manually add this repository url as a patch source in Morphe: https://github.com/xyz-user/xyz-patches
-
-### 🛠️ Building
-
-To build UserXYZ Patches,
-you can follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
+| Type | Release |
+|------|---------|
+| `feat:` | Minor |
+| `fix:` | Patch |
+| `chore:` | No release |
 
 ## 📜 License
 
-UserXYZ Patches are licensed under the [GNU General Public License v3.0](LICENSE)
+PichiWA Patches are licensed under [GNU General Public License v3.0](LICENSE).

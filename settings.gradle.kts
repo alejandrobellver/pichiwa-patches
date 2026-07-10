@@ -1,7 +1,8 @@
-rootProject.name = "morphe-patches-template"
+rootProject.name = "pichiwa-patches"
 
 pluginManagement {
     repositories {
+        mavenLocal()
         gradlePluginPortal()
         google()
         maven {
