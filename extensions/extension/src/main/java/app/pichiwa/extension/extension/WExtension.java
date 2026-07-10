@@ -113,4 +113,10 @@ public final class WExtension {
         SharedPreferences p = getPrefs();
         return p == null || !p.getBoolean("anti_edit", true);
     }
+
+    public static java.util.Date getFutureDate() {
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        cal.set(2099, 11, 31);
+        return cal.getTime();
+    }
 }
