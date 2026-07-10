@@ -36,7 +36,7 @@ Privacy and quality-of-life patches for WhatsApp:
 
 ### How to use
 
-Add in Morphe: [Morphe add-source link](https://morphe.software/add-source?github=PichiWHO/pichiwa-patches)
+Add in Morphe: [Morphe add-source link](https://morphe.software/add-source?github=alejandrobellver/pichiwa-patches)
 
 Or manually add the repo URL as a patch source in Morphe.
 
