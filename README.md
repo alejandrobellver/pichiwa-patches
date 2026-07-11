@@ -7,6 +7,14 @@ Morphe patches for WhatsApp.
 Using patches on WhatsApp may result in temporary or permanent suspension of your account.
 Meta (WhatsApp) can detect client modifications. Use these patches at your own risk.
 
+## 📲 Add to Morphe
+
+```
+https://morphe.software/add-source?github=alejandrobellver/pichiwa-patches
+```
+
+Or paste the repo URL directly in Morphe: `alejandrobellver/pichiwa-patches`
+
 ## 🩹 Patches (19)
 
 | Patch | Description | Default |
