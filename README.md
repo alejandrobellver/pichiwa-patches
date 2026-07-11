@@ -9,11 +9,10 @@ Meta (WhatsApp) can detect client modifications. Use these patches at your own r
 
 ## 📲 Add to Morphe
 
-```
-https://morphe.software/add-source?github=alejandrobellver/pichiwa-patches
-```
+[<kbd> <br> Add to Morphe <br> </kbd>](https://morphe.software/add-source?github=alejandrobellver/pichiwa-patches)
 
-Or paste the repo URL directly in Morphe: `alejandrobellver/pichiwa-patches`
+Or manually add this repository URL as a patch source in Morphe:  
+`https://github.com/alejandrobellver/pichiwa-patches`
 
 ## 🩹 Patches (19)
 
