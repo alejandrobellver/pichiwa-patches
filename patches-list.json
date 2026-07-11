@@ -469,6 +469,32 @@
         }
       ],
       "options": []
+    },
+    {
+      "name": "Spoof instalador",
+      "description": "Finge instalación desde Google Play para evitar restricciones.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.whatsapp",
+          "name": "WhatsApp",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#25D366",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
     }
   ]
 }
