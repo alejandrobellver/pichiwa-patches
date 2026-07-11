@@ -17,9 +17,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -43,9 +45,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -69,9 +73,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -95,9 +101,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -121,9 +129,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -147,9 +157,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -173,9 +185,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -199,9 +213,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -225,9 +241,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -251,9 +269,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -277,9 +297,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -303,9 +325,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -329,9 +353,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -355,9 +381,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -381,9 +409,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -407,9 +437,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -433,9 +465,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -459,9 +493,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -485,9 +521,11 @@
           "signatures": null,
           "targets": [
             {
-              "version": null,
-              "versionCodes": null,
-              "isExperimental": true,
+              "version": "2.26.27.4",
+              "versionCodes": {
+                "ARM64_V8A": 262700402
+              },
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
