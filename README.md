@@ -2,6 +2,8 @@
 
 Morphe patches for WhatsApp.
 
+> Not functional yet - work in progress.
+
 ## ⚠️ Disclaimer
 
 Using patches on WhatsApp may result in temporary or permanent suspension of your account.
