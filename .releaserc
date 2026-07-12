@@ -37,7 +37,8 @@
         "releaseJson": {
           "path": "patches-bundle.json",
           "downloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${version}/patches-${version}.mpp",
-          "signatureUrlTemplate": ""
+          "signatureUrlTemplate": "",
+          "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${version}/extension.mpe"
         }
       }
     ],
@@ -69,6 +70,10 @@
         "assets": [
           {
             "path": "patches/build/libs/patches-!(*sources*|*javadoc*).mpp?(.asc)"
+          },
+          {
+            "path": "extensions/extension.mpe",
+            "name": "extension.mpe"
           },
           {
             "path": "patches.json"
