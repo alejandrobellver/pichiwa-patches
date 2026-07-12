@@ -55,14 +55,15 @@ for patch in data["patches"]:
             universal[patch["name"]] = patch
         continue
     for pkg_entry in cp:
-        pkg  = pkg_entry["packageName"]
-        name = pkg_entry.get("name") or pkg  # fall back to package name if no label
+        pkg  = pkg_entry.get("name")
+        if not pkg: continue
+        name = pkg
         if pkg not in by_pkg:
             by_pkg[pkg] = {
                 "name":    name,
                 "emoji":   pkg_emoji(pkg),
                 "patches": {},
-                "targets": pkg_entry.get("targets", []),
+                "targets": [{"version": v} for v in pkg_entry.get("versions", [])],
             }
         # Deduplicate patches that appear across multiple packages
         if patch["name"] not in by_pkg[pkg]["patches"]:

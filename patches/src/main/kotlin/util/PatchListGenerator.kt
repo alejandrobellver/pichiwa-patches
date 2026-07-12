@@ -40,7 +40,7 @@ private fun generatePatchList(version: String, patches: Set<Patch<*>>) {
             patch.description,
             patch.use,
             patch.dependencies.map { it.javaClass.simpleName },
-            patch.compatiblePackages?.associate { (packageName, versions) -> packageName to versions },
+            patch.compatiblePackages?.map { (packageName, versions) -> JsonPatch.CompatiblePackage(packageName, versions) },
             patch.options.values.map { option ->
                 JsonPatch.Option(
                     option.key,
@@ -77,9 +77,14 @@ private data class JsonPatch(
     val description: String? = null,
     val use: Boolean = true,
     val dependencies: List<String>,
-    val compatiblePackages: Map<String, Set<String>?>? = null,
+    val compatiblePackages: List<CompatiblePackage>? = null,
     val options: List<Option>,
 ) {
+    data class CompatiblePackage(
+        val name: String,
+        val versions: Set<String>?
+    )
+
     data class Option(
         val key: String,
         val title: String?,
