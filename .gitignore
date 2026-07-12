@@ -128,3 +128,6 @@ node_modules/
 # Ignore IDEA files
 .idea/
 local.properties
+
+# Build script with local credentials
+build.ps1
