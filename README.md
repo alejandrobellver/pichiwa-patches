@@ -2,9 +2,7 @@
 
 Morphe patches for WhatsApp.
 
-## 🚧 Work in Progress
-
-**This project is not functional yet.** I'm actively working on getting the patches to load correctly in Morphe. Do not add this source expecting it to work — it will show "no metadata" or fail to patch. Check back later or follow the development on the `dev` branch.
+> Not functional yet - work in progress.
 
 ## ⚠️ Disclaimer
 
