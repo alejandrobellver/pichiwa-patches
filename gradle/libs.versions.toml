@@ -6,6 +6,7 @@ gson = "2.14.0"
 
 [libraries]
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+morphe-patches-library = { module = "app.morphe:morphe-patches-library", version.ref = "morphe-patcher" }
 
 [plugins]
 android-library = { id = "com.android.library" }

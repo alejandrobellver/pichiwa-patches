@@ -1,6 +1,5 @@
 /*
- * Copyright 2025 Morphe.
- * https://github.com/MorpheApp/morphe-patches-template
+ * Copyright 2025 PichiWA.
  */
 
 package util
