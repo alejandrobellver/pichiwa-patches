@@ -18,9 +18,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -46,9 +44,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -74,9 +70,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -102,9 +96,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -130,9 +122,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -158,9 +148,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -186,9 +174,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -214,9 +200,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -242,9 +226,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -270,9 +252,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -298,9 +278,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -326,9 +304,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -354,9 +330,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -382,9 +356,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -410,9 +382,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -438,9 +408,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -466,9 +434,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -494,9 +460,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
@@ -522,9 +486,7 @@
           "targets": [
             {
               "version": "2.26.27.4",
-              "versionCodes": {
-                "ARM64_V8A": 262700402
-              },
+              "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
               "description": null
