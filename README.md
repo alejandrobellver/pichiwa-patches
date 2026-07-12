@@ -46,7 +46,7 @@ Or manually add this repository URL as a patch source in Morphe:
 # Build patches (.mpp) and extension (.mpe)
 ./gradlew :patches:build :extensions:extension:build
 
-# Optional: generate patches-list.json
+# Optional: generate patches.json
 ./gradlew :patches:generatePatchesList
 
 # Output:
