@@ -36,7 +36,7 @@
       "@MorpheApp/changelog", {
         "releaseJson": {
           "path": "patches-bundle.json",
-          "downloadUrlTemplate": "https://github.com/PichiWHO/pichiwa-patches/releases/download/v${version}/patches-${version}.mpp",
+          "downloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${version}/patches-${version}.mpp",
           "signatureUrlTemplate": ""
         }
       }
@@ -47,7 +47,7 @@
       {
         "prepareCmd": "./gradlew generatePatchesList \
           && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json \
-          && python3 .github/scripts/generate_patches_readme.py PichiWHO/pichiwa-patches $GITHUB_REF_NAME patches-list.json README.md"
+          && python3 .github/scripts/generate_patches_readme.py alejandrobellver/pichiwa-patches $GITHUB_REF_NAME patches-list.json README.md"
       }
     ],
     [
