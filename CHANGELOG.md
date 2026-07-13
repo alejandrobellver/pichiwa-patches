@@ -1,3 +1,9 @@
+## [0.3.2-dev.16](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.15...v0.3.2-dev.16) (2026-07-13)
+
+### Bug Fixes
+
+* **patches:** restore correct fingerprint for SettingsPatch ([958873d](https://github.com/alejandrobellver/pichiwa-patches/commit/958873d447d21d4cd64b245784269e7027e94d78))
+
 ## [0.3.2-dev.15](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.14...v0.3.2-dev.15) (2026-07-13)
 
 ### Bug Fixes
