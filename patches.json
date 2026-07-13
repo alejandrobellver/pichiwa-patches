@@ -1,16 +1,19 @@
 {
-  "version": "0.3.0",
+  "version": "0.3.2-dev.1",
   "patches": [
     {
       "name": "Anti Desaparecer",
       "description": "Mantiene los mensajes temporales visibles.",
       "use": false,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -18,11 +21,14 @@
       "description": "Bypass detección de root, emulador y ROM personalizada.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -30,11 +36,14 @@
       "description": "Evita que otros editen mensajes enviados.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -42,11 +51,14 @@
       "description": "Evita la verificacion forzada de version y expiracion de WhatsApp.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -54,11 +66,14 @@
       "description": "Evita que otros borren sus mensajes o estados.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -66,11 +81,14 @@
       "description": "Ve medios efímeros sin límite y permite capturas.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -78,11 +96,14 @@
       "description": "Permite copiar texto de estados de contactos.",
       "use": false,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -90,11 +111,14 @@
       "description": "No marca mensajes como leídos al abrir chats.",
       "use": false,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -102,11 +126,14 @@
       "description": "Guarda estados de foto y video directamente.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -114,11 +141,14 @@
       "description": "Congela la hora de última conexión.",
       "use": false,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -126,11 +156,14 @@
       "description": "Envía imágenes y video sin compresión.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -138,11 +171,14 @@
       "description": "Escribe sin mostrar \"escribiendo...\".",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -150,11 +186,14 @@
       "description": "Lee mensajes sin enviar ticks azules.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -162,11 +201,14 @@
       "description": "Quita la etiqueta \"reenviado\" de los mensajes.",
       "use": false,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -174,11 +216,14 @@
       "description": "Oculta la pestaña de comunidades.",
       "use": false,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -186,11 +231,14 @@
       "description": "Oculta la pestaña de novedades/estados.",
       "use": false,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -198,11 +246,14 @@
       "description": "Añade acceso a ajustes de PichiWA en el menú de Home.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -210,11 +261,14 @@
       "description": "Reenvía mensajes a contactos ilimitados.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     },
     {
@@ -222,11 +276,14 @@
       "description": "Finge instalación desde Google Play para evitar restricciones.",
       "use": true,
       "dependencies": [],
-      "compatiblePackages": {
-        "com.whatsapp": [
-          "2.26.27.4"
-        ]
-      },
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
       "options": []
     }
   ]
