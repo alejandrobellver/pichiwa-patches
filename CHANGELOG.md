@@ -1,3 +1,9 @@
+## [0.3.2-dev.17](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.16...v0.3.2-dev.17) (2026-07-13)
+
+### Bug Fixes
+
+* **patches:** use low registers for Dalvik injection in SettingsPatch ([8592539](https://github.com/alejandrobellver/pichiwa-patches/commit/85925396a35e2126e351a53e4b59c49b20afeb3c))
+
 ## [0.3.2-dev.16](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.15...v0.3.2-dev.16) (2026-07-13)
 
 ### Bug Fixes
