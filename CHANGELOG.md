@@ -1,3 +1,9 @@
+## [0.3.2-dev.12](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.11...v0.3.2-dev.12) (2026-07-13)
+
+### Bug Fixes
+
+* **whatsapp:** fix missing move-exception in DNDMode and FreezeLastSeen smali ([f7d831a](https://github.com/alejandrobellver/pichiwa-patches/commit/f7d831a5632e00999af0504c820ccf3b6f4508c0))
+
 ## [0.3.2-dev.11](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.10...v0.3.2-dev.11) (2026-07-13)
 
 ### Bug Fixes
