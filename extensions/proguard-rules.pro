@@ -10,3 +10,6 @@
 -keep class com.google.** {
   *;
 }
+-keep class app.pichiwa.** {
+  *;
+}

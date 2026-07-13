@@ -21,7 +21,8 @@ val mediaQuality = bytecodePatch(
             filters = listOf(string("ProcessVideoQuality(videoLimitMb="))
         ).let { match ->
             match.method.addInstructions(0, """
-                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean("hd_media", true, false, "v0")}
+                invoke-static {}, $EXT->useHighQualityMedia()Z
+                move-result v0
                 if-nez v0, :original
                 const/4 v0, 0x1
                 return v0

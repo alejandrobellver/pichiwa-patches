@@ -21,7 +21,8 @@ val antiRevoke = bytecodePatch(
             filters = listOf(string("msgstore/revoke/missing-old-id "))
         ).let { match ->
             match.method.addInstructions(0, """
-                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean("anti_revoke", true, true, "v0")}
+                invoke-static {}, $EXT->shouldAllowRevoke()Z
+                move-result v0
                 if-nez v0, :original
                 return-void
                 :original
