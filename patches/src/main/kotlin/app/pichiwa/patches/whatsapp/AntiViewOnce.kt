@@ -26,7 +26,8 @@ val antiViewOnce = bytecodePatch(
             val register = im.getInstruction<OneRegisterInstruction>().registerA
 
             match.method.addInstructions(im.index + 1, """
-                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean("anti_view_once", true, false, "v$register")}
+                invoke-static {}, $EXT->canViewOnceBeViewed()Z
+                move-result v$register
                 if-nez v$register, :original
                 const/4 v$register, 0x0
                 :original
@@ -34,4 +35,3 @@ val antiViewOnce = bytecodePatch(
         }
     }
 }
-

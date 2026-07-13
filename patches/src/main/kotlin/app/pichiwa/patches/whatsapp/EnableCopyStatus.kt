@@ -21,7 +21,8 @@ val enableCopyStatus = bytecodePatch(
             filters = listOf(string("conversation/copymessage/npe"))
         ).let { match ->
             match.method.addInstructions(0, """
-                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean("enable_copy_status", false, false, "v0")}
+                invoke-static {}, $EXT->shouldEnableStatusCopy()Z
+                move-result v0
                 if-nez v0, :original
                 return-void
                 :original

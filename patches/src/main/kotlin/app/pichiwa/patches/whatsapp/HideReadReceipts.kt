@@ -23,7 +23,8 @@ val hideReadReceipts = bytecodePatch(
             filters = listOf(string("receipt"))
         ).let { match ->
             match.method.addInstructions(0, """
-                ${app.pichiwa.patches.shared.SmaliHelper.getPrefHideReadReceipts("v0")}
+                invoke-static {}, $EXT->shouldSendReadReceipt()Z
+                move-result v0
                 if-nez v0, :original
                 return-void
                 :original
