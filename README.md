@@ -21,7 +21,7 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.3.2-dev.13](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.13)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
+> **[v0.3.2-dev.14](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.14)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
 <details open>
 <summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
 <br>
@@ -42,13 +42,13 @@ Or manually add this repository URL as a patch source in Morphe:
 | [Copiar estados](#copiar-estados) | Permite copiar texto de estados de contactos. |  |
 | [Freeze Last Seen](#freeze-last-seen) | Congela la hora de ultima conexion. |  |
 | [HD Media](#hd-media) | Envía imágenes y video sin compresión. |  |
+| [Menu de configuracion](#menu-de-configuracion) | Agrega el menu de Pichiwa en los ajustes. |  |
 | [Modo Fantasma](#modo-fantasma) | No recibes ni envias mensajes mientras este activo. |  |
 | [Ocultar escritura](#ocultar-escritura) | Escribe sin mostrar "escribiendo...". |  |
 | [Ocultar lectura](#ocultar-lectura) | Lee mensajes sin enviar ticks azules. |  |
 | [Ocultar reenviado](#ocultar-reenviado) | Quita la etiqueta "reenviado" de los mensajes. |  |
 | [Quitar Comunidades](#quitar-comunidades) | Oculta la pestaña de comunidades. |  |
 | [Quitar Novedades](#quitar-novedades) | Oculta la pestaña de novedades/estados. |  |
-| [Settings Menu](#settings-menu) | Añade acceso a ajustes de PichiWA en el menú de Home. |  |
 | [Sin límite de reenvío](#sin-l-mite-de-reenv-o) | Reenvía mensajes a contactos ilimitados. |  |
 | [Spoof instalador](#spoof-instalador) | Finge instalación desde Google Play para evitar restricciones. |  |
 

@@ -1,3 +1,11 @@
+## [0.3.2-dev.14](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.13...v0.3.2-dev.14) (2026-07-13)
+
+### Bug Fixes
+
+* **patches:** eliminate all WExtension usages to bypass Dalvik AOT class verification NoClassDefFoundError ([5dc21a6](https://github.com/alejandrobellver/pichiwa-patches/commit/5dc21a61cf496985d7a042ead0135deb33f94b69))
+* **patches:** remove static dependency on PichiwaMenuHook to avoid AOT verification failure ([64639f5](https://github.com/alejandrobellver/pichiwa-patches/commit/64639f587d40f6f70a2cdcacb99aecdb31a00671))
+* **patches:** resolve kotlin compilation errors caused by incorrectly escaped double quotes ([0f8ab05](https://github.com/alejandrobellver/pichiwa-patches/commit/0f8ab053c95f0798dffbd19130e30085d7579cde))
+
 ## [0.3.2-dev.13](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.12...v0.3.2-dev.13) (2026-07-13)
 
 ### Bug Fixes
