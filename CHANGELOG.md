@@ -1,3 +1,11 @@
+## [0.3.2-dev.20](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.19...v0.3.2-dev.20) (2026-07-13)
+
+### Bug Fixes
+
+* **patches:** rip out WExtension completely ([aefab87](https://github.com/alejandrobellver/pichiwa-patches/commit/aefab8771b8a0b2dcdb48890d265c99be3da7846))
+* **patches:** rip out WExtension completely ([b8df012](https://github.com/alejandrobellver/pichiwa-patches/commit/b8df012ba0f7ff8743789d3ca50c054a27be130b))
+* resolve merge conflict in patches.json ([8424d62](https://github.com/alejandrobellver/pichiwa-patches/commit/8424d62bc015227f4d279f9c142ea0fc0e111566))
+
 ## [0.3.2-dev.19](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.18...v0.3.2-dev.19) (2026-07-13)
 
 ### Bug Fixes
