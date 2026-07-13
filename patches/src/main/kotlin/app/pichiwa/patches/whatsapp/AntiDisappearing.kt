@@ -21,7 +21,7 @@ val antiDisappearing = bytecodePatch(
             filters = listOf(string("expire_timestamp"))
         ).let { match ->
             match.method.addInstructions(0, """
-                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean(\"anti_disappearing\", false, false, \"v0\")}
+                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean("anti_disappearing", false, false, "v0")}
                 if-nez v0, :original
                 return-void
                 :original

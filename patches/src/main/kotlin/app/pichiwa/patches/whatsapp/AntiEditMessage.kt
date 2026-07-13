@@ -21,7 +21,7 @@ val antiEditMessage = bytecodePatch(
             filters = listOf(string("MessageEditInfoStore/insertEditInfo/missing information in the FMessage"))
         ).let { match ->
             match.method.addInstructions(0, """
-                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean(\"anti_edit\", true, true, \"v0\")}
+                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean("anti_edit", true, true, "v0")}
                 if-nez v0, :original
                 return-void
                 :original
