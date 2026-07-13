@@ -21,7 +21,7 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.3.2-dev.14](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.14)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
+> **[v0.3.2-dev.15](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.15)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
 <details open>
 <summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
 <br>
@@ -33,24 +33,24 @@ Or manually add this repository URL as a patch source in Morphe:
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Anti Desaparecer](#anti-desaparecer) | Mantiene los mensajes temporales visibles. |  |
-| [Anti Detector](#anti-detector) | Bypass detección de root, emulador y ROM personalizada. |  |
-| [Anti Editar](#anti-editar) | Evita que otros editen mensajes enviados. |  |
-| [Anti Expiracion](#anti-expiracion) | Evita la verificacion forzada de version y expiracion de WhatsApp. |  |
-| [Anti Revoke](#anti-revoke) | Evita que otros borren sus mensajes o estados. |  |
-| [Anti-View Once](#anti-view-once) | Ve medios efímeros sin límite y permite capturas. |  |
-| [Copiar estados](#copiar-estados) | Permite copiar texto de estados de contactos. |  |
-| [Freeze Last Seen](#freeze-last-seen) | Congela la hora de ultima conexion. |  |
-| [HD Media](#hd-media) | Envía imágenes y video sin compresión. |  |
-| [Menu de configuracion](#menu-de-configuracion) | Agrega el menu de Pichiwa en los ajustes. |  |
-| [Modo Fantasma](#modo-fantasma) | No recibes ni envias mensajes mientras este activo. |  |
-| [Ocultar escritura](#ocultar-escritura) | Escribe sin mostrar "escribiendo...". |  |
-| [Ocultar lectura](#ocultar-lectura) | Lee mensajes sin enviar ticks azules. |  |
-| [Ocultar reenviado](#ocultar-reenviado) | Quita la etiqueta "reenviado" de los mensajes. |  |
-| [Quitar Comunidades](#quitar-comunidades) | Oculta la pestaña de comunidades. |  |
-| [Quitar Novedades](#quitar-novedades) | Oculta la pestaña de novedades/estados. |  |
-| [Sin límite de reenvío](#sin-l-mite-de-reenv-o) | Reenvía mensajes a contactos ilimitados. |  |
-| [Spoof instalador](#spoof-instalador) | Finge instalación desde Google Play para evitar restricciones. |  |
+| [Anti Detector](#anti-detector) | Bypass root, emulator, and custom ROM detection. |  |
+| [Anti Disappearing](#anti-disappearing) | Keep disappearing messages visible. |  |
+| [Anti Edit](#anti-edit) | Prevent others from editing sent messages. |  |
+| [Anti Expiration](#anti-expiration) | Bypass WhatsApp forced version and expiration verification. |  |
+| [Anti Revoke](#anti-revoke) | Prevent others from deleting their messages or statuses. |  |
+| [Anti View Once](#anti-view-once) | View ephemeral media without limits and allow screenshots. |  |
+| [Copy Statuses](#copy-statuses) | Allow copying text from contact statuses. |  |
+| [Freeze Last Seen](#freeze-last-seen) | Freeze the last seen time. |  |
+| [Ghost Mode](#ghost-mode) | Do not receive or send messages while active. |  |
+| [HD Media](#hd-media) | Send images and videos without compression. |  |
+| [Hide Forwarded](#hide-forwarded) | Quita la etiqueta "reenviado" de los mensajes. |  |
+| [Hide Read Receipts](#hide-read-receipts) | Read messages without sending blue ticks. |  |
+| [Hide Typing](#hide-typing) | Escribe sin mostrar "escribiendo...". |  |
+| [No Forward Limit](#no-forward-limit) | Forward messages to unlimited contacts. |  |
+| [Remove Communities](#remove-communities) | Hide the communities tab. |  |
+| [Remove Updates](#remove-updates) | Hide the updates/statuses tab. |  |
+| [Settings Menu](#settings-menu) | Add the Pichiwa menu in settings. |  |
+| [Spoof Installer](#spoof-installer) | Fake installation from Google Play to avoid restrictions. |  |
 
 </details>
 

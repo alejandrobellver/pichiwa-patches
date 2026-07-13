@@ -1,3 +1,9 @@
+## [0.3.2-dev.15](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.14...v0.3.2-dev.15) (2026-07-13)
+
+### Bug Fixes
+
+* **patches:** fix syntax error in AntiViewOnce, translate patches and UI to English, and update README ([929f298](https://github.com/alejandrobellver/pichiwa-patches/commit/929f298e291e0be86cedb0f66a47c708277561fe))
+
 ## [0.3.2-dev.14](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.13...v0.3.2-dev.14) (2026-07-13)
 
 ### Bug Fixes

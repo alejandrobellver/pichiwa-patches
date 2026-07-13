@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-07-13T17:50:21",
-  "description": "## [0.3.2-dev.14](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.13...v0.3.2-dev.14) (2026-07-13)\n\n### Bug Fixes\n\n* **patches:** eliminate all WExtension usages to bypass Dalvik AOT class verification NoClassDefFoundError ([5dc21a6](https://github.com/alejandrobellver/pichiwa-patches/commit/5dc21a61cf496985d7a042ead0135deb33f94b69))\n* **patches:** remove static dependency on PichiwaMenuHook to avoid AOT verification failure ([64639f5](https://github.com/alejandrobellver/pichiwa-patches/commit/64639f587d40f6f70a2cdcacb99aecdb31a00671))\n* **patches:** resolve kotlin compilation errors caused by incorrectly escaped double quotes ([0f8ab05](https://github.com/alejandrobellver/pichiwa-patches/commit/0f8ab053c95f0798dffbd19130e30085d7579cde))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.14/patches-0.3.2-dev.14.mpp",
+  "created_at": "2026-07-13T17:58:10",
+  "description": "## [0.3.2-dev.15](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.14...v0.3.2-dev.15) (2026-07-13)\n\n### Bug Fixes\n\n* **patches:** fix syntax error in AntiViewOnce, translate patches and UI to English, and update README ([929f298](https://github.com/alejandrobellver/pichiwa-patches/commit/929f298e291e0be86cedb0f66a47c708277561fe))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.15/patches-0.3.2-dev.15.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.14"
+  "version": "0.3.2-dev.15"
 }
