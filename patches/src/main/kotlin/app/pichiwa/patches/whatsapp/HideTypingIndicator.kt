@@ -21,9 +21,6 @@ val hideTypingIndicator = bytecodePatch(
             filters = listOf(string("HandleMeComposing/sendComposing; toJid="))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->isTypingAllowed()Z
-                move-result v0
-                if-nez v0, :original
                 return-void
                 :original
             """)
