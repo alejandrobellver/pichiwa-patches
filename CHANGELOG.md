@@ -1,3 +1,9 @@
+## [0.3.2-dev.11](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.10...v0.3.2-dev.11) (2026-07-13)
+
+### Bug Fixes
+
+* **whatsapp:** use reflection to avoid class verification errors in DND and FreezeLastSeen ([b7b8873](https://github.com/alejandrobellver/pichiwa-patches/commit/b7b88738116ddca344f09839eb586a40bff333ac))
+
 ## [0.3.2-dev.10](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.9...v0.3.2-dev.10) (2026-07-13)
 
 ### Bug Fixes
