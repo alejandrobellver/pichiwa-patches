@@ -1,3 +1,9 @@
+## [0.3.2-dev.7](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.6...v0.3.2-dev.7) (2026-07-13)
+
+### Bug Fixes
+
+* **whatsapp:** fix ExpirationBypass crash on root mount mode by replacing WExtension with pure smali ([9377a61](https://github.com/alejandrobellver/pichiwa-patches/commit/9377a61680f74b6129635e85b37719e64fc47420))
+
 ## [0.3.2-dev.6](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.5...v0.3.2-dev.6) (2026-07-13)
 
 ### Bug Fixes
