@@ -1,3 +1,9 @@
+## [0.3.2-dev.10](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.9...v0.3.2-dev.10) (2026-07-13)
+
+### Bug Fixes
+
+* **whatsapp:** fix incorrect fingerprint for DNDMode ([c02531d](https://github.com/alejandrobellver/pichiwa-patches/commit/c02531d528c38a76803ef2e17bc28d36728ea85e))
+
 ## [0.3.2-dev.9](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.8...v0.3.2-dev.9) (2026-07-13)
 
 ### Bug Fixes
