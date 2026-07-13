@@ -10,8 +10,8 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val antiEditMessage = bytecodePatch(
-    name = "Anti Editar",
-    description = "Evita que otros editen mensajes enviados.",
+    name = "Anti Edit",
+    description = "Prevent others from editing sent messages.",
     default = true
 ) {
     compatibleWith(WHATSAPP)

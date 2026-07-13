@@ -8,8 +8,8 @@ import app.pichiwa.patches.shared.Constants.WHATSAPP
 
 @Suppress("unused")
 val dndMode = bytecodePatch(
-    name = "Modo Fantasma",
-    description = "No recibes ni envias mensajes mientras este activo.",
+    name = "Ghost Mode",
+    description = "Do not receive or send messages while active.",
     default = false
 ) {
     compatibleWith(WHATSAPP)

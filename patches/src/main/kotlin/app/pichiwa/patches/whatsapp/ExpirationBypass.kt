@@ -10,8 +10,8 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val expirationBypass = bytecodePatch(
-    name = "Anti Expiracion",
-    description = "Evita la verificacion forzada de version y expiracion de WhatsApp.",
+    name = "Anti Expiration",
+    description = "Bypass WhatsApp forced version and expiration verification.",
     default = true
 ) {
     compatibleWith(WHATSAPP)

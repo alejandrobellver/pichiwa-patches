@@ -8,8 +8,8 @@ import app.pichiwa.patches.shared.Constants.WHATSAPP
 
 @Suppress("unused")
 val settingsPatch = bytecodePatch(
-    name = "Menu de configuracion",
-    description = "Agrega el menu de Pichiwa en los ajustes.",
+    name = "Settings Menu",
+    description = "Add the Pichiwa menu in settings.",
     default = true
 ) {
     compatibleWith(WHATSAPP)

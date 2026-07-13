@@ -12,8 +12,8 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val antiViewOnce = bytecodePatch(
-    name = "Anti-View Once",
-    description = "Ve medios efímeros sin límite y permite capturas.",
+    name = "Anti View Once",
+    description = "View ephemeral media without limits and allow screenshots.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
@@ -26,7 +26,7 @@ val antiViewOnce = bytecodePatch(
             val register = im.getInstruction<OneRegisterInstruction>().registerA
 
             match.method.addInstructions(im.index + 1, """
-                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean("anti_view_once", true, false, "v`$register")}
+                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean("anti_view_once", true, false, "v$register")}
                 if-nez v$register, :original
                 const/4 v$register, 0x0
                 :original

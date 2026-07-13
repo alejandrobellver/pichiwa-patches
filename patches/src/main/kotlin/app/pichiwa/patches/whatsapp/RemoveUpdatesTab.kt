@@ -8,8 +8,8 @@ import app.pichiwa.patches.shared.Constants.WHATSAPP
 
 @Suppress("unused")
 val removeUpdatesTab = bytecodePatch(
-    name = "Quitar Novedades",
-    description = "Oculta la pestaña de novedades/estados.",
+    name = "Remove Updates",
+    description = "Hide the updates/statuses tab.",
     default = false
 ) {
     compatibleWith(WHATSAPP)

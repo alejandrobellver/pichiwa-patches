@@ -9,8 +9,8 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
 @Suppress("unused")
 val spoofInstaller = bytecodePatch(
-    name = "Spoof instalador",
-    description = "Finge instalación desde Google Play para evitar restricciones.",
+    name = "Spoof Installer",
+    description = "Fake installation from Google Play to avoid restrictions.",
     default = true
 ) {
     compatibleWith(WHATSAPP)

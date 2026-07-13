@@ -10,8 +10,8 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val antiDisappearing = bytecodePatch(
-    name = "Anti Desaparecer",
-    description = "Mantiene los mensajes temporales visibles.",
+    name = "Anti Disappearing",
+    description = "Keep disappearing messages visible.",
     default = false
 ) {
     compatibleWith(WHATSAPP)

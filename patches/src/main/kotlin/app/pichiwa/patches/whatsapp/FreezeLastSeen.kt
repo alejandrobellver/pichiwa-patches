@@ -9,7 +9,7 @@ import app.pichiwa.patches.shared.Constants.WHATSAPP
 @Suppress("unused")
 val freezeLastSeen = bytecodePatch(
     name = "Freeze Last Seen",
-    description = "Congela la hora de ultima conexion.",
+    description = "Freeze the last seen time.",
     default = false
 ) {
     compatibleWith(WHATSAPP)

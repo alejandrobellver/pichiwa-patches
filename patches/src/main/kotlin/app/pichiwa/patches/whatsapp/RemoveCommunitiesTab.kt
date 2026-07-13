@@ -8,8 +8,8 @@ import app.pichiwa.patches.shared.Constants.WHATSAPP
 
 @Suppress("unused")
 val removeCommunitiesTab = bytecodePatch(
-    name = "Quitar Comunidades",
-    description = "Oculta la pestaña de comunidades.",
+    name = "Remove Communities",
+    description = "Hide the communities tab.",
     default = false
 ) {
     compatibleWith(WHATSAPP)
