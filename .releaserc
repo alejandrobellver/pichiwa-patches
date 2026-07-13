@@ -72,7 +72,7 @@
             "path": "patches/build/libs/patches-!(*sources*|*javadoc*).mpp?(.asc)"
           },
           {
-            "path": "extensions/extension.mpe",
+            "path": "extensions/extension/build/morphe/extensions/extension.mpe",
             "name": "extension.mpe"
           },
           {
