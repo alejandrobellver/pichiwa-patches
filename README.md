@@ -17,7 +17,7 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.3.2-dev.2](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;19 patches total
+> **[v0.3.2-dev.3](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;19 patches total
 <details open>
 <summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;19 patches</summary>
 <br>

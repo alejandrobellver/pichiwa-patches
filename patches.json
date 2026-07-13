@@ -1,5 +1,5 @@
 {
-  "version": "0.3.2-dev.2",
+  "version": "0.3.2-dev.3",
   "patches": [
     {
       "name": "Anti Desaparecer",

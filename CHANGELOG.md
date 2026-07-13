@@ -1,3 +1,9 @@
+## [0.3.2-dev.3](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.2...v0.3.2-dev.3) (2026-07-13)
+
+### 🐛 Bug Fixes
+
+* **whatsapp:** update fingerprints for AntiEditMessage and AntiRevoke for v2.26.27.4 ([fb9472c](https://github.com/alejandrobellver/pichiwa-patches/commit/fb9472c547187e34682ee61215ef3c57c06e4aa1))
+
 ## [0.3.2-dev.2](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.1...v0.3.2-dev.2) (2026-07-13)
 
 ### 🐛 Bug Fixes

@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-07-13T00:50:23",
-  "description": "## [0.3.2-dev.2](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.1...v0.3.2-dev.2) (2026-07-13)\n\n### 🐛 Bug Fixes\n\n* correct path to extension.mpe for release upload ([dbb3891](https://github.com/alejandrobellver/pichiwa-patches/commit/dbb38912f96cb2f4135354418def3a4d9b6adcef))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.2/patches-0.3.2-dev.2.mpp",
+  "created_at": "2026-07-13T01:48:34",
+  "description": "## [0.3.2-dev.3](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.2...v0.3.2-dev.3) (2026-07-13)\n\n### 🐛 Bug Fixes\n\n* **whatsapp:** update fingerprints for AntiEditMessage and AntiRevoke for v2.26.27.4 ([fb9472c](https://github.com/alejandrobellver/pichiwa-patches/commit/fb9472c547187e34682ee61215ef3c57c06e4aa1))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.3/patches-0.3.2-dev.3.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.2"
+  "version": "0.3.2-dev.3"
 }
