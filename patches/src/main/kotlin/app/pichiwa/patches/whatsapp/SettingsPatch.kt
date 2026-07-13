@@ -16,7 +16,10 @@ val settingsPatch = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("conversations/oncontextitemselected/unsupported/"))
+            definingClass = "Lcom/whatsapp/home/ui/HomeActivity;",
+            name = "onCreateOptionsMenu",
+            returnType = "Z",
+            parameters = listOf("Landroid/view/Menu;")
         ).let { match ->
             match.method.addInstructions(0, """
                 const-string v30, "app.pichiwa.extension.extension.PichiwaMenuHook"
