@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-07-13T02:30:12",
-  "description": "## [0.3.2-dev.5](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.4...v0.3.2-dev.5) (2026-07-13)\n\n### 🐛 Bug Fixes\n\n* **whatsapp:** update remaining fingerprints for v2.26.27.4 ([a0b0324](https://github.com/alejandrobellver/pichiwa-patches/commit/a0b0324bf0f3e89d41d474a446e0b0a41e62ba30))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.5/patches-0.3.2-dev.5.mpp",
+  "created_at": "2026-07-13T02:45:57",
+  "description": "## [0.3.2-dev.6](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.5...v0.3.2-dev.6) (2026-07-13)\n\n### Bug Fixes\n\n* **whatsapp:** fix VerifyError in HideForwardedTag patch ([29d1553](https://github.com/alejandrobellver/pichiwa-patches/commit/29d155360bf87e4d4076009b3cd6bf15a38fa48b))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.6/patches-0.3.2-dev.6.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.5"
+  "version": "0.3.2-dev.6"
 }
