@@ -1,5 +1,5 @@
 {
-  "version": "0.3.2-dev.13",
+  "version": "0.3.2-dev.14",
   "patches": [
     {
       "name": "Anti Desaparecer",
@@ -137,6 +137,21 @@
       "options": []
     },
     {
+      "name": "Menu de configuracion",
+      "description": "Agrega el menu de Pichiwa en los ajustes.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Modo Fantasma",
       "description": "No recibes ni envias mensajes mientras este activo.",
       "use": false,
@@ -215,21 +230,6 @@
       "name": "Quitar Novedades",
       "description": "Oculta la pestaña de novedades/estados.",
       "use": false,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Settings Menu",
-      "description": "Añade acceso a ajustes de PichiWA en el menú de Home.",
-      "use": true,
       "dependencies": [],
       "compatiblePackages": [
         {
