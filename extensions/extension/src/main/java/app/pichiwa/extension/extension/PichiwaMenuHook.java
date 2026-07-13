@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.Keep;
+
+@Keep
 @SuppressWarnings("unused")
 public final class PichiwaMenuHook {
 

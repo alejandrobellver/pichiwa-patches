@@ -7,6 +7,9 @@ import android.content.SharedPreferences;
 
 import java.lang.reflect.Method;
 
+import androidx.annotation.Keep;
+
+@Keep
 @SuppressWarnings("unused")
 public final class WExtension {
 
