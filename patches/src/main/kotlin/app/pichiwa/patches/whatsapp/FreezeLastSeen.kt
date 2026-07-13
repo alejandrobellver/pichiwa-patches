@@ -21,10 +21,15 @@ val freezeLastSeen = bytecodePatch(
             filters = listOf(string("presencestatemanager/setAvailable/new-state: "))
         ).let { match ->
             match.method.addInstructions(0, """
+                .catch Ljava/lang/Throwable; {:try_start_freeze .. :try_end_freeze} :catch_freeze
+                :try_start_freeze
                 invoke-static {}, $EXT->shouldFreezeLastSeen()Z
                 move-result v0
                 if-nez v0, :original
                 return-void
+                :try_end_freeze
+                .catchall {:try_start_freeze .. :try_end_freeze} :catch_freeze
+                :catch_freeze
                 :original
             """)
         }
