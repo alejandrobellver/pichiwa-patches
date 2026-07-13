@@ -1,7 +1,9 @@
 {
-  "created_at": "2026-07-13T18:54:48",
-  "description": "## [0.3.2-dev.18](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.17...v0.3.2-dev.18) (2026-07-13)\n\n### Bug Fixes\n\n* **patches:** revert to WExtension and prevent R8 from stripping it to fix Dalvik Verification errors without corrupting locals ([6936b02](https://github.com/alejandrobellver/pichiwa-patches/commit/6936b02b068f46ba7c069b42bea4b56dcf88be11))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.18/patches-0.3.2-dev.18.mpp",
+  "created_at": "2026-07-13T19:39:47",
+  "description": "## [0.3.2-dev.19](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.18...v0.3.2-dev.19) (2026-07-13)\n\n### Bug Fixes\n\n* **patches:** add @Keep annotations to extension classes to guarantee R8 does not strip them, preventing Dalvik NoClassDefFoundError ([97da667](https://github.com/alejandrobellver/pichiwa-patches/commit/97da66764ebde228d28daa538fa2cdb3051cf453))\n* **patches:** revert @Keep to fix build and inject extension URL into patches-bundle.json to fix NoClassDefFoundError ([de5b3fc](https://github.com/alejandrobellver/pichiwa-patches/commit/de5b3fca025ebfc231497ba18fac38599e5d5b7f))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.19/patches-0.3.2-dev.19.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.18"
+  "version": "0.3.2-dev.19",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.19/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.19/extension.mpe"
 }

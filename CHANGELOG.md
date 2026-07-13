@@ -1,3 +1,10 @@
+## [0.3.2-dev.19](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.18...v0.3.2-dev.19) (2026-07-13)
+
+### Bug Fixes
+
+* **patches:** add @Keep annotations to extension classes to guarantee R8 does not strip them, preventing Dalvik NoClassDefFoundError ([97da667](https://github.com/alejandrobellver/pichiwa-patches/commit/97da66764ebde228d28daa538fa2cdb3051cf453))
+* **patches:** revert @Keep to fix build and inject extension URL into patches-bundle.json to fix NoClassDefFoundError ([de5b3fc](https://github.com/alejandrobellver/pichiwa-patches/commit/de5b3fca025ebfc231497ba18fac38599e5d5b7f))
+
 ## [0.3.2-dev.18](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.17...v0.3.2-dev.18) (2026-07-13)
 
 ### Bug Fixes
