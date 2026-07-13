@@ -1,5 +1,5 @@
 {
-  "version": "0.3.2-dev.3",
+  "version": "0.3.2-dev.4",
   "patches": [
     {
       "name": "Anti Desaparecer",
@@ -110,21 +110,6 @@
       "name": "DND Mode",
       "description": "No marca mensajes como leídos al abrir chats.",
       "use": false,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Descargar estados",
-      "description": "Guarda estados de foto y video directamente.",
-      "use": true,
       "dependencies": [],
       "compatiblePackages": [
         {

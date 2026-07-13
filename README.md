@@ -17,9 +17,9 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.3.2-dev.3](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;19 patches total
+> **[v0.3.2-dev.4](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.4)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
 <details open>
-<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;19 patches</summary>
+<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -37,7 +37,6 @@ Or manually add this repository URL as a patch source in Morphe:
 | [Anti-View Once](#anti-view-once) | Ve medios efímeros sin límite y permite capturas. |  |
 | [Copiar estados](#copiar-estados) | Permite copiar texto de estados de contactos. |  |
 | [DND Mode](#dnd-mode) | No marca mensajes como leídos al abrir chats. |  |
-| [Descargar estados](#descargar-estados) | Guarda estados de foto y video directamente. |  |
 | [Freeze Last Seen](#freeze-last-seen) | Congela la hora de última conexión. |  |
 | [HD Media](#hd-media) | Envía imágenes y video sin compresión. |  |
 | [Ocultar escritura](#ocultar-escritura) | Escribe sin mostrar "escribiendo...". |  |

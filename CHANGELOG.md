@@ -1,3 +1,9 @@
+## [0.3.2-dev.4](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.3...v0.3.2-dev.4) (2026-07-13)
+
+### 🐛 Bug Fixes
+
+* **whatsapp:** update fingerprints for EnableCopyStatus and RemoveForwardLimit for v2.26.27.4 ([ded0a82](https://github.com/alejandrobellver/pichiwa-patches/commit/ded0a826adeb9664faf2f9e1e065ac47838ddab4))
+
 ## [0.3.2-dev.3](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.2...v0.3.2-dev.3) (2026-07-13)
 
 ### 🐛 Bug Fixes
