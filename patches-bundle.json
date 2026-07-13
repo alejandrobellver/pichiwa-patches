@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-07-13T03:31:09",
-  "description": "## [0.3.2-dev.11](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.10...v0.3.2-dev.11) (2026-07-13)\n\n### Bug Fixes\n\n* **whatsapp:** use reflection to avoid class verification errors in DND and FreezeLastSeen ([b7b8873](https://github.com/alejandrobellver/pichiwa-patches/commit/b7b88738116ddca344f09839eb586a40bff333ac))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.11/patches-0.3.2-dev.11.mpp",
+  "created_at": "2026-07-13T03:38:32",
+  "description": "## [0.3.2-dev.12](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.11...v0.3.2-dev.12) (2026-07-13)\n\n### Bug Fixes\n\n* **whatsapp:** fix missing move-exception in DNDMode and FreezeLastSeen smali ([f7d831a](https://github.com/alejandrobellver/pichiwa-patches/commit/f7d831a5632e00999af0504c820ccf3b6f4508c0))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.12/patches-0.3.2-dev.12.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.11"
+  "version": "0.3.2-dev.12"
 }
