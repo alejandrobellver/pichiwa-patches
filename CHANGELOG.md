@@ -1,3 +1,9 @@
+## [0.3.2-dev.2](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.1...v0.3.2-dev.2) (2026-07-13)
+
+### 🐛 Bug Fixes
+
+* correct path to extension.mpe for release upload ([dbb3891](https://github.com/alejandrobellver/pichiwa-patches/commit/dbb38912f96cb2f4135354418def3a4d9b6adcef))
+
 ## [0.3.2-dev.1](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.1...v0.3.2-dev.1) (2026-07-13)
 
 ### 🐛 Bug Fixes
