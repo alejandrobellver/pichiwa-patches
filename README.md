@@ -2,6 +2,10 @@
 
 Morphe patches for WhatsApp.
 
+# 🚨 EXPERIMENTAL: UNDER DEVELOPMENT 🚨
+## This project is currently a Work In Progress and DOES NOT WORK.
+### Please do not use it yet.
+
 > Not functional yet - work in progress.
 
 ## ⚠️ Disclaimer

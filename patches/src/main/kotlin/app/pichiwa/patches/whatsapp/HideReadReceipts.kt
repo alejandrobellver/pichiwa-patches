@@ -10,8 +10,8 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val hideReadReceipts = bytecodePatch(
-    name = "Ocultar lectura",
-    description = "Lee mensajes sin enviar ticks azules.",
+    name = "Hide Read Receipts",
+    description = "Read messages without sending blue ticks.",
     default = true
 ) {
     compatibleWith(WHATSAPP)

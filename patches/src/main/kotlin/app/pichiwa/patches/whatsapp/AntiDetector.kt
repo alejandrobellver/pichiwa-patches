@@ -9,7 +9,7 @@ import app.pichiwa.patches.shared.Constants.WHATSAPP
 @Suppress("unused")
 val antiDetector = bytecodePatch(
     name = "Anti Detector",
-    description = "Bypass detección de root, emulador y ROM personalizada.",
+    description = "Bypass root, emulator, and custom ROM detection.",
     default = true
 ) {
     compatibleWith(WHATSAPP)

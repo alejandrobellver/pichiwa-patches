@@ -10,7 +10,7 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val hideForwardedTag = bytecodePatch(
-    name = "Ocultar reenviado",
+    name = "Hide Forwarded",
     description = "Quita la etiqueta \"reenviado\" de los mensajes.",
     default = false
 ) {

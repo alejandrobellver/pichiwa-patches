@@ -11,7 +11,7 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 @Suppress("unused")
 val mediaQuality = bytecodePatch(
     name = "HD Media",
-    description = "Envía imágenes y video sin compresión.",
+    description = "Send images and videos without compression.",
     default = true
 ) {
     compatibleWith(WHATSAPP)

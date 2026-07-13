@@ -10,7 +10,7 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val hideTypingIndicator = bytecodePatch(
-    name = "Ocultar escritura",
+    name = "Hide Typing",
     description = "Escribe sin mostrar \"escribiendo...\".",
     default = true
 ) {

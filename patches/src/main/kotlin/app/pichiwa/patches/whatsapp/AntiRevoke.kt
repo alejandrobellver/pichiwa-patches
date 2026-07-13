@@ -11,7 +11,7 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 @Suppress("unused")
 val antiRevoke = bytecodePatch(
     name = "Anti Revoke",
-    description = "Evita que otros borren sus mensajes o estados.",
+    description = "Prevent others from deleting their messages or statuses.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
