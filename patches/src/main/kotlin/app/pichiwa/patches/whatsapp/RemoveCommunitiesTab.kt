@@ -16,7 +16,7 @@ val removeCommunitiesTab = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("No HomeFragment mapping for community tab id:"))
+            filters = listOf(string("No HomeFragment mapping for community tab id: "))
         ).let { match ->
             match.method.addInstructions(0, """
                 return-void

@@ -18,7 +18,7 @@ val hideTypingIndicator = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("HandleMeComposing/sendComposing"))
+            filters = listOf(string("HandleMeComposing/sendComposing; toJid="))
         ).let { match ->
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->isTypingAllowed()Z

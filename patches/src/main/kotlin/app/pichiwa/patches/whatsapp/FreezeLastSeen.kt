@@ -18,7 +18,7 @@ val freezeLastSeen = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("presencestatemanager/setAvailable/new-state"))
+            filters = listOf(string("presencestatemanager/setAvailable/new-state: "))
         ).let { match ->
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->shouldFreezeLastSeen()Z

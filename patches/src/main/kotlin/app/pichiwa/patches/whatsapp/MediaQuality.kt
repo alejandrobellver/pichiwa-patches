@@ -18,7 +18,7 @@ val mediaQuality = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("ProcessVideoQuality("))
+            filters = listOf(string("ProcessVideoQuality(videoLimitMb="))
         ).let { match ->
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->useHighQualityMedia()Z

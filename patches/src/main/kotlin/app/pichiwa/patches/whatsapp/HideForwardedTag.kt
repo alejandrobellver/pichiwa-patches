@@ -18,7 +18,7 @@ val hideForwardedTag = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("chatInfo/incrementUnseenImportantMessageCount"))
+            filters = listOf(string("chatInfo/incrementUnseenImportantMessageCount "))
         ).let { match ->
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->canForwardTagBeHidden()Z
