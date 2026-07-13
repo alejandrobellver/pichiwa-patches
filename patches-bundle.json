@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-07-13T02:56:19",
-  "description": "## [0.3.2-dev.7](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.6...v0.3.2-dev.7) (2026-07-13)\n\n### Bug Fixes\n\n* **whatsapp:** fix ExpirationBypass crash on root mount mode by replacing WExtension with pure smali ([9377a61](https://github.com/alejandrobellver/pichiwa-patches/commit/9377a61680f74b6129635e85b37719e64fc47420))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.7/patches-0.3.2-dev.7.mpp",
+  "created_at": "2026-07-13T03:03:03",
+  "description": "## [0.3.2-dev.8](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.7...v0.3.2-dev.8) (2026-07-13)\n\n### Bug Fixes\n\n* **whatsapp:** correct hex timestamp for 2099-12-31 in ExpirationBypass ([6c8bd7b](https://github.com/alejandrobellver/pichiwa-patches/commit/6c8bd7b6950a1540b61b560de53d49e8c1555e4d))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.8/patches-0.3.2-dev.8.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.7"
+  "version": "0.3.2-dev.8"
 }
