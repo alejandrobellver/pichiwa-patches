@@ -24,7 +24,7 @@ val expirationBypass = bytecodePatch(
         ).let { match ->
             match.method.addInstructions(0, """
                 new-instance v0, Ljava/util/Date;
-                const-wide v1, 0x3bb2328600L
+                const-wide v1, 0x3bb27668d80L
                 invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
                 return-object v0
             """)
