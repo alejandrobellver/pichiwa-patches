@@ -44,8 +44,10 @@ val freezeLastSeen = bytecodePatch(
                 if-nez v0, :original
                 return-void
                 :try_end_freeze
-                .catchall {:try_start_freeze .. :try_end_freeze} :catch_freeze
+                goto :original
+                
                 :catch_freeze
+                move-exception v0
                 :original
             """)
         }

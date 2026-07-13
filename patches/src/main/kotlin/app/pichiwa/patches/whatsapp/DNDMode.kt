@@ -44,8 +44,10 @@ val dndMode = bytecodePatch(
                 if-nez v0, :original
                 return-void
                 :try_end_dnd
-                .catchall {:try_start_dnd .. :try_end_dnd} :catch_dnd
+                goto :original
+                
                 :catch_dnd
+                move-exception v0
                 :original
             """)
         }
