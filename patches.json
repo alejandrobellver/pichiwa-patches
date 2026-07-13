@@ -1,5 +1,5 @@
 {
-  "version": "0.3.2-dev.12",
+  "version": "0.3.2-dev.13",
   "patches": [
     {
       "name": "Anti Desaparecer",
@@ -107,23 +107,8 @@
       "options": []
     },
     {
-      "name": "DND Mode",
-      "description": "No marca mensajes como leídos al abrir chats.",
-      "use": false,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
       "name": "Freeze Last Seen",
-      "description": "Congela la hora de última conexión.",
+      "description": "Congela la hora de ultima conexion.",
       "use": false,
       "dependencies": [],
       "compatiblePackages": [
@@ -140,6 +125,21 @@
       "name": "HD Media",
       "description": "Envía imágenes y video sin compresión.",
       "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Modo Fantasma",
+      "description": "No recibes ni envias mensajes mientras este activo.",
+      "use": false,
       "dependencies": [],
       "compatiblePackages": [
         {
