@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
-  "version": "0.3.2-dev.19",
-=======
-  "version": "0.3.2-dev.10",
->>>>>>> Stashed changes
+  "version": "0.3.2-dev.20",
   "patches": [
     {
       "name": "Anti Detector",
