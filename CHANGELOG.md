@@ -1,3 +1,9 @@
+## [0.3.2-dev.6](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.5...v0.3.2-dev.6) (2026-07-13)
+
+### Bug Fixes
+
+* **whatsapp:** fix VerifyError in HideForwardedTag patch ([29d1553](https://github.com/alejandrobellver/pichiwa-patches/commit/29d155360bf87e4d4076009b3cd6bf15a38fa48b))
+
 ## [0.3.2-dev.5](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.4...v0.3.2-dev.5) (2026-07-13)
 
 ### 🐛 Bug Fixes
