@@ -48,6 +48,7 @@
       {
         "prepareCmd": "./gradlew generatePatchesList \
           && jq '.version=\"${nextRelease.version}\"' patches.json > patches.json.tmp && mv patches.json.tmp patches.json \
+          && jq '.extension_download_url=\"https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${nextRelease.version}/extension.mpe\" | .extensionDownloadUrlTemplate=\"https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${nextRelease.version}/extension.mpe\"' patches-bundle.json > patches-bundle.json.tmp && mv patches-bundle.json.tmp patches-bundle.json \
           && python3 .github/scripts/generate_patches_readme.py alejandrobellver/pichiwa-patches $GITHUB_REF_NAME patches.json README.md"
       }
     ],

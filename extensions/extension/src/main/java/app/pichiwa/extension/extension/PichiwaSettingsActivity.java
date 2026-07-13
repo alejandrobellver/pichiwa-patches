@@ -11,9 +11,6 @@ import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import androidx.annotation.Keep;
-
-@Keep
 @SuppressWarnings("unused")
 public class PichiwaSettingsActivity extends Activity {
 
