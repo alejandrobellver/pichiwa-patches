@@ -1,3 +1,9 @@
+## [0.3.2-dev.9](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.8...v0.3.2-dev.9) (2026-07-13)
+
+### Bug Fixes
+
+* **whatsapp:** wrap WExtension calls in try-catch for DND and FreezeLastSeen to avoid startup crash ([a651530](https://github.com/alejandrobellver/pichiwa-patches/commit/a6515303188788342bb903edbff94256008efd95))
+
 ## [0.3.2-dev.8](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.7...v0.3.2-dev.8) (2026-07-13)
 
 ### Bug Fixes
