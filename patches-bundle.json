@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-07-13T18:22:41",
-  "description": "## [0.3.2-dev.17](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.16...v0.3.2-dev.17) (2026-07-13)\n\n### Bug Fixes\n\n* **patches:** use low registers for Dalvik injection in SettingsPatch ([8592539](https://github.com/alejandrobellver/pichiwa-patches/commit/85925396a35e2126e351a53e4b59c49b20afeb3c))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.17/patches-0.3.2-dev.17.mpp",
+  "created_at": "2026-07-13T18:54:48",
+  "description": "## [0.3.2-dev.18](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.17...v0.3.2-dev.18) (2026-07-13)\n\n### Bug Fixes\n\n* **patches:** revert to WExtension and prevent R8 from stripping it to fix Dalvik Verification errors without corrupting locals ([6936b02](https://github.com/alejandrobellver/pichiwa-patches/commit/6936b02b068f46ba7c069b42bea4b56dcf88be11))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.18/patches-0.3.2-dev.18.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.17"
+  "version": "0.3.2-dev.18"
 }

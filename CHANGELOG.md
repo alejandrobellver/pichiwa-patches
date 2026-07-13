@@ -1,3 +1,9 @@
+## [0.3.2-dev.18](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.17...v0.3.2-dev.18) (2026-07-13)
+
+### Bug Fixes
+
+* **patches:** revert to WExtension and prevent R8 from stripping it to fix Dalvik Verification errors without corrupting locals ([6936b02](https://github.com/alejandrobellver/pichiwa-patches/commit/6936b02b068f46ba7c069b42bea4b56dcf88be11))
+
 ## [0.3.2-dev.17](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.16...v0.3.2-dev.17) (2026-07-13)
 
 ### Bug Fixes
