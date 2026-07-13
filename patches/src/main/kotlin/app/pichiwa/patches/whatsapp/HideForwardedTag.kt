@@ -21,8 +21,7 @@ val hideForwardedTag = bytecodePatch(
             filters = listOf(string("chatInfo/incrementUnseenImportantMessageCount "))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->canForwardTagBeHidden()Z
-                move-result v0
+                ${app.pichiwa.patches.shared.SmaliHelper.getPrefBoolean(\"hide_forwarded_tag\", false, false, \"v0\")}
                 if-eqz v0, :cond_pichiwa_0
                 const/4 v0, 0x0
                 return v0
