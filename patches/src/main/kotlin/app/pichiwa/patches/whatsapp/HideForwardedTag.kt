@@ -23,9 +23,10 @@ val hideForwardedTag = bytecodePatch(
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->canForwardTagBeHidden()Z
                 move-result v0
-                if-nez v0, :original
-                return-void
-                :original
+                if-eqz v0, :cond_pichiwa_0
+                const/4 v0, 0x0
+                return v0
+                :cond_pichiwa_0
             """)
         }
     }
