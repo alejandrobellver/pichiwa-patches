@@ -16,29 +16,8 @@ Meta (WhatsApp) can detect client modifications. Use these patches at your own r
 Or manually add this repository URL as a patch source in Morphe:  
 `https://github.com/alejandrobellver/pichiwa-patches`
 
-## 🩹 Patches (19)
-
-| Patch | Description | Default |
-|-------|-------------|---------|
-| AntiDetector | Bypass root/emulator/custom ROM detection | ✅ |
-| AntiDisappearing | Keep disappearing messages visible | ❌ |
-| AntiEditMessage | Prevent others from editing sent messages | ✅ |
-| AntiRevoke | Prevent others from deleting messages/statuses | ✅ |
-| AntiViewOnce | View once media without limits, allow screenshots | ✅ |
-| DNDMode | Don't mark messages as read when opening chats | ❌ |
-| DownloadStatus | Download photo/video status updates | ✅ |
-| EnableCopyStatus | Copy text from contact statuses | ❌ |
-| ExpirationBypass | Bypass forced verification and expiration | ✅ |
-| FreezeLastSeen | Freeze last seen timestamp | ❌ |
-| HideForwardedTag | Remove "forwarded" label from messages | ❌ |
-| HideReadReceipts | Hide blue ticks when reading messages | ✅ |
-| HideTypingIndicator | Hide "typing..." indicator | ✅ |
-| MediaQuality | Send HD images/videos without compression | ✅ |
-| RemoveCommunitiesTab | Remove the Communities tab | ❌ |
-| RemoveForwardLimit | Remove forward message limit | ✅ |
-| RemoveUpdatesTab | Remove the Updates tab | ❌ |
-| SettingsMenu | PichiWA settings in Home overflow menu | ✅ |
-| SpoofInstaller | Fake Google Play as installer source | ✅ |
+<!-- PATCHES_START EXPANDED -->
+<!-- PATCHES_END -->
 
 ## 🛠️ Development
 
