@@ -21,8 +21,7 @@ val removeForwardLimit = bytecodePatch(
             filters = listOf(string("UserActionsMessageForwarding/userActionForwardMessage"))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->getForwardLimit()I
-                move-result v0
+                ${app.pichiwa.patches.shared.SmaliHelper.getPrefIntMax(\"remove_forward_limit\", true, \"v0\")}
                 :original
             """)
         }
