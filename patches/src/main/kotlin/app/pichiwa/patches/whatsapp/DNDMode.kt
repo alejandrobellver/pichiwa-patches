@@ -18,7 +18,7 @@ val dndMode = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("presencestatemanager/setUnavailable "))
+            filters = listOf(string("MessageHandler/start"))
         ).let { match ->
             match.method.addInstructions(0, """
                 .catch Ljava/lang/Throwable; {:try_start_dnd .. :try_end_dnd} :catch_dnd
