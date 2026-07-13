@@ -18,7 +18,7 @@ val removeForwardLimit = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("UserActions/userActionForwardMessage"))
+            filters = listOf(string("UserActionsMessageForwarding/userActionForwardMessage"))
         ).let { match ->
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->getForwardLimit()I

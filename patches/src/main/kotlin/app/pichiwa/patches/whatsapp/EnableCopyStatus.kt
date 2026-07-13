@@ -18,7 +18,7 @@ val enableCopyStatus = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("conversation/copymessage"))
+            filters = listOf(string("conversation/copymessage/npe"))
         ).let { match ->
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->shouldEnableStatusCopy()Z
