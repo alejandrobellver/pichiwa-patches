@@ -1,3 +1,9 @@
+## [0.3.2-dev.5](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.4...v0.3.2-dev.5) (2026-07-13)
+
+### 🐛 Bug Fixes
+
+* **whatsapp:** update remaining fingerprints for v2.26.27.4 ([a0b0324](https://github.com/alejandrobellver/pichiwa-patches/commit/a0b0324bf0f3e89d41d474a446e0b0a41e62ba30))
+
 ## [0.3.2-dev.4](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.3...v0.3.2-dev.4) (2026-07-13)
 
 ### 🐛 Bug Fixes

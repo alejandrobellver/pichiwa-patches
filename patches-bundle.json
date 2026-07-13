@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-07-13T02:07:40",
-  "description": "## [0.3.2-dev.4](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.3...v0.3.2-dev.4) (2026-07-13)\n\n### 🐛 Bug Fixes\n\n* **whatsapp:** update fingerprints for EnableCopyStatus and RemoveForwardLimit for v2.26.27.4 ([ded0a82](https://github.com/alejandrobellver/pichiwa-patches/commit/ded0a826adeb9664faf2f9e1e065ac47838ddab4))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.4/patches-0.3.2-dev.4.mpp",
+  "created_at": "2026-07-13T02:30:12",
+  "description": "## [0.3.2-dev.5](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.4...v0.3.2-dev.5) (2026-07-13)\n\n### 🐛 Bug Fixes\n\n* **whatsapp:** update remaining fingerprints for v2.26.27.4 ([a0b0324](https://github.com/alejandrobellver/pichiwa-patches/commit/a0b0324bf0f3e89d41d474a446e0b0a41e62ba30))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.5/patches-0.3.2-dev.5.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.4"
+  "version": "0.3.2-dev.5"
 }
