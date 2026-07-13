@@ -17,7 +17,7 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.3.2-dev.12](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.12)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
+> **[v0.3.2-dev.13](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.13)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
 <details open>
 <summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
 <br>
@@ -36,9 +36,9 @@ Or manually add this repository URL as a patch source in Morphe:
 | [Anti Revoke](#anti-revoke) | Evita que otros borren sus mensajes o estados. |  |
 | [Anti-View Once](#anti-view-once) | Ve medios efímeros sin límite y permite capturas. |  |
 | [Copiar estados](#copiar-estados) | Permite copiar texto de estados de contactos. |  |
-| [DND Mode](#dnd-mode) | No marca mensajes como leídos al abrir chats. |  |
-| [Freeze Last Seen](#freeze-last-seen) | Congela la hora de última conexión. |  |
+| [Freeze Last Seen](#freeze-last-seen) | Congela la hora de ultima conexion. |  |
 | [HD Media](#hd-media) | Envía imágenes y video sin compresión. |  |
+| [Modo Fantasma](#modo-fantasma) | No recibes ni envias mensajes mientras este activo. |  |
 | [Ocultar escritura](#ocultar-escritura) | Escribe sin mostrar "escribiendo...". |  |
 | [Ocultar lectura](#ocultar-lectura) | Lee mensajes sin enviar ticks azules. |  |
 | [Ocultar reenviado](#ocultar-reenviado) | Quita la etiqueta "reenviado" de los mensajes. |  |

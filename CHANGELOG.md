@@ -1,3 +1,9 @@
+## [0.3.2-dev.13](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.12...v0.3.2-dev.13) (2026-07-13)
+
+### Bug Fixes
+
+* resolve ClassNotFoundException during early startup ([27b4b86](https://github.com/alejandrobellver/pichiwa-patches/commit/27b4b869a13ef70c0a67a4e001097f7681f62798))
+
 ## [0.3.2-dev.12](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.11...v0.3.2-dev.12) (2026-07-13)
 
 ### Bug Fixes
