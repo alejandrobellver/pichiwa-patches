@@ -1,3 +1,9 @@
+## [0.3.2-dev.8](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.7...v0.3.2-dev.8) (2026-07-13)
+
+### Bug Fixes
+
+* **whatsapp:** correct hex timestamp for 2099-12-31 in ExpirationBypass ([6c8bd7b](https://github.com/alejandrobellver/pichiwa-patches/commit/6c8bd7b6950a1540b61b560de53d49e8c1555e4d))
+
 ## [0.3.2-dev.7](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.6...v0.3.2-dev.7) (2026-07-13)
 
 ### Bug Fixes
