@@ -23,8 +23,9 @@ val expirationBypass = bytecodePatch(
             filters = listOf(string("software_forced_expiration"))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->getFutureDate()Ljava/util/Date;
-                move-result-object v0
+                new-instance v0, Ljava/util/Date;
+                const-wide v1, 0x3bb2328600L
+                invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
                 return-object v0
             """)
         }
