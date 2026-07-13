@@ -1,9 +1,24 @@
 {
-  "version": "0.3.2-dev.14",
+  "version": "0.3.2-dev.15",
   "patches": [
     {
-      "name": "Anti Desaparecer",
-      "description": "Mantiene los mensajes temporales visibles.",
+      "name": "Anti Detector",
+      "description": "Bypass root, emulator, and custom ROM detection.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Anti Disappearing",
+      "description": "Keep disappearing messages visible.",
       "use": false,
       "dependencies": [],
       "compatiblePackages": [
@@ -17,8 +32,8 @@
       "options": []
     },
     {
-      "name": "Anti Detector",
-      "description": "Bypass detección de root, emulador y ROM personalizada.",
+      "name": "Anti Edit",
+      "description": "Prevent others from editing sent messages.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -32,23 +47,8 @@
       "options": []
     },
     {
-      "name": "Anti Editar",
-      "description": "Evita que otros editen mensajes enviados.",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Anti Expiracion",
-      "description": "Evita la verificacion forzada de version y expiracion de WhatsApp.",
+      "name": "Anti Expiration",
+      "description": "Bypass WhatsApp forced version and expiration verification.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -63,7 +63,7 @@
     },
     {
       "name": "Anti Revoke",
-      "description": "Evita que otros borren sus mensajes o estados.",
+      "description": "Prevent others from deleting their messages or statuses.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -77,8 +77,8 @@
       "options": []
     },
     {
-      "name": "Anti-View Once",
-      "description": "Ve medios efímeros sin límite y permite capturas.",
+      "name": "Anti View Once",
+      "description": "View ephemeral media without limits and allow screenshots.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -92,8 +92,8 @@
       "options": []
     },
     {
-      "name": "Copiar estados",
-      "description": "Permite copiar texto de estados de contactos.",
+      "name": "Copy Statuses",
+      "description": "Allow copying text from contact statuses.",
       "use": false,
       "dependencies": [],
       "compatiblePackages": [
@@ -108,7 +108,22 @@
     },
     {
       "name": "Freeze Last Seen",
-      "description": "Congela la hora de ultima conexion.",
+      "description": "Freeze the last seen time.",
+      "use": false,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Ghost Mode",
+      "description": "Do not receive or send messages while active.",
       "use": false,
       "dependencies": [],
       "compatiblePackages": [
@@ -123,7 +138,7 @@
     },
     {
       "name": "HD Media",
-      "description": "Envía imágenes y video sin compresión.",
+      "description": "Send images and videos without compression.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -137,67 +152,7 @@
       "options": []
     },
     {
-      "name": "Menu de configuracion",
-      "description": "Agrega el menu de Pichiwa en los ajustes.",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Modo Fantasma",
-      "description": "No recibes ni envias mensajes mientras este activo.",
-      "use": false,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Ocultar escritura",
-      "description": "Escribe sin mostrar \"escribiendo...\".",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Ocultar lectura",
-      "description": "Lee mensajes sin enviar ticks azules.",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Ocultar reenviado",
+      "name": "Hide Forwarded",
       "description": "Quita la etiqueta \"reenviado\" de los mensajes.",
       "use": false,
       "dependencies": [],
@@ -212,38 +167,8 @@
       "options": []
     },
     {
-      "name": "Quitar Comunidades",
-      "description": "Oculta la pestaña de comunidades.",
-      "use": false,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Quitar Novedades",
-      "description": "Oculta la pestaña de novedades/estados.",
-      "use": false,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Sin límite de reenvío",
-      "description": "Reenvía mensajes a contactos ilimitados.",
+      "name": "Hide Read Receipts",
+      "description": "Read messages without sending blue ticks.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -257,8 +182,83 @@
       "options": []
     },
     {
-      "name": "Spoof instalador",
-      "description": "Finge instalación desde Google Play para evitar restricciones.",
+      "name": "Hide Typing",
+      "description": "Escribe sin mostrar \"escribiendo...\".",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "No Forward Limit",
+      "description": "Forward messages to unlimited contacts.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Remove Communities",
+      "description": "Hide the communities tab.",
+      "use": false,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Remove Updates",
+      "description": "Hide the updates/statuses tab.",
+      "use": false,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Settings Menu",
+      "description": "Add the Pichiwa menu in settings.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Spoof Installer",
+      "description": "Fake installation from Google Play to avoid restrictions.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
