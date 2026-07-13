@@ -18,7 +18,7 @@ val antiRevoke = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("msgstore/edit/revoke"))
+            filters = listOf(string("msgstore/revoke/missing-old-id "))
         ).let { match ->
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->shouldAllowRevoke()Z

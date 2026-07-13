@@ -18,7 +18,7 @@ val antiEditMessage = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("MessageEditInfoStore/insertEditInfo/missing"))
+            filters = listOf(string("MessageEditInfoStore/insertEditInfo/missing information in the FMessage"))
         ).let { match ->
             match.method.addInstructions(0, """
                 invoke-static {}, $EXT->shouldAllowEdit()Z
