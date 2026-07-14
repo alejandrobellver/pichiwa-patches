@@ -1,3 +1,13 @@
+## [0.4.0-dev.1](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.21...v0.4.0-dev.1) (2026-07-14)
+
+### Bug Fixes
+
+* **patches:** update HideGMS to new Morphe API ([01ea4e1](https://github.com/alejandrobellver/pichiwa-patches/commit/01ea4e1ce6d9a898ea86bd03182f6b1dd7a99d7b))
+
+### New Features
+
+* **patches:** add HideGMS to bypass integrity ([f0e2ca8](https://github.com/alejandrobellver/pichiwa-patches/commit/f0e2ca8c1790f1e1b189651cb5bcdb61b4a1d10d))
+
 ## [0.3.2-dev.21](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.20...v0.3.2-dev.21) (2026-07-14)
 
 ### Bug Fixes

@@ -21,9 +21,9 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.3.2-dev.21](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.21)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
+> **[v0.4.0-dev.1](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;19 patches total
 <details open>
-<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
+<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;19 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -44,6 +44,7 @@ Or manually add this repository URL as a patch source in Morphe:
 | [Ghost Mode](#ghost-mode) | Do not receive or send messages while active. |  |
 | [HD Media](#hd-media) | Send images and videos without compression. |  |
 | [Hide Forwarded](#hide-forwarded) | Quita la etiqueta "reenviado" de los mensajes. |  |
+| [Hide GMS](#hide-gms) | Pretends that Google Play Services is missing to force fallback registration flows. |  |
 | [Hide Read Receipts](#hide-read-receipts) | Read messages without sending blue ticks. |  |
 | [Hide Typing](#hide-typing) | Escribe sin mostrar "escribiendo...". |  |
 | [No Forward Limit](#no-forward-limit) | Forward messages to unlimited contacts. |  |
