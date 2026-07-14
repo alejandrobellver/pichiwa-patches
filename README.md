@@ -21,9 +21,9 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.4.0-dev.6](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.6)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;20 patches total
+> **[v0.4.0-dev.7](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.7)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;21 patches total
 <details open>
-<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;20 patches</summary>
+<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;21 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -47,6 +47,7 @@ Or manually add this repository URL as a patch source in Morphe:
 | [Hide GMS](#hide-gms) | Pretends that Google Play Services is missing to force fallback registration flows. |  |
 | [Hide Read Receipts](#hide-read-receipts) | Read messages without sending blue ticks. |  |
 | [Hide Typing](#hide-typing) | Escribe sin mostrar "escribiendo...". |  |
+| [MicroG Support](#microg-support) | Redirects Play Integrity to microG-RE and prompts auto-install if missing. |  |
 | [No Forward Limit](#no-forward-limit) | Forward messages to unlimited contacts. |  |
 | [Remove Communities](#remove-communities) | Hide the communities tab. |  |
 | [Remove Updates](#remove-updates) | Hide the updates/statuses tab. |  |

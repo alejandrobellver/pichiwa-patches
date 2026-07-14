@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-dev.6",
+  "version": "0.4.0-dev.7",
   "patches": [
     {
       "name": "Anti Detector",
@@ -199,6 +199,21 @@
     {
       "name": "Hide Typing",
       "description": "Escribe sin mostrar \"escribiendo...\".",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "MicroG Support",
+      "description": "Redirects Play Integrity to microG-RE and prompts auto-install if missing.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
