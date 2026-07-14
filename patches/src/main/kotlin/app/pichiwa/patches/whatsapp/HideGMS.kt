@@ -1,24 +1,29 @@
 package app.pichiwa.patches.whatsapp
 
-import app.morphe.patcher.api.Patch
-import app.morphe.patcher.api.PatchContext
+import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.patch.bytecodePatch
+import app.pichiwa.patches.shared.Constants.WHATSAPP
 
-class HideGMS : Patch() {
-    override val name = "Hide GMS"
-    override val description = "Pretends that Google Play Services is missing to force fallback registration flows."
-    override val version = "1.0.0"
+@Suppress("unused")
+val hideGMS = bytecodePatch(
+    name = "Hide GMS",
+    description = "Pretends that Google Play Services is missing to force fallback registration flows.",
+    default = true
+) {
+    compatibleWith(WHATSAPP)
 
-    override fun execute(context: PatchContext) {
-        val targetClass = "com/google/android/gms/common/GooglePlayServicesUtil"
-        val targetMethod = "A00(Landroid/content/Context;I)I"
-
-        context.smali.getClass(targetClass)?.let { cls ->
-            cls.getMethod(targetMethod)?.let { method ->
-                method.clearInstructions()
-                method.addInstruction("const/4 v0, 0x1")
-                method.addInstruction("return v0")
-                context.log("Injected HideGMS hook into GooglePlayServicesUtil.A00")
-            } ?: context.log("Failed to find A00 in GooglePlayServicesUtil")
-        } ?: context.log("Failed to find GooglePlayServicesUtil class")
+    execute {
+        Fingerprint(
+            definingClass = "Lcom/google/android/gms/common/GooglePlayServicesUtil;",
+            name = "A00",
+            returnType = "I",
+            parameters = listOf("Landroid/content/Context;", "I")
+        ).let { match ->
+            match.method.addInstructions(0, """
+                const/4 v0, 0x1
+                return v0
+            """)
+        }
     }
 }
