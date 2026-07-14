@@ -1,3 +1,9 @@
+## [0.4.0-dev.14](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.13...v0.4.0-dev.14) (2026-07-14)
+
+### Bug Fixes
+
+* anchor Remove Communities on 200 instead of 600 due to smali goto block ([1847000](https://github.com/alejandrobellver/pichiwa-patches/commit/1847000ee8634cb65c948d755495aeeca63f4ca4))
+
 ## [0.4.0-dev.13](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.12...v0.4.0-dev.13) (2026-07-14)
 
 ### Bug Fixes

@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-14T22:11:46",
-  "description": "## [0.4.0-dev.13](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.12...v0.4.0-dev.13) (2026-07-14)\n\n### Bug Fixes\n\n* highly robust instruction injection before return-object in A07 ([55c8512](https://github.com/alejandrobellver/pichiwa-patches/commit/55c85122b6bb04aea14b0f7c9b77df75ff11abc9))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.13/patches-0.4.0-dev.13.mpp",
+  "created_at": "2026-07-14T22:22:11",
+  "description": "## [0.4.0-dev.14](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.13...v0.4.0-dev.14) (2026-07-14)\n\n### Bug Fixes\n\n* anchor Remove Communities on 200 instead of 600 due to smali goto block ([1847000](https://github.com/alejandrobellver/pichiwa-patches/commit/1847000ee8634cb65c948d755495aeeca63f4ca4))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.14/patches-0.4.0-dev.14.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.13",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.13/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.13/extension.mpe"
+  "version": "0.4.0-dev.14",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.14/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.14/extension.mpe"
 }
