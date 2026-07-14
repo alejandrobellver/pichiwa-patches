@@ -20,13 +20,17 @@ val antiViewOnce = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("INSERT_VIEW_ONCE_SQL"))
+            filters = listOf(string("GET_VIEW_ONCE_STATE_BY_MESSAGE_ROW_ID_SQL"))
         ).let { match ->
-            val im = match.instructionMatches[0]
-            val register = im.getInstruction<OneRegisterInstruction>().registerA
-
-            match.method.addInstructions(im.index + 1, """
-                const/4 v$register, 0x0
+            val impl = match.originalMethod.implementation ?: return@let
+            val instructions = impl.instructions.toList()
+            
+            val lastInvoke = instructions.last { it.opcode.name == "invoke-interface" }
+            val regD = (lastInvoke as com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction).registerD
+            val index = instructions.indexOf(lastInvoke)
+            
+            match.method.addInstructions(index, """
+                const/4 v$regD, 0x0
             """)
         }
     }
