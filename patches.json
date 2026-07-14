@@ -1,5 +1,5 @@
 {
-  "version": "0.3.2-dev.21",
+  "version": "0.3.2-dev.22",
   "patches": [
     {
       "name": "Anti Detector",
@@ -155,6 +155,21 @@
       "name": "Hide Forwarded",
       "description": "Quita la etiqueta \"reenviado\" de los mensajes.",
       "use": false,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Hide GMS",
+      "description": "Pretends that Google Play Services is missing to force fallback registration flows.",
+      "use": true,
       "dependencies": [],
       "compatiblePackages": [
         {
