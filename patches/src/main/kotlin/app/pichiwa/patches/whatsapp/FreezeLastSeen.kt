@@ -15,7 +15,7 @@ val freezeLastSeen = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
+        Fingerprint(returnType = "V", 
             filters = listOf(string("presencestatemanager/setAvailable/new-state: "))
         ).let { match ->
             match.method.addInstructions(0, """
@@ -24,3 +24,4 @@ val freezeLastSeen = bytecodePatch(
         }
     }
 }
+

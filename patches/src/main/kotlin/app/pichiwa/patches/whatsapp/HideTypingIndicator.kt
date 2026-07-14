@@ -17,7 +17,7 @@ val hideTypingIndicator = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
+        Fingerprint(returnType = "V", 
             filters = listOf(string("HandleMeComposing/sendComposing; toJid="))
         ).let { match ->
             match.method.addInstructions(0, """
@@ -27,3 +27,4 @@ val hideTypingIndicator = bytecodePatch(
         }
     }
 }
+

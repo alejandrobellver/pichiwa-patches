@@ -17,7 +17,7 @@ val enableCopyStatus = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
+        Fingerprint(returnType = "V", 
             filters = listOf(string("conversation/copymessage/npe"))
         ).let { match ->
             match.method.addInstructions(0, """
@@ -27,3 +27,4 @@ val enableCopyStatus = bytecodePatch(
         }
     }
 }
+

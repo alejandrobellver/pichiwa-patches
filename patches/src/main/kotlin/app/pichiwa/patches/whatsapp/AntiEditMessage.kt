@@ -17,7 +17,7 @@ val antiEditMessage = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
+        Fingerprint(returnType = "V", 
             filters = listOf(string("MessageEditInfoStore/insertEditInfo/missing information in the FMessage"))
         ).let { match ->
             match.method.addInstructions(0, """
@@ -27,3 +27,4 @@ val antiEditMessage = bytecodePatch(
         }
     }
 }
+
