@@ -61,27 +61,38 @@ val antiViewOnce = bytecodePatch(
             }
         }
 
+        // --- 3. Bypass FLAG_SECURE universal utility ---
+        // Instead of targeting ViewOnceViewerActivity, we target the utility method itself (e.g. LX/2mi;->A00(Landroid/view/Window;)V)
+        // This ensures FLAG_SECURE is never applied, even if called from other fragments or on window focus changes.
         classDefForEach { def ->
-            if (def.type == "Lcom/whatsapp/viewonce/ui/messaging/ViewOnceViewerActivity;") {
-                def.methods.forEach { method ->
+            def.methods.forEach { method ->
+                // The utility method takes a single Window parameter
+                if (method.parameters.size == 1 && method.parameters[0].type == "Landroid/view/Window;") {
                     val impl = method.implementation ?: return@forEach
-                    val instructions = impl.instructions.toList()
                     
-                    for (i in 0 until instructions.size - 1) {
-                        val instr = instructions[i]
-                        if (instr.opcode.name == "invoke-virtual" && instr is com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction) {
-                            if (instr.reference.toString() == "Landroid/app/Activity;->getWindow()Landroid/view/Window;") {
-                                val nextInstr = instructions[i + 1]
-                                if (nextInstr.opcode.name == "move-result-object" && nextInstr is com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction) {
-                                    val reg = nextInstr.registerA
-                                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.returnType == method.returnType }
-                                    mutableMethod?.addInstructions(i + 2, """
-                                        const/4 v$reg, 0x0
-                                    """)
-                                    break
-                                }
+                    var hasSecureFlag = false
+                    var hasFlagsCall = false
+                    
+                    for (instr in impl.instructions) {
+                        if (instr is com.android.tools.smali.dexlib2.iface.instruction.NarrowLiteralInstruction) {
+                            if (instr.narrowLiteral == 0x2000) hasSecureFlag = true
+                        }
+                        if (instr is com.android.tools.smali.dexlib2.iface.instruction.WideLiteralInstruction) {
+                            if (instr.wideLiteral == 0x2000L) hasSecureFlag = true
+                        }
+                        if (instr is com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction) {
+                            val refStr = instr.reference.toString()
+                            if (refStr == "Landroid/view/Window;->setFlags(II)V" || refStr == "Landroid/view/Window;->addFlags(I)V") {
+                                hasFlagsCall = true
                             }
                         }
+                    }
+                    
+                    if (hasSecureFlag && hasFlagsCall) {
+                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters }
+                        mutableMethod.addInstructions(0, """
+                            return-void
+                        """)
                     }
                 }
             }
