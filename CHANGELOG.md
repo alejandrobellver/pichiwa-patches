@@ -1,3 +1,9 @@
+## [0.4.0-dev.16](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.15...v0.4.0-dev.16) (2026-07-14)
+
+### Bug Fixes
+
+* AntiViewOnce now hooks GET_VIEW_ONCE_STATE_BY_MESSAGE_ROW_ID_SQL to bypass expiration checks instead of causing insertion exceptions ([8a05df9](https://github.com/alejandrobellver/pichiwa-patches/commit/8a05df92d2b22a5c91918010113c0d7c6aa512a1))
+
 ## [0.4.0-dev.15](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.14...v0.4.0-dev.15) (2026-07-14)
 
 ### Bug Fixes
