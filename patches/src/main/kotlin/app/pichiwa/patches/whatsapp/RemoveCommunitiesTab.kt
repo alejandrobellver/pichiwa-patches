@@ -15,7 +15,7 @@ val removeCommunitiesTab = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
+        Fingerprint(returnType = "V", 
             filters = listOf(string("No HomeFragment mapping for community tab id: "))
         ).let { match ->
             match.method.addInstructions(0, """
@@ -24,3 +24,4 @@ val removeCommunitiesTab = bytecodePatch(
         }
     }
 }
+

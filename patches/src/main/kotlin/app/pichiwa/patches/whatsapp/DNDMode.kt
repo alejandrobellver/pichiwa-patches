@@ -15,7 +15,7 @@ val dndMode = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
+        Fingerprint(returnType = "V", 
             filters = listOf(string("MessageHandler/start"))
         ).let { match ->
             match.classDef.methods.first { it.name == "A03" }.let { method ->
@@ -26,3 +26,4 @@ val dndMode = bytecodePatch(
         }
     }
 }
+

@@ -17,7 +17,7 @@ val antiDisappearing = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
+        Fingerprint(returnType = "V", 
             filters = listOf(string("expire_timestamp"))
         ).let { match ->
             match.method.addInstructions(0, """
@@ -27,3 +27,4 @@ val antiDisappearing = bytecodePatch(
         }
     }
 }
+

@@ -20,8 +20,10 @@ val antiRevoke = bytecodePatch(
         Fingerprint(
             filters = listOf(string("msgstore/revoke/missing-old-id "))
         ).let { match ->
+            val returnType = match.method.returnType
+            val returnInst = if (returnType == "V") "return-void" else "const/4 v0, 0x0\n                return v0"
             match.method.addInstructions(0, """
-                return-void
+                $returnInst
                 :original
             """)
         }
