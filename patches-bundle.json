@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-14T04:46:17",
-  "description": "## [0.4.0-dev.3](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.2...v0.4.0-dev.3) (2026-07-14)\n\n### Bug Fixes\n\n* **whatsapp:** fix incorrect returnType in SpoofSignature fingerprint for 0e8 ([d065c7b](https://github.com/alejandrobellver/pichiwa-patches/commit/d065c7b2dc16b36745033ed4c446e23ab9309c57))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.3/patches-0.4.0-dev.3.mpp",
+  "created_at": "2026-07-14T05:00:33",
+  "description": "## [0.4.0-dev.4](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.3...v0.4.0-dev.4) (2026-07-14)\n\n### Bug Fixes\n\n* **whatsapp:** use correct register type in HideGMS to avoid VerifyError ([dac0667](https://github.com/alejandrobellver/pichiwa-patches/commit/dac066734bbb0e1ff0de051277b472c206910a7b))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.4/patches-0.4.0-dev.4.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.3",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.3/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.3/extension.mpe"
+  "version": "0.4.0-dev.4",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.4/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.4/extension.mpe"
 }

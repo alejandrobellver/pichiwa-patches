@@ -1,3 +1,9 @@
+## [0.4.0-dev.4](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.3...v0.4.0-dev.4) (2026-07-14)
+
+### Bug Fixes
+
+* **whatsapp:** use correct register type in HideGMS to avoid VerifyError ([dac0667](https://github.com/alejandrobellver/pichiwa-patches/commit/dac066734bbb0e1ff0de051277b472c206910a7b))
+
 ## [0.4.0-dev.3](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.2...v0.4.0-dev.3) (2026-07-14)
 
 ### Bug Fixes
