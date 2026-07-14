@@ -1,3 +1,9 @@
+## [0.4.0-dev.13](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.12...v0.4.0-dev.13) (2026-07-14)
+
+### Bug Fixes
+
+* highly robust instruction injection before return-object in A07 ([55c8512](https://github.com/alejandrobellver/pichiwa-patches/commit/55c85122b6bb04aea14b0f7c9b77df75ff11abc9))
+
 ## [0.4.0-dev.12](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.11...v0.4.0-dev.12) (2026-07-14)
 
 ### Bug Fixes

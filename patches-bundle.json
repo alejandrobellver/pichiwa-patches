@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-14T21:50:47",
-  "description": "## [0.4.0-dev.12](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.11...v0.4.0-dev.12) (2026-07-14)\n\n### Bug Fixes\n\n* robust instruction injection for Remove Communities and Remove Updates ([67f5b57](https://github.com/alejandrobellver/pichiwa-patches/commit/67f5b57126d8cb8ad6fa07e37894acfa023fe286))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.12/patches-0.4.0-dev.12.mpp",
+  "created_at": "2026-07-14T22:11:46",
+  "description": "## [0.4.0-dev.13](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.12...v0.4.0-dev.13) (2026-07-14)\n\n### Bug Fixes\n\n* highly robust instruction injection before return-object in A07 ([55c8512](https://github.com/alejandrobellver/pichiwa-patches/commit/55c85122b6bb04aea14b0f7c9b77df75ff11abc9))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.13/patches-0.4.0-dev.13.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.12",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.12/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.12/extension.mpe"
+  "version": "0.4.0-dev.13",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.13/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.13/extension.mpe"
 }
