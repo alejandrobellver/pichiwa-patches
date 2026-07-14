@@ -21,14 +21,12 @@ val spoofSignature = bytecodePatch(
             name = "A01",
             returnType = "LX/0eL;"
         ).let { match ->
-            match.instructionMatches = match.originalMethod.implementation?.instructions?.mapIndexedNotNull { index, instruction ->
-                if (instruction.toString().contains("equals")) {
-                    app.morphe.patcher.InstructionMatch(index, instruction)
-                } else null
-            } ?: emptyList()
+            val instructions = match.originalMethod.implementation?.instructions ?: return@let
+            val instructionMatches = instructions.mapIndexedNotNull { index, instruction ->
+                if (instruction.toString().contains("equals")) index else null
+            }
             
-            match.instructionMatches.forEach { insnMatch ->
-                val invokeIdx = insnMatch.index
+            instructionMatches.forEach { invokeIdx ->
                 val impl = match.originalMethod.implementation ?: return@forEach
                 val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
                 val reg = moveResult.registerA
@@ -43,14 +41,12 @@ val spoofSignature = bytecodePatch(
             name = "A00",
             returnType = "LX/Hij;"
         ).let { match ->
-            match.instructionMatches = match.originalMethod.implementation?.instructions?.mapIndexedNotNull { index, instruction ->
-                if (instruction.toString().contains("equals")) {
-                    app.morphe.patcher.InstructionMatch(index, instruction)
-                } else null
-            } ?: emptyList()
+            val instructions = match.originalMethod.implementation?.instructions ?: return@let
+            val instructionMatches = instructions.mapIndexedNotNull { index, instruction ->
+                if (instruction.toString().contains("equals")) index else null
+            }
             
-            match.instructionMatches.forEach { insnMatch ->
-                val invokeIdx = insnMatch.index
+            instructionMatches.forEach { invokeIdx ->
                 val impl = match.originalMethod.implementation ?: return@forEach
                 val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
                 val reg = moveResult.registerA
@@ -65,14 +61,12 @@ val spoofSignature = bytecodePatch(
             name = "A00",
             returnType = "LX/Hij;"
         ).let { match ->
-            match.instructionMatches = match.originalMethod.implementation?.instructions?.mapIndexedNotNull { index, instruction ->
-                if (instruction.toString().contains("equals")) {
-                    app.morphe.patcher.InstructionMatch(index, instruction)
-                } else null
-            } ?: emptyList()
+            val instructions = match.originalMethod.implementation?.instructions ?: return@let
+            val instructionMatches = instructions.mapIndexedNotNull { index, instruction ->
+                if (instruction.toString().contains("equals")) index else null
+            }
             
-            match.instructionMatches.forEach { insnMatch ->
-                val invokeIdx = insnMatch.index
+            instructionMatches.forEach { invokeIdx ->
                 val impl = match.originalMethod.implementation ?: return@forEach
                 val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
                 val reg = moveResult.registerA
