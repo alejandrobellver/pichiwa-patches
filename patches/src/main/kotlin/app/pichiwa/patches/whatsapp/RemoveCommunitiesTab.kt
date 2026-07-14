@@ -18,7 +18,7 @@ val removeCommunitiesTab = bytecodePatch(
     execute {
         Fingerprint(
             returnType = "Ljava/util/ArrayList;",
-            filters = listOf(literal(200), literal(300))
+            filters = listOf(literal(200), literal(300), literal(400), literal(900))
         ).let { match ->
             val impl = match.originalMethod.implementation ?: return@let
             val returnIndices = impl.instructions.mapIndexedNotNull { index, instr ->
