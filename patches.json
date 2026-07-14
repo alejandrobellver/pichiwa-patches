@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-dev.1",
+  "version": "0.4.0-dev.2",
   "patches": [
     {
       "name": "Anti Detector",
@@ -274,6 +274,21 @@
     {
       "name": "Spoof Installer",
       "description": "Fake installation from Google Play to avoid restrictions.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Spoof Signature",
+      "description": "Forces WhatsApp signature checks to pass by patching the equals method comparison.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
