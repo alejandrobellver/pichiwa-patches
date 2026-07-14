@@ -6,6 +6,7 @@ import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import app.pichiwa.patches.shared.Constants.WHATSAPP
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 
 @Suppress("unused")
 val spoofSignature = bytecodePatch(
@@ -23,7 +24,8 @@ val spoofSignature = bytecodePatch(
         ).let { match ->
             val instructions = match.originalMethod.implementation?.instructions ?: return@let
             val instructionMatches = instructions.mapIndexedNotNull { index, instruction ->
-                if (instruction.toString().contains("equals")) index else null
+                val ref = (instruction as? ReferenceInstruction)?.reference
+                if (ref?.toString()?.contains("equals") == true) index else null
             }
             
             instructionMatches.forEach { invokeIdx ->
@@ -43,7 +45,8 @@ val spoofSignature = bytecodePatch(
         ).let { match ->
             val instructions = match.originalMethod.implementation?.instructions ?: return@let
             val instructionMatches = instructions.mapIndexedNotNull { index, instruction ->
-                if (instruction.toString().contains("equals")) index else null
+                val ref = (instruction as? ReferenceInstruction)?.reference
+                if (ref?.toString()?.contains("equals") == true) index else null
             }
             
             instructionMatches.forEach { invokeIdx ->
@@ -63,7 +66,8 @@ val spoofSignature = bytecodePatch(
         ).let { match ->
             val instructions = match.originalMethod.implementation?.instructions ?: return@let
             val instructionMatches = instructions.mapIndexedNotNull { index, instruction ->
-                if (instruction.toString().contains("equals")) index else null
+                val ref = (instruction as? ReferenceInstruction)?.reference
+                if (ref?.toString()?.contains("equals") == true) index else null
             }
             
             instructionMatches.forEach { invokeIdx ->
