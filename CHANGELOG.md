@@ -1,3 +1,9 @@
+## [0.4.0-dev.6](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.5...v0.4.0-dev.6) (2026-07-14)
+
+### Bug Fixes
+
+* **whatsapp:** iterate backwards to prevent index shift in SpoofSignature ([29fa56f](https://github.com/alejandrobellver/pichiwa-patches/commit/29fa56f81adbe0c664eb8ff3c5852410ed8fcf31))
+
 ## [0.4.0-dev.5](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.4...v0.4.0-dev.5) (2026-07-14)
 
 ### Bug Fixes
