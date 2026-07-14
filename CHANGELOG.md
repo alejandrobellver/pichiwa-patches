@@ -1,3 +1,9 @@
+## [0.4.0-dev.5](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.4...v0.4.0-dev.5) (2026-07-14)
+
+### Bug Fixes
+
+* **whatsapp:** properly check if instruction is ReferenceInstruction in SpoofSignature ([dda93f1](https://github.com/alejandrobellver/pichiwa-patches/commit/dda93f18e61e537e79111c45bed3d8d8d68c1d27))
+
 ## [0.4.0-dev.4](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.3...v0.4.0-dev.4) (2026-07-14)
 
 ### Bug Fixes
