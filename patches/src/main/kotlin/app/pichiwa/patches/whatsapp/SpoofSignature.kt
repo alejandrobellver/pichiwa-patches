@@ -39,7 +39,7 @@ val spoofSignature = bytecodePatch(
         Fingerprint(
             definingClass = "LX/0e8;",
             name = "A00",
-            returnType = "LX/Hij;"
+            returnType = "Landroid/os/Bundle;"
         ).let { match ->
             val instructions = match.originalMethod.implementation?.instructions ?: return@let
             val instructionMatches = instructions.mapIndexedNotNull { index, instruction ->
