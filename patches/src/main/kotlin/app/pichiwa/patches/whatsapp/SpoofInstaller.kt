@@ -27,5 +27,17 @@ val spoofInstaller = bytecodePatch(
                 const-string v$reg, "com.android.vending"
             """)
         }
+
+        Fingerprint(
+            filters = listOf(methodCall(name = "getInitiatingPackageName"))
+        ).let { match ->
+            val invokeIdx = match.instructionMatches[0].index
+            val impl = match.originalMethod.implementation ?: return@let
+            val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@let
+            val reg = moveResult.registerA
+            match.method.addInstructions(invokeIdx + 2, """
+                const-string v$reg, "com.android.vending"
+            """)
+        }
     }
 }
