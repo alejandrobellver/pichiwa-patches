@@ -1,3 +1,9 @@
+## [0.4.0-dev.9](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.8...v0.4.0-dev.9) (2026-07-14)
+
+### Bug Fixes
+
+* PatchException in RemoveCommunitiesTab by returning correct type ([65f6536](https://github.com/alejandrobellver/pichiwa-patches/commit/65f6536204887cd837d0f54cc48ea4305392fd67))
+
 ## [0.4.0-dev.8](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.7...v0.4.0-dev.8) (2026-07-14)
 
 ### Bug Fixes
