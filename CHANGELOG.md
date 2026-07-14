@@ -1,3 +1,9 @@
+## [0.4.0-dev.17](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.16...v0.4.0-dev.17) (2026-07-14)
+
+### Bug Fixes
+
+* bypass FLAG_SECURE for screenshots in view once media and intercept UPDATE_VIEW_ONCE_SQL ([e0f8aee](https://github.com/alejandrobellver/pichiwa-patches/commit/e0f8aeed0737ff17dffdb89574698e1574cedc08))
+
 ## [0.4.0-dev.16](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.15...v0.4.0-dev.16) (2026-07-14)
 
 ### Bug Fixes
