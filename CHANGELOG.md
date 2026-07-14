@@ -1,3 +1,10 @@
+## [0.4.0-dev.10](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.9...v0.4.0-dev.10) (2026-07-14)
+
+### Bug Fixes
+
+* actually remove communities and updates tabs from the ArrayList to prevent ViewPager NPE ([40f95a3](https://github.com/alejandrobellver/pichiwa-patches/commit/40f95a3f02bd83d732e8ec46eae7beccbba4bd7c))
+* add missing import for literal in RemoveCommunitiesTab ([94542a8](https://github.com/alejandrobellver/pichiwa-patches/commit/94542a8369118c61032cdadb1f493171c28bae6e))
+
 ## [0.4.0-dev.9](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.8...v0.4.0-dev.9) (2026-07-14)
 
 ### Bug Fixes
