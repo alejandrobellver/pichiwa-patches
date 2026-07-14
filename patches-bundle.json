@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-14T08:33:58",
-  "description": "## [0.4.0-dev.9](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.8...v0.4.0-dev.9) (2026-07-14)\n\n### Bug Fixes\n\n* PatchException in RemoveCommunitiesTab by returning correct type ([65f6536](https://github.com/alejandrobellver/pichiwa-patches/commit/65f6536204887cd837d0f54cc48ea4305392fd67))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.9/patches-0.4.0-dev.9.mpp",
+  "created_at": "2026-07-14T08:53:24",
+  "description": "## [0.4.0-dev.10](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.9...v0.4.0-dev.10) (2026-07-14)\n\n### Bug Fixes\n\n* actually remove communities and updates tabs from the ArrayList to prevent ViewPager NPE ([40f95a3](https://github.com/alejandrobellver/pichiwa-patches/commit/40f95a3f02bd83d732e8ec46eae7beccbba4bd7c))\n* add missing import for literal in RemoveCommunitiesTab ([94542a8](https://github.com/alejandrobellver/pichiwa-patches/commit/94542a8369118c61032cdadb1f493171c28bae6e))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.10/patches-0.4.0-dev.10.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.9",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.9/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.9/extension.mpe"
+  "version": "0.4.0-dev.10",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.10/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.10/extension.mpe"
 }
