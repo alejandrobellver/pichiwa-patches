@@ -1,3 +1,9 @@
+## [0.4.0-dev.12](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.11...v0.4.0-dev.12) (2026-07-14)
+
+### Bug Fixes
+
+* robust instruction injection for Remove Communities and Remove Updates ([67f5b57](https://github.com/alejandrobellver/pichiwa-patches/commit/67f5b57126d8cb8ad6fa07e37894acfa023fe286))
+
 ## [0.4.0-dev.11](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.10...v0.4.0-dev.11) (2026-07-14)
 
 ### Bug Fixes
