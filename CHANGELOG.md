@@ -1,3 +1,9 @@
+## [0.4.0-dev.11](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.10...v0.4.0-dev.11) (2026-07-14)
+
+### Bug Fixes
+
+* make fingerprint strictly match tab population method to prevent PatchException and apply patch correctly ([18cf53f](https://github.com/alejandrobellver/pichiwa-patches/commit/18cf53fe4f9dcb5411f5c84fa1548d09b0ca2704))
+
 ## [0.4.0-dev.10](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.9...v0.4.0-dev.10) (2026-07-14)
 
 ### Bug Fixes
