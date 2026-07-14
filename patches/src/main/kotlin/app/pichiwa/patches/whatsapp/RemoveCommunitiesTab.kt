@@ -2,6 +2,7 @@ package app.pichiwa.patches.whatsapp
 
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.literal
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.string
 import app.pichiwa.patches.shared.Constants.WHATSAPP
