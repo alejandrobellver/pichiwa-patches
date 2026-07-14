@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-14T22:30:16",
-  "description": "## [0.4.0-dev.15](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.14...v0.4.0-dev.15) (2026-07-14)\n\n### Bug Fixes\n\n* revert RemoveUpdatesTab to use the reliable const/16 anchor strategy ([71cd529](https://github.com/alejandrobellver/pichiwa-patches/commit/71cd52911e946732f90b1f84107a3f026836f73e))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.15/patches-0.4.0-dev.15.mpp",
+  "created_at": "2026-07-14T22:47:07",
+  "description": "## [0.4.0-dev.16](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.15...v0.4.0-dev.16) (2026-07-14)\n\n### Bug Fixes\n\n* AntiViewOnce now hooks GET_VIEW_ONCE_STATE_BY_MESSAGE_ROW_ID_SQL to bypass expiration checks instead of causing insertion exceptions ([8a05df9](https://github.com/alejandrobellver/pichiwa-patches/commit/8a05df92d2b22a5c91918010113c0d7c6aa512a1))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.16/patches-0.4.0-dev.16.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.15",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.15/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.15/extension.mpe"
+  "version": "0.4.0-dev.16",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.16/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.16/extension.mpe"
 }
