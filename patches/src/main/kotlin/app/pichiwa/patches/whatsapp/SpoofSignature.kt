@@ -28,7 +28,7 @@ val spoofSignature = bytecodePatch(
                 if (ref?.toString()?.contains("equals") == true) index else null
             }
             
-            instructionMatches.forEach { invokeIdx ->
+            instructionMatches.reversed().forEach { invokeIdx ->
                 val impl = match.originalMethod.implementation ?: return@forEach
                 val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
                 val reg = moveResult.registerA
@@ -49,7 +49,7 @@ val spoofSignature = bytecodePatch(
                 if (ref?.toString()?.contains("equals") == true) index else null
             }
             
-            instructionMatches.forEach { invokeIdx ->
+            instructionMatches.reversed().forEach { invokeIdx ->
                 val impl = match.originalMethod.implementation ?: return@forEach
                 val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
                 val reg = moveResult.registerA
@@ -70,7 +70,7 @@ val spoofSignature = bytecodePatch(
                 if (ref?.toString()?.contains("equals") == true) index else null
             }
             
-            instructionMatches.forEach { invokeIdx ->
+            instructionMatches.reversed().forEach { invokeIdx ->
                 val impl = match.originalMethod.implementation ?: return@forEach
                 val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
                 val reg = moveResult.registerA
