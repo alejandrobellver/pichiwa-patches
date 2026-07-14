@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-13T19:55:59",
-  "description": "## [0.3.2-dev.20](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.19...v0.3.2-dev.20) (2026-07-13)\n\n### Bug Fixes\n\n* **patches:** rip out WExtension completely ([aefab87](https://github.com/alejandrobellver/pichiwa-patches/commit/aefab8771b8a0b2dcdb48890d265c99be3da7846))\n* **patches:** rip out WExtension completely ([b8df012](https://github.com/alejandrobellver/pichiwa-patches/commit/b8df012ba0f7ff8743789d3ca50c054a27be130b))\n* resolve merge conflict in patches.json ([8424d62](https://github.com/alejandrobellver/pichiwa-patches/commit/8424d62bc015227f4d279f9c142ea0fc0e111566))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.20/patches-0.3.2-dev.20.mpp",
+  "created_at": "2026-07-14T01:54:17",
+  "description": "## [0.3.2-dev.21](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.20...v0.3.2-dev.21) (2026-07-14)\n\n### Bug Fixes\n\n* **patches:** update SpoofInstaller to support Android 11+ (getInitiatingPackageName) ([f8fecc6](https://github.com/alejandrobellver/pichiwa-patches/commit/f8fecc6cce5c27b002d54b8d7330e1668b100095))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.21/patches-0.3.2-dev.21.mpp",
   "signature_download_url": "",
-  "version": "0.3.2-dev.20",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.20/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.20/extension.mpe"
+  "version": "0.3.2-dev.21",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.21/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.3.2-dev.21/extension.mpe"
 }
