@@ -1,3 +1,9 @@
+## [0.4.0-dev.18](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.17...v0.4.0-dev.18) (2026-07-14)
+
+### Bug Fixes
+
+* dynamically hook LX/5k7 interface and intercept CM2 to force view once state to unread in memory ([9accbd4](https://github.com/alejandrobellver/pichiwa-patches/commit/9accbd4054687aa945d63d2d948fb53259d91032))
+
 ## [0.4.0-dev.17](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.16...v0.4.0-dev.17) (2026-07-14)
 
 ### Bug Fixes
