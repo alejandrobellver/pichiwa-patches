@@ -1,3 +1,9 @@
+## [0.4.0-dev.15](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.14...v0.4.0-dev.15) (2026-07-14)
+
+### Bug Fixes
+
+* revert RemoveUpdatesTab to use the reliable const/16 anchor strategy ([71cd529](https://github.com/alejandrobellver/pichiwa-patches/commit/71cd52911e946732f90b1f84107a3f026836f73e))
+
 ## [0.4.0-dev.14](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.13...v0.4.0-dev.14) (2026-07-14)
 
 ### Bug Fixes
