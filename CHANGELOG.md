@@ -1,3 +1,13 @@
+## [0.4.0-dev.2](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.1...v0.4.0-dev.2) (2026-07-14)
+
+### Bug Fixes
+
+* **whatsapp:** fix kotlin compilation error in SpoofSignature patch ([428e7a3](https://github.com/alejandrobellver/pichiwa-patches/commit/428e7a31a989496be21a1c9bb73233cdb3c0f972))
+
+### New Features
+
+* **whatsapp:** add SpoofSignature patch to force signature checks to pass ([5c1c19f](https://github.com/alejandrobellver/pichiwa-patches/commit/5c1c19fc61fd67575592157e367a2d696484d5ae))
+
 ## [0.4.0-dev.1](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.21...v0.4.0-dev.1) (2026-07-14)
 
 ### Bug Fixes

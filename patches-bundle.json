@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-14T03:03:16",
-  "description": "## [0.4.0-dev.1](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.21...v0.4.0-dev.1) (2026-07-14)\n\n### Bug Fixes\n\n* **patches:** update HideGMS to new Morphe API ([01ea4e1](https://github.com/alejandrobellver/pichiwa-patches/commit/01ea4e1ce6d9a898ea86bd03182f6b1dd7a99d7b))\n\n### New Features\n\n* **patches:** add HideGMS to bypass integrity ([f0e2ca8](https://github.com/alejandrobellver/pichiwa-patches/commit/f0e2ca8c1790f1e1b189651cb5bcdb61b4a1d10d))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.1/patches-0.4.0-dev.1.mpp",
+  "created_at": "2026-07-14T04:23:37",
+  "description": "## [0.4.0-dev.2](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.1...v0.4.0-dev.2) (2026-07-14)\n\n### Bug Fixes\n\n* **whatsapp:** fix kotlin compilation error in SpoofSignature patch ([428e7a3](https://github.com/alejandrobellver/pichiwa-patches/commit/428e7a31a989496be21a1c9bb73233cdb3c0f972))\n\n### New Features\n\n* **whatsapp:** add SpoofSignature patch to force signature checks to pass ([5c1c19f](https://github.com/alejandrobellver/pichiwa-patches/commit/5c1c19fc61fd67575592157e367a2d696484d5ae))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.2/patches-0.4.0-dev.2.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.1",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.1/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.1/extension.mpe"
+  "version": "0.4.0-dev.2",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.2/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.2/extension.mpe"
 }
