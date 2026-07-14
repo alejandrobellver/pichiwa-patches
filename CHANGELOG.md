@@ -1,3 +1,9 @@
+## [0.3.2-dev.21](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.20...v0.3.2-dev.21) (2026-07-14)
+
+### Bug Fixes
+
+* **patches:** update SpoofInstaller to support Android 11+ (getInitiatingPackageName) ([f8fecc6](https://github.com/alejandrobellver/pichiwa-patches/commit/f8fecc6cce5c27b002d54b8d7330e1668b100095))
+
 ## [0.3.2-dev.20](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.3.2-dev.19...v0.3.2-dev.20) (2026-07-13)
 
 ### Bug Fixes
