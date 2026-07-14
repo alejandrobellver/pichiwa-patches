@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-14T07:29:45",
-  "description": "## [0.4.0-dev.7](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.6...v0.4.0-dev.7) (2026-07-14)\n\n### New Features\n\n* add MicroG-RE support and auto-install ([91b1e6d](https://github.com/alejandrobellver/pichiwa-patches/commit/91b1e6da3029a9e5f3f533b753fed92883a3837a))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.7/patches-0.4.0-dev.7.mpp",
+  "created_at": "2026-07-14T08:22:11",
+  "description": "## [0.4.0-dev.8](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.7...v0.4.0-dev.8) (2026-07-14)\n\n### Bug Fixes\n\n* VerifyError in AntiRevoke and NoSuchMethodError in SpoofSignature ([7c810ba](https://github.com/alejandrobellver/pichiwa-patches/commit/7c810ba6e0cae0f54bda3b80178d6e51f049c166))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.8/patches-0.4.0-dev.8.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.7",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.7/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.7/extension.mpe"
+  "version": "0.4.0-dev.8",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.8/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.8/extension.mpe"
 }

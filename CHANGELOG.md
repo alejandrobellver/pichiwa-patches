@@ -1,3 +1,9 @@
+## [0.4.0-dev.8](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.7...v0.4.0-dev.8) (2026-07-14)
+
+### Bug Fixes
+
+* VerifyError in AntiRevoke and NoSuchMethodError in SpoofSignature ([7c810ba](https://github.com/alejandrobellver/pichiwa-patches/commit/7c810ba6e0cae0f54bda3b80178d6e51f049c166))
+
 ## [0.4.0-dev.7](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.6...v0.4.0-dev.7) (2026-07-14)
 
 ### New Features
