@@ -1,3 +1,9 @@
+## [0.4.0-dev.3](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.2...v0.4.0-dev.3) (2026-07-14)
+
+### Bug Fixes
+
+* **whatsapp:** fix incorrect returnType in SpoofSignature fingerprint for 0e8 ([d065c7b](https://github.com/alejandrobellver/pichiwa-patches/commit/d065c7b2dc16b36745033ed4c446e23ab9309c57))
+
 ## [0.4.0-dev.2](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.1...v0.4.0-dev.2) (2026-07-14)
 
 ### Bug Fixes
