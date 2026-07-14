@@ -1,3 +1,9 @@
+## [0.4.0-dev.7](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.6...v0.4.0-dev.7) (2026-07-14)
+
+### New Features
+
+* add MicroG-RE support and auto-install ([91b1e6d](https://github.com/alejandrobellver/pichiwa-patches/commit/91b1e6da3029a9e5f3f533b753fed92883a3837a))
+
 ## [0.4.0-dev.6](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.5...v0.4.0-dev.6) (2026-07-14)
 
 ### Bug Fixes
