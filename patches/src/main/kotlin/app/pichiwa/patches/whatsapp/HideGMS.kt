@@ -21,8 +21,8 @@ val hideGMS = bytecodePatch(
             parameters = listOf("Landroid/content/Context;", "I")
         ).let { match ->
             match.method.addInstructions(0, """
-                const/4 v0, 0x1
-                return v0
+                const/4 v1, 0x1
+                return v1
             """)
         }
     }
