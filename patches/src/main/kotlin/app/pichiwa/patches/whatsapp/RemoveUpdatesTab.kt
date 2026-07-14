@@ -19,8 +19,21 @@ val removeUpdatesTab = bytecodePatch(
             returnType = "Ljava/util/ArrayList;",
             filters = listOf(literal(200), literal(300))
         ).let { match ->
-            // ponytail: removes the tab with literal 200 from the list
-            // needs refinement per WA version
+            val impl = match.originalMethod.implementation ?: return@let
+            val returnIndices = impl.instructions.mapIndexedNotNull { index, instr ->
+                if (instr.opcode.name == "return-object") index else null
+            }
+            returnIndices.reversed().forEach { retIdx ->
+                val retInstr = impl.instructions.elementAt(retIdx) as com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+                val listReg = retInstr.registerA
+                val tempReg = if (listReg == 0) 1 else 0
+                match.method.addInstructions(retIdx, """
+                    const/16 v${tempReg}, 0x12c
+                    invoke-static {v${tempReg}}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+                    move-result-object v${tempReg}
+                    invoke-virtual {v${listReg}, v${tempReg}}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+                """)
+            }
         }
     }
 }
