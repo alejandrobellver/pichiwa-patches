@@ -16,7 +16,24 @@ val loginFix = bytecodePatch(
 ) {
     compatibleWith(WHATSAPP)
 
+
     execute {
+        // --- 1. Fake GMS Checks (Disable GMS logically) ---
+        classDefForEach { def ->
+            if (def.type == "Lcom/google/android/gms/common/GooglePlayServicesUtil;") {
+                def.methods.forEach { method ->
+                    if (method.name == "A00" && method.returnType == "I") {
+                        val impl = method.implementation ?: return@forEach
+                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                        mutableMethod.addInstructions(0, """
+                            const/4 v0, 0x1
+                            return v0
+                        """)
+                    }
+                }
+            }
+        }
+
         // --- 2. Bypass Signature Verifier Locally ---
         classDefForEach { def ->
             def.methods.forEach { method ->
