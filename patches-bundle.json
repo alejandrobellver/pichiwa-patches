@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-15T05:03:04",
-  "description": "## [0.4.0-dev.34](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.33...v0.4.0-dev.34) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** add missing MethodReference import in LoginFix ([0a03f26](https://github.com/alejandrobellver/pichiwa-patches/commit/0a03f26f8d75f61f5a86470b88ee52254d0892b5))\n* **whatsapp:** bypass Play Services signature locally instead of breaking API availability ([2938a46](https://github.com/alejandrobellver/pichiwa-patches/commit/2938a4611f15b83b80208ad7efd7908fb1596e00))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.34/patches-0.4.0-dev.34.mpp",
+  "created_at": "2026-07-15T05:13:34",
+  "description": "## [0.4.0-dev.35](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.34...v0.4.0-dev.35) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** globally redirect gms and vending to MicroG-RE to fix Play Integrity / SafetyNet fallback ([b977564](https://github.com/alejandrobellver/pichiwa-patches/commit/b9775643bb1a0fd697da562ee6546cdc0e2e7258))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.35/patches-0.4.0-dev.35.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.34",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.34/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.34/extension.mpe"
+  "version": "0.4.0-dev.35",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.35/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.35/extension.mpe"
 }

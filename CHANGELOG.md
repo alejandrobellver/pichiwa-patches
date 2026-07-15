@@ -1,3 +1,9 @@
+## [0.4.0-dev.35](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.34...v0.4.0-dev.35) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** globally redirect gms and vending to MicroG-RE to fix Play Integrity / SafetyNet fallback ([b977564](https://github.com/alejandrobellver/pichiwa-patches/commit/b9775643bb1a0fd697da562ee6546cdc0e2e7258))
+
 ## [0.4.0-dev.34](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.33...v0.4.0-dev.34) (2026-07-15)
 
 ### Bug Fixes
