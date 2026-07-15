@@ -1,3 +1,10 @@
+## [0.4.0-dev.41](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.40...v0.4.0-dev.41) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** spoof Java PackageInfo.signatures and restore MicroG-RE Play Integrity hook ([7f5403d](https://github.com/alejandrobellver/pichiwa-patches/commit/7f5403d956e2c97f988fba5101bcee094f34587a))
+* **whatsapp:** test if disabling java signature spoofing fixes VerifyError ([f2ddcc0](https://github.com/alejandrobellver/pichiwa-patches/commit/f2ddcc0f34f82645782abf9b004eebdde8f2d807))
+
 ## [0.4.0-dev.40](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.39...v0.4.0-dev.40) (2026-07-15)
 
 ### Bug Fixes
