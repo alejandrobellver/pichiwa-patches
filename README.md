@@ -21,9 +21,9 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.4.0-dev.19](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.19)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;21 patches total
+> **[v0.4.0-dev.20](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.20)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
 <details open>
-<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;21 patches</summary>
+<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -44,16 +44,13 @@ Or manually add this repository URL as a patch source in Morphe:
 | [Ghost Mode](#ghost-mode) | Do not receive or send messages while active. |  |
 | [HD Media](#hd-media) | Send images and videos without compression. |  |
 | [Hide Forwarded](#hide-forwarded) | Quita la etiqueta "reenviado" de los mensajes. |  |
-| [Hide GMS](#hide-gms) | Pretends that Google Play Services is missing to force fallback registration flows. |  |
 | [Hide Read Receipts](#hide-read-receipts) | Read messages without sending blue ticks. |  |
 | [Hide Typing](#hide-typing) | Escribe sin mostrar "escribiendo...". |  |
-| [MicroG Support](#microg-support) | Redirects Play Integrity to microG-RE and prompts auto-install if missing. |  |
 | [No Forward Limit](#no-forward-limit) | Forward messages to unlimited contacts. |  |
 | [Remove Communities](#remove-communities) | Hide the communities tab. |  |
 | [Remove Updates](#remove-updates) | Hide the updates/statuses tab. |  |
+| [SMS Verification Bypass](#sms-verification-bypass) | Bypasses SMS verification bans by spoofing signatures, installers, and hiding GMS. REQUIRED: You must manually install microG-RE for Play Integrity to pass. |  |
 | [Settings Menu](#settings-menu) | Add the Pichiwa menu in settings. |  |
-| [Spoof Installer](#spoof-installer) | Fake installation from Google Play to avoid restrictions. |  |
-| [Spoof Signature](#spoof-signature) | Forces WhatsApp signature checks to pass by patching the equals method comparison. |  |
 
 </details>
 
