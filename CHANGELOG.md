@@ -1,3 +1,9 @@
+## [0.4.0-dev.21](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.20...v0.4.0-dev.21) (2026-07-15)
+
+### Bug Fixes
+
+* remove HideGMS from SMSVerificationBypass as it causes crash with MicroG ([64beb79](https://github.com/alejandrobellver/pichiwa-patches/commit/64beb795da19c09e72fbe25e5e7d7566805cb119))
+
 ## [0.4.0-dev.20](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.19...v0.4.0-dev.20) (2026-07-15)
 
 ### New Features
