@@ -1,3 +1,9 @@
+## [0.4.0-dev.36](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.35...v0.4.0-dev.36) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** inject microg packages into queries via extension manifest to bypass package visibility restrictions ([144888f](https://github.com/alejandrobellver/pichiwa-patches/commit/144888fc917a2f6fdf2cb200455ac8550ade8e12))
+
 ## [0.4.0-dev.35](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.34...v0.4.0-dev.35) (2026-07-15)
 
 ### Bug Fixes
