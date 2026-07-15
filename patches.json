@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-dev.23",
+  "version": "0.4.0-dev.24",
   "patches": [
     {
       "name": "Anti Detector",
@@ -107,21 +107,6 @@
       "options": []
     },
     {
-      "name": "Force GMS Success",
-      "description": "Ensures every GooglePlayServicesUtil.A00 call returns SUCCESS (0) to avoid update prompts.",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
       "name": "Freeze Last Seen",
       "description": "Freeze the last seen time.",
       "use": false,
@@ -212,6 +197,21 @@
       "options": []
     },
     {
+      "name": "Login Bypass",
+      "description": "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "No Forward Limit",
       "description": "Forward messages to unlimited contacts.",
       "use": true,
@@ -245,21 +245,6 @@
       "name": "Remove Updates",
       "description": "Hide the updates/statuses tab.",
       "use": false,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "SMS Verification Bypass",
-      "description": "Bypasses SMS verification bans by spoofing signatures, installers, and hiding GMS. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
-      "use": true,
       "dependencies": [],
       "compatiblePackages": [
         {
