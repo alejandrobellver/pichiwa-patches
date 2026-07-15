@@ -78,21 +78,7 @@ val antiBan = bytecodePatch(
             }
         }
 
-        // --- 3. Spoof GMS Availability (Force Success) ---
-        // Instead of hiding GMS (returning 1 = MISSING), we return 0 (SUCCESS)
-        // This prevents the "Update Google Play Services" prompt and allows WhatsApp
-        // to proceed and use the MicroG redirect for Play Integrity.
-        Fingerprint(
-            definingClass = "Lcom/google/android/gms/common/GooglePlayServicesUtil;",
-            name = "A00",
-            returnType = "I",
-            parameters = listOf("Landroid/content/Context;", "I")
-        ).let { match ->
-            match.method.addInstructions(0, """
-                const/4 v1, 0x0
-                return v1
-            """)
-        }
+        // GMS block removed – handled globally by ForceGmsSuccess.patch
 
         // --- 4. MicroG Support (Redirect BIND_EXPRESS_INTEGRITY_SERVICE intent) ---
         classDefForEach { def ->
