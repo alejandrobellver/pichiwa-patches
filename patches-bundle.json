@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-14T23:26:26",
-  "description": "## [0.4.0-dev.18](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.17...v0.4.0-dev.18) (2026-07-14)\n\n### Bug Fixes\n\n* dynamically hook LX/5k7 interface and intercept CM2 to force view once state to unread in memory ([9accbd4](https://github.com/alejandrobellver/pichiwa-patches/commit/9accbd4054687aa945d63d2d948fb53259d91032))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.18/patches-0.4.0-dev.18.mpp",
+  "created_at": "2026-07-15T00:13:28",
+  "description": "## [0.4.0-dev.19](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.18...v0.4.0-dev.19) (2026-07-15)\n\n### Bug Fixes\n\n* bypass ViewOnce screenshot block using universal FLAG_SECURE hook ([ef7c35d](https://github.com/alejandrobellver/pichiwa-patches/commit/ef7c35d5cb5fea453580a1165c48f838602855d2))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.19/patches-0.4.0-dev.19.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.18",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.18/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.18/extension.mpe"
+  "version": "0.4.0-dev.19",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.19/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.19/extension.mpe"
 }

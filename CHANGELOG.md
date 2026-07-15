@@ -1,3 +1,9 @@
+## [0.4.0-dev.19](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.18...v0.4.0-dev.19) (2026-07-15)
+
+### Bug Fixes
+
+* bypass ViewOnce screenshot block using universal FLAG_SECURE hook ([ef7c35d](https://github.com/alejandrobellver/pichiwa-patches/commit/ef7c35d5cb5fea453580a1165c48f838602855d2))
+
 ## [0.4.0-dev.18](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.17...v0.4.0-dev.18) (2026-07-14)
 
 ### Bug Fixes
