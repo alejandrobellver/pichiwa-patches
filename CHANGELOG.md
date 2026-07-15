@@ -3,6 +3,19 @@
 ### Bug Fixes
 
 * **whatsapp:** check signatures array length to prevent ArrayIndexOutOfBoundsException crash ([22c7d30](https://github.com/alejandrobellver/pichiwa-patches/commit/22c7d3036a153c1a4f0221dea86ceefbb07e4aaf))
+* **whatsapp:** replace array-length with Array.getLength to avoid VerifyError on 4-bit smali register limit ([0adcf5a](https://github.com/alejandrobellver/pichiwa-patches/commit/0adcf5a069a3c5be347508134e4b0963f6e8165d))
+* **whatsapp:** spoof Java PackageInfo.signatures and restore MicroG-RE Play Integrity hook ([7f5403d](https://github.com/alejandrobellver/pichiwa-patches/commit/7f5403d956e2c97f988fba5101bcee094f34587a))
+* **whatsapp:** test if disabling java signature spoofing fixes VerifyError ([f2ddcc0](https://github.com/alejandrobellver/pichiwa-patches/commit/f2ddcc0f34f82645782abf9b004eebdde8f2d807))
+
+### New Features
+
+* **whatsapp:** jump version to 0.5.0-dev.1 after cleanup ([be013c0](https://github.com/alejandrobellver/pichiwa-patches/commit/be013c082e85f428b63cbe95ce69add45b6ca1d8))
+
+## [0.4.0-dev.41](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.40...v0.4.0-dev.41) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** check signatures array length to prevent ArrayIndexOutOfBoundsException crash ([22c7d30](https://github.com/alejandrobellver/pichiwa-patches/commit/22c7d3036a153c1a4f0221dea86ceefbb07e4aaf))
 * **whatsapp:** spoof Java PackageInfo.signatures and restore MicroG-RE Play Integrity hook ([7f5403d](https://github.com/alejandrobellver/pichiwa-patches/commit/7f5403d956e2c97f988fba5101bcee094f34587a))
 * **whatsapp:** test if disabling java signature spoofing fixes VerifyError ([f2ddcc0](https://github.com/alejandrobellver/pichiwa-patches/commit/f2ddcc0f34f82645782abf9b004eebdde8f2d807))
 
