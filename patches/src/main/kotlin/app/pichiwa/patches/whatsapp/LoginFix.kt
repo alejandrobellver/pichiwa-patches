@@ -81,37 +81,29 @@ val loginFix = bytecodePatch(
             }
         }
 
-        // --- 3. Redirect Play Integrity Binding ---
+
+        // --- 4. Global MicroG-RE Package Redirection ---
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
-                var hasIntegrityAction = false
-                var vendingInstructionIndex = -1
-                var vendingRegister = -1
-
-                impl.instructions.forEachIndexed { index, instruction ->
-                    if (instruction is ReferenceInstruction) {
-                        val ref = instruction.reference
-                        if (ref is StringReference) {
-                            if (ref.string == "com.google.android.play.core.expressintegrityservice.BIND_EXPRESS_INTEGRITY_SERVICE" ||
-                                ref.string == "com.google.android.play.core.integrityservice.BIND_INTEGRITY_SERVICE") {
-                                hasIntegrityAction = true
-                            }
-                            if (hasIntegrityAction && ref.string == "com.android.vending") {
-                                vendingInstructionIndex = index
-                                if (instruction is OneRegisterInstruction) {
-                                    vendingRegister = instruction.registerA
-                                }
-                            }
-                        }
-                    }
+                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        val str = (instr.reference as StringReference).string
+                        if (str == "com.google.android.gms") index to "app.revanced.android.gms"
+                        else if (str == "com.android.vending") index to "app.revanced.android.vending"
+                        else null
+                    } else null
                 }
-
-                if (hasIntegrityAction && vendingInstructionIndex != -1 && vendingRegister != -1) {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(vendingInstructionIndex + 1, """
-                        const-string v$vendingRegister, "app.revanced.android.vending"
-                    """)
+                
+                if (matches.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    matches.reversed().forEach { (idx, newPackage) ->
+                        val instr = impl.instructions.elementAtOrNull(idx) as? OneRegisterInstruction ?: return@forEach
+                        val reg = instr.registerA
+                        mutableMethod.addInstructions(idx + 1, """
+                            const-string v$reg, "$newPackage"
+                        """)
+                    }
                 }
             }
         }
