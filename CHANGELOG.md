@@ -1,3 +1,9 @@
+## [0.4.0-dev.28](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.27...v0.4.0-dev.28) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** remove dangerous signature spoofing that caused SIGABRT in RegisterPhone ([a95549d](https://github.com/alejandrobellver/pichiwa-patches/commit/a95549de32e0b5a8ef3f09d7bd03e918bdc967ec))
+
 ## [0.4.0-dev.27](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.26...v0.4.0-dev.27) (2026-07-15)
 
 ### Bug Fixes

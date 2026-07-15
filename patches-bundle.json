@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-15T03:07:21",
-  "description": "## [0.4.0-dev.27](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.26...v0.4.0-dev.27) (2026-07-15)\n\n### Bug Fixes\n\n* remove express integrity bypass which caused native crash ([f93ed89](https://github.com/alejandrobellver/pichiwa-patches/commit/f93ed8949fd669de733bcc9904495668009353ca))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.27/patches-0.4.0-dev.27.mpp",
+  "created_at": "2026-07-15T03:22:07",
+  "description": "## [0.4.0-dev.28](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.27...v0.4.0-dev.28) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** remove dangerous signature spoofing that caused SIGABRT in RegisterPhone ([a95549d](https://github.com/alejandrobellver/pichiwa-patches/commit/a95549de32e0b5a8ef3f09d7bd03e918bdc967ec))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.28/patches-0.4.0-dev.28.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.27",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.27/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.27/extension.mpe"
+  "version": "0.4.0-dev.28",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.28/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.28/extension.mpe"
 }
