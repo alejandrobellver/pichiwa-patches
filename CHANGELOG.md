@@ -1,3 +1,9 @@
+## [0.4.0-dev.31](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.30...v0.4.0-dev.31) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** revert global GMS replace and dynamically patch GooglePlayServicesUtil ([712f8d5](https://github.com/alejandrobellver/pichiwa-patches/commit/712f8d5e0ed176edec0d068c6577a2ff62040a24))
+
 ## [0.4.0-dev.30](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.29...v0.4.0-dev.30) (2026-07-15)
 
 ### New Features
