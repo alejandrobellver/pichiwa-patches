@@ -1,3 +1,9 @@
+## [0.4.0-dev.33](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.32...v0.4.0-dev.33) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** intercept both Standard and Express Integrity intents ([581ab1a](https://github.com/alejandrobellver/pichiwa-patches/commit/581ab1ae5815c0a92836f988e24089298eb04549))
+
 ## [0.4.0-dev.32](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.31...v0.4.0-dev.32) (2026-07-15)
 
 ### Bug Fixes
