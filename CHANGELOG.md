@@ -1,3 +1,9 @@
+## [0.4.0-dev.39](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.38...v0.4.0-dev.39) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** remove global GMS spoofing to fix FCM and SMS Retriever crashes, keep only Vending spoofing for Play Integrity ([fea1861](https://github.com/alejandrobellver/pichiwa-patches/commit/fea186153b1a5a0b4c643e3f5cc8c488574bf6cd))
+
 ## [0.4.0-dev.38](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.37...v0.4.0-dev.38) (2026-07-15)
 
 ### Bug Fixes
