@@ -1,3 +1,9 @@
+## [0.4.0-dev.20](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.19...v0.4.0-dev.20) (2026-07-15)
+
+### New Features
+
+* merge SMS verification bypass patches into SMSVerificationBypass ([5dea517](https://github.com/alejandrobellver/pichiwa-patches/commit/5dea51727f747b7eff462ae0330c61de83ec3d32))
+
 ## [0.4.0-dev.19](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.18...v0.4.0-dev.19) (2026-07-15)
 
 ### Bug Fixes

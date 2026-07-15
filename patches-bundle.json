@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-15T00:13:28",
-  "description": "## [0.4.0-dev.19](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.18...v0.4.0-dev.19) (2026-07-15)\n\n### Bug Fixes\n\n* bypass ViewOnce screenshot block using universal FLAG_SECURE hook ([ef7c35d](https://github.com/alejandrobellver/pichiwa-patches/commit/ef7c35d5cb5fea453580a1165c48f838602855d2))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.19/patches-0.4.0-dev.19.mpp",
+  "created_at": "2026-07-15T00:34:18",
+  "description": "## [0.4.0-dev.20](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.19...v0.4.0-dev.20) (2026-07-15)\n\n### New Features\n\n* merge SMS verification bypass patches into SMSVerificationBypass ([5dea517](https://github.com/alejandrobellver/pichiwa-patches/commit/5dea51727f747b7eff462ae0330c61de83ec3d32))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.20/patches-0.4.0-dev.20.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.19",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.19/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.19/extension.mpe"
+  "version": "0.4.0-dev.20",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.20/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.20/extension.mpe"
 }

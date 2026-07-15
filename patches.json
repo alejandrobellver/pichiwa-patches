@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-dev.19",
+  "version": "0.4.0-dev.20",
   "patches": [
     {
       "name": "Anti Detector",
@@ -167,21 +167,6 @@
       "options": []
     },
     {
-      "name": "Hide GMS",
-      "description": "Pretends that Google Play Services is missing to force fallback registration flows.",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
       "name": "Hide Read Receipts",
       "description": "Read messages without sending blue ticks.",
       "use": true,
@@ -199,21 +184,6 @@
     {
       "name": "Hide Typing",
       "description": "Escribe sin mostrar \"escribiendo...\".",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "MicroG Support",
-      "description": "Redirects Play Integrity to microG-RE and prompts auto-install if missing.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -272,38 +242,23 @@
       "options": []
     },
     {
+      "name": "SMS Verification Bypass",
+      "description": "Bypasses SMS verification bans by spoofing signatures, installers, and hiding GMS. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Settings Menu",
       "description": "Add the Pichiwa menu in settings.",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Spoof Installer",
-      "description": "Fake installation from Google Play to avoid restrictions.",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "name": "com.whatsapp",
-          "versions": [
-            "2.26.27.4"
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Spoof Signature",
-      "description": "Forces WhatsApp signature checks to pass by patching the equals method comparison.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
