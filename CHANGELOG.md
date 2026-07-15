@@ -1,3 +1,9 @@
+## [0.4.0-dev.24](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.23...v0.4.0-dev.24) (2026-07-15)
+
+### New Features
+
+* rename patch to Login Bypass and delete aggressive ForceGmsSuccess patch ([2385dc4](https://github.com/alejandrobellver/pichiwa-patches/commit/2385dc4ed464b7e556b5421eb0915e1dc34ba290))
+
 ## [0.4.0-dev.23](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.22...v0.4.0-dev.23) (2026-07-15)
 
 ### Bug Fixes
