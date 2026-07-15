@@ -74,7 +74,8 @@ val loginFix = bytecodePatch(
                     if (instruction is ReferenceInstruction) {
                         val ref = instruction.reference
                         if (ref is StringReference) {
-                            if (ref.string == "com.google.android.play.core.expressintegrityservice.BIND_EXPRESS_INTEGRITY_SERVICE") {
+                            if (ref.string == "com.google.android.play.core.expressintegrityservice.BIND_EXPRESS_INTEGRITY_SERVICE" ||
+                                ref.string == "com.google.android.play.core.integrityservice.BIND_INTEGRITY_SERVICE") {
                                 hasIntegrityAction = true
                             }
                             if (hasIntegrityAction && ref.string == "com.android.vending") {
