@@ -40,23 +40,41 @@ val loginFix = bytecodePatch(
             }
         }
 
-        // --- 2. Force GoogleApiAvailability success (obfuscation-safe) ---
+        // --- 2. Bypass Signature Verifier Locally ---
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
-                var isTarget = false
-                impl.instructions.forEach { instr ->
+                
+                var targetMoveResultIndex = -1
+                var targetRegister = -1
+                
+                impl.instructions.forEachIndexed { index, instr ->
                     if (instr is ReferenceInstruction && instr.reference is StringReference) {
                         if ((instr.reference as StringReference).string == " requires Google Play services, but their signature is invalid.") {
-                            isTarget = true
+                            // Find the invoke-static
+                            for (i in index downTo 0) {
+                                val prevInstr = impl.instructions.elementAt(i)
+                                if (prevInstr.opcode.name == "invoke-static") {
+                                    val ref = (prevInstr as ReferenceInstruction).reference
+                                    if (ref is MethodReference && ref.returnType == "Z") {
+                                        // The next instruction is move-result
+                                        val moveInstr = impl.instructions.elementAt(i + 1)
+                                        if (moveInstr.opcode.name.startsWith("move-result") && moveInstr is OneRegisterInstruction) {
+                                            targetMoveResultIndex = i + 1
+                                            targetRegister = moveInstr.registerA
+                                        }
+                                        break
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-                if (isTarget) {
+                
+                if (targetMoveResultIndex != -1 && targetRegister != -1) {
                     val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    mutableMethod.addInstructions(0, """
-                        const/4 v0, 0x0
-                        return v0
+                    mutableMethod.addInstructions(targetMoveResultIndex + 1, """
+                        const/4 v$targetRegister, 0x1
                     """)
                 }
             }
