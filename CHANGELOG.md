@@ -1,3 +1,9 @@
+## [0.4.0-dev.43](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.42...v0.4.0-dev.43) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** logically disable GMS by hooking GooglePlayServicesUtil.A00 to return SERVICE_MISSING ([71f4658](https://github.com/alejandrobellver/pichiwa-patches/commit/71f4658abbce9fe0a0bb5a16cc73a7df29adc95e))
+
 ## [0.4.0-dev.42](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.41...v0.4.0-dev.42) (2026-07-15)
 
 ### Bug Fixes
