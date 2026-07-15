@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-15T05:44:17",
-  "description": "## [0.4.0-dev.37](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.36...v0.4.0-dev.37) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** inject original signature into manifest to enable MicroG-RE spoofing ([8da55b3](https://github.com/alejandrobellver/pichiwa-patches/commit/8da55b3d42d066e10d3f60ffcf8849109adbebe6))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.37/patches-0.4.0-dev.37.mpp",
+  "created_at": "2026-07-15T06:11:15",
+  "description": "## [0.4.0-dev.38](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.37...v0.4.0-dev.38) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** update MicroG-RE signature payload with official WhatsApp certificate ([874f3ae](https://github.com/alejandrobellver/pichiwa-patches/commit/874f3ae396a33e03fa0aed87c9a8e21e3fe8e374))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.38/patches-0.4.0-dev.38.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.37",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.37/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.37/extension.mpe"
+  "version": "0.4.0-dev.38",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.38/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.38/extension.mpe"
 }

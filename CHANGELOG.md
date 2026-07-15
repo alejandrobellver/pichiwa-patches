@@ -1,3 +1,9 @@
+## [0.4.0-dev.38](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.37...v0.4.0-dev.38) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** update MicroG-RE signature payload with official WhatsApp certificate ([874f3ae](https://github.com/alejandrobellver/pichiwa-patches/commit/874f3ae396a33e03fa0aed87c9a8e21e3fe8e374))
+
 ## [0.4.0-dev.37](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.36...v0.4.0-dev.37) (2026-07-15)
 
 ### Bug Fixes
