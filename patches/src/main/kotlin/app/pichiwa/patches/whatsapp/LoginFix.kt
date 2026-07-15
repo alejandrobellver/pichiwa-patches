@@ -22,7 +22,6 @@ val loginFix = bytecodePatch(
                 val impl = method.implementation ?: return@forEach
                 val matches = impl.instructions.mapIndexedNotNull { index, instr ->
                     val ref = (instr as? ReferenceInstruction)?.reference?.toString()
-                    // Match getInstallerPackageName or getInitiatingPackageName
                     if (ref == "Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;" ||
                         ref == "Landroid/content/pm/InstallSourceInfo;->getInitiatingPackageName()Ljava/lang/String;"
                     ) index else null
@@ -30,7 +29,6 @@ val loginFix = bytecodePatch(
                 
                 if (matches.isNotEmpty()) {
                     val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    // Process in reverse to maintain correct indices
                     matches.reversed().forEach { invokeIdx ->
                         val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
                         val reg = moveResult.registerA
@@ -42,33 +40,37 @@ val loginFix = bytecodePatch(
             }
         }
 
-        // --- 2. Force GoogleApiAvailability success (global) ---
-        // Overwrite methods that check Google Play Services availability to always succeed.
+        // --- 2. Force GoogleApiAvailability success (obfuscation-safe) ---
         classDefForEach { def ->
-            def.methods.forEach { method ->
-                // isGooglePlayServicesAvailable(Context) -> SUCCESS (0)
-                if (method.name == "isGooglePlayServicesAvailable" && method.parameters == listOf("Landroid/content/Context;") && method.returnType == "I") {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(0, """
-                        const/4 v0, 0x0
-                        return v0
-                    """)
-                }
-                // makeGooglePlayServicesAvailable(Activity) -> SUCCESS (0)
-                if (method.name == "makeGooglePlayServicesAvailable" && method.parameters == listOf("Landroid/app/Activity;") && method.returnType == "I") {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(0, """
-                        const/4 v0, 0x0
-                        return v0
-                    """)
-                }
-                // getErrorResolutionPendingIntent(Context, int) -> null (no intent)
-                if (method.name == "getErrorResolutionPendingIntent" && method.parameters == listOf("Landroid/content/Context;", "I") && method.returnType == "Landroid/app/PendingIntent;") {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(0, """
-                        const/4 v0, 0x0
-                        return-object v0
-                    """)
+            val type = def.type
+            if (type == "Lcom/google/android/gms/common/GooglePlayServicesUtil;" || 
+                type == "Lcom/google/android/gms/common/GoogleApiAvailability;" || 
+                type == "Lcom/google/android/gms/common/GoogleApiAvailabilityLight;") {
+                def.methods.forEach { method ->
+                    // isGooglePlayServicesAvailable(Context) -> SUCCESS (0)
+                    if (method.parameters == listOf("Landroid/content/Context;") && method.returnType == "I") {
+                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                        mutableMethod.addInstructions(0, """
+                            const/4 v0, 0x0
+                            return v0
+                        """)
+                    }
+                    // makeGooglePlayServicesAvailable(Activity) -> SUCCESS (0)
+                    if (method.parameters == listOf("Landroid/app/Activity;") && method.returnType == "I") {
+                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                        mutableMethod.addInstructions(0, """
+                            const/4 v0, 0x0
+                            return v0
+                        """)
+                    }
+                    // getErrorResolutionPendingIntent(Context, int, String) -> null
+                    if (method.returnType == "Landroid/app/PendingIntent;") {
+                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                        mutableMethod.addInstructions(0, """
+                            const/4 v0, 0x0
+                            return-object v0
+                        """)
+                    }
                 }
             }
         }
@@ -103,36 +105,6 @@ val loginFix = bytecodePatch(
                     mutableMethod?.addInstructions(vendingInstructionIndex + 1, """
                         const-string v$vendingRegister, "app.revanced.android.vending"
                     """)
-                }
-            }
-        }
-
-        // --- 4. Global GMS String Replacement (Redirect to microG-RE) ---
-        classDefForEach { def ->
-            def.methods.forEach { method ->
-                val impl = method.implementation ?: return@forEach
-                val replacements = mutableListOf<Pair<Int, String>>()
-
-                impl.instructions.forEachIndexed { index, instr ->
-                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
-                        val str = (instr.reference as StringReference).string
-                        if (str == "com.google.android.gms") {
-                            if (instr is OneRegisterInstruction) {
-                                replacements.add(index to "app.revanced.android.gms")
-                            }
-                        }
-                    }
-                }
-
-                if (replacements.isNotEmpty()) {
-                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    replacements.reversed().forEach { (index, newStr) ->
-                        val instr = impl.instructions.elementAt(index) as OneRegisterInstruction
-                        val reg = instr.registerA
-                        mutableMethod.addInstructions(index + 1, """
-                            const-string v$reg, "$newStr"
-                        """)
-                    }
                 }
             }
         }
