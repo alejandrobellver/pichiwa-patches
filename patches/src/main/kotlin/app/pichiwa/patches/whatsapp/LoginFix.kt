@@ -5,6 +5,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.pichiwa.patches.shared.Constants.WHATSAPP
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
+import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 import com.android.tools.smali.dexlib2.iface.reference.StringReference
 
 @Suppress("unused")
