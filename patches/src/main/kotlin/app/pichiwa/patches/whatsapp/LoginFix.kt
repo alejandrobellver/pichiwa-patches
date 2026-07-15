@@ -47,37 +47,6 @@ val loginFix = bytecodePatch(
 
         // GMS checks are handled natively by MicroG-RE. We only redirect Integrity.
 
-        classDefForEach { def ->
-            def.methods.forEach { method ->
-                val impl = method.implementation ?: return@forEach
-                var hasIntegrityAction = false
-                var vendingInstructionIndex = -1
-                var vendingRegister = -1
 
-                impl.instructions.forEachIndexed { index, instruction ->
-                    if (instruction is ReferenceInstruction) {
-                        val ref = instruction.reference
-                        if (ref is StringReference) {
-                            if (ref.string == "com.google.android.play.core.expressintegrityservice.BIND_EXPRESS_INTEGRITY_SERVICE") {
-                                hasIntegrityAction = true
-                            }
-                            if (hasIntegrityAction && ref.string == "com.android.vending") {
-                                vendingInstructionIndex = index
-                                if (instruction is OneRegisterInstruction) {
-                                    vendingRegister = instruction.registerA
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (hasIntegrityAction && vendingInstructionIndex != -1 && vendingRegister != -1) {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(vendingInstructionIndex + 1, """
-                        const-string v$vendingRegister, "app.revanced.android.vending"
-                    """)
-                }
-            }
-        }
     }
 }
