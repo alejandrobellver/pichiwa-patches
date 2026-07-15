@@ -1,3 +1,9 @@
+## [0.4.0-dev.22](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.21...v0.4.0-dev.22) (2026-07-15)
+
+### Bug Fixes
+
+* force GooglePlayServicesUtil to return SUCCESS to prevent update prompts ([793fc8c](https://github.com/alejandrobellver/pichiwa-patches/commit/793fc8c424638d8adee585756bc43bdd481af167))
+
 ## [0.4.0-dev.21](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.20...v0.4.0-dev.21) (2026-07-15)
 
 ### Bug Fixes
