@@ -89,8 +89,7 @@ val loginFix = bytecodePatch(
                 val matches = impl.instructions.mapIndexedNotNull { index, instr ->
                     if (instr is ReferenceInstruction && instr.reference is StringReference) {
                         val str = (instr.reference as StringReference).string
-                        if (str == "com.google.android.gms") index to "app.revanced.android.gms"
-                        else if (str == "com.android.vending") index to "app.revanced.android.vending"
+                        if (str == "com.android.vending") index to "app.revanced.android.vending"
                         else null
                     } else null
                 }
