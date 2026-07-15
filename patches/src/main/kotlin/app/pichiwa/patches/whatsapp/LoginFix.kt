@@ -45,38 +45,7 @@ val loginFix = bytecodePatch(
 
         // --- 2. Spoof Signature (Removed due to native crash) ---
 
-        // GMS block removed – handled globally by ForceGmsSuccess.patch
-
-        // --- 5. Force GoogleApiAvailability success (global) ---
-        // Overwrite methods that check Google Play Services availability to always succeed.
-        classDefForEach { def ->
-            def.methods.forEach { method ->
-                // isGooglePlayServicesAvailable(Context) -> SUCCESS (0)
-                if (method.name == "isGooglePlayServicesAvailable" && method.parameters == listOf("Landroid/content/Context;") && method.returnType == "I") {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(0, """
-                        const/4 v0, 0x0
-                        return v0
-                    """)
-                }
-                // makeGooglePlayServicesAvailable(Activity) -> SUCCESS (0)
-                if (method.name == "makeGooglePlayServicesAvailable" && method.parameters == listOf("Landroid/app/Activity;") && method.returnType == "I") {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(0, """
-                        const/4 v0, 0x0
-                        return v0
-                    """)
-                }
-                // getErrorResolutionPendingIntent(Context, int) -> null (no intent)
-                if (method.name == "getErrorResolutionPendingIntent" && method.parameters == listOf("Landroid/content/Context;", "I") && method.returnType == "Landroid/app/PendingIntent;") {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(0, """
-                        const/4 v0, 0x0
-                        return-object v0
-                    """)
-                }
-            }
-        }
+        // GMS checks are handled natively by MicroG-RE. We only redirect Integrity.
 
         classDefForEach { def ->
             def.methods.forEach { method ->
