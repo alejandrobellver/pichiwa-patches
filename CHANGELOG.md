@@ -1,3 +1,10 @@
+## [0.4.0-dev.34](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.33...v0.4.0-dev.34) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** add missing MethodReference import in LoginFix ([0a03f26](https://github.com/alejandrobellver/pichiwa-patches/commit/0a03f26f8d75f61f5a86470b88ee52254d0892b5))
+* **whatsapp:** bypass Play Services signature locally instead of breaking API availability ([2938a46](https://github.com/alejandrobellver/pichiwa-patches/commit/2938a4611f15b83b80208ad7efd7908fb1596e00))
+
 ## [0.4.0-dev.33](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.32...v0.4.0-dev.33) (2026-07-15)
 
 ### Bug Fixes

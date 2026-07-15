@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-15T04:41:10",
-  "description": "## [0.4.0-dev.33](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.32...v0.4.0-dev.33) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** intercept both Standard and Express Integrity intents ([581ab1a](https://github.com/alejandrobellver/pichiwa-patches/commit/581ab1ae5815c0a92836f988e24089298eb04549))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.33/patches-0.4.0-dev.33.mpp",
+  "created_at": "2026-07-15T05:03:04",
+  "description": "## [0.4.0-dev.34](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.33...v0.4.0-dev.34) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** add missing MethodReference import in LoginFix ([0a03f26](https://github.com/alejandrobellver/pichiwa-patches/commit/0a03f26f8d75f61f5a86470b88ee52254d0892b5))\n* **whatsapp:** bypass Play Services signature locally instead of breaking API availability ([2938a46](https://github.com/alejandrobellver/pichiwa-patches/commit/2938a4611f15b83b80208ad7efd7908fb1596e00))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.34/patches-0.4.0-dev.34.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.33",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.33/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.33/extension.mpe"
+  "version": "0.4.0-dev.34",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.34/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.34/extension.mpe"
 }
