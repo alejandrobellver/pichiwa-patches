@@ -1,4 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <queries>
+        <package android:name="app.revanced.android.vending" />
+        <package android:name="app.revanced.android.gms" />
+    </queries>
     <application>
         <activity
             android:name="app.pichiwa.extension.extension.PichiwaSettingsActivity"
