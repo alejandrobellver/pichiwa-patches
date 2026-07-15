@@ -1,3 +1,9 @@
+## [0.4.0-dev.32](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.31...v0.4.0-dev.32) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** target exact signature method instead of all Context methods ([917a228](https://github.com/alejandrobellver/pichiwa-patches/commit/917a228eccb39d938883363332cd3a2d9d7ea4fa))
+
 ## [0.4.0-dev.31](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.30...v0.4.0-dev.31) (2026-07-15)
 
 ### Bug Fixes
