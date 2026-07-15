@@ -1,3 +1,9 @@
+## [0.4.0-dev.30](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.29...v0.4.0-dev.30) (2026-07-15)
+
+### New Features
+
+* **whatsapp:** globally redirect GMS strings to microG-RE ([06a0b2d](https://github.com/alejandrobellver/pichiwa-patches/commit/06a0b2d4b6f211c88dacc78c45d21b512cbc8bbb))
+
 ## [0.4.0-dev.29](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.28...v0.4.0-dev.29) (2026-07-15)
 
 ### New Features
