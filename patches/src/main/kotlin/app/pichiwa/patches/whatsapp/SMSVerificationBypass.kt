@@ -78,18 +78,7 @@ val antiBan = bytecodePatch(
             }
         }
 
-        // --- 3. Hide GMS ---
-        Fingerprint(
-            definingClass = "Lcom/google/android/gms/common/GooglePlayServicesUtil;",
-            name = "A00",
-            returnType = "I",
-            parameters = listOf("Landroid/content/Context;", "I")
-        ).let { match ->
-            match.method.addInstructions(0, """
-                const/4 v1, 0x1
-                return v1
-            """)
-        }
+        // Hide GMS removed: It conflicted with MicroG support and caused a crash.
 
         // --- 4. MicroG Support (Redirect BIND_EXPRESS_INTEGRITY_SERVICE intent) ---
         classDefForEach { def ->
