@@ -1,3 +1,9 @@
+## [0.4.0-dev.25](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.24...v0.4.0-dev.25) (2026-07-15)
+
+### Bug Fixes
+
+* remove signature spoofing which caused JNI native crash in msys ([e478957](https://github.com/alejandrobellver/pichiwa-patches/commit/e478957bf8998f2dae51192da96fc9105c68aba4))
+
 ## [0.4.0-dev.24](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.23...v0.4.0-dev.24) (2026-07-15)
 
 ### New Features

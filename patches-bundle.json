@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-15T02:28:40",
-  "description": "## [0.4.0-dev.24](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.23...v0.4.0-dev.24) (2026-07-15)\n\n### New Features\n\n* rename patch to Login Bypass and delete aggressive ForceGmsSuccess patch ([2385dc4](https://github.com/alejandrobellver/pichiwa-patches/commit/2385dc4ed464b7e556b5421eb0915e1dc34ba290))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.24/patches-0.4.0-dev.24.mpp",
+  "created_at": "2026-07-15T02:45:25",
+  "description": "## [0.4.0-dev.25](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.24...v0.4.0-dev.25) (2026-07-15)\n\n### Bug Fixes\n\n* remove signature spoofing which caused JNI native crash in msys ([e478957](https://github.com/alejandrobellver/pichiwa-patches/commit/e478957bf8998f2dae51192da96fc9105c68aba4))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.25/patches-0.4.0-dev.25.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.24",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.24/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.24/extension.mpe"
+  "version": "0.4.0-dev.25",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.25/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.25/extension.mpe"
 }
