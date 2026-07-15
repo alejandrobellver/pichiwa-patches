@@ -1,3 +1,9 @@
+## [0.4.0-dev.40](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.39...v0.4.0-dev.40) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** disable Play Integrity entirely by removing installer spoofing and redirecting vending to dummy package to force fallback ([47da55a](https://github.com/alejandrobellver/pichiwa-patches/commit/47da55ac5ff9c8b2affdecfd70e5064875a8c8b0))
+
 ## [0.4.0-dev.39](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.38...v0.4.0-dev.39) (2026-07-15)
 
 ### Bug Fixes

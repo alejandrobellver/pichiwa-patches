@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-15T06:24:49",
-  "description": "## [0.4.0-dev.39](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.38...v0.4.0-dev.39) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** remove global GMS spoofing to fix FCM and SMS Retriever crashes, keep only Vending spoofing for Play Integrity ([fea1861](https://github.com/alejandrobellver/pichiwa-patches/commit/fea186153b1a5a0b4c643e3f5cc8c488574bf6cd))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.39/patches-0.4.0-dev.39.mpp",
+  "created_at": "2026-07-15T06:39:42",
+  "description": "## [0.4.0-dev.40](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.39...v0.4.0-dev.40) (2026-07-15)\n\n### Bug Fixes\n\n* **whatsapp:** disable Play Integrity entirely by removing installer spoofing and redirecting vending to dummy package to force fallback ([47da55a](https://github.com/alejandrobellver/pichiwa-patches/commit/47da55ac5ff9c8b2affdecfd70e5064875a8c8b0))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.40/patches-0.4.0-dev.40.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.39",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.39/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.39/extension.mpe"
+  "version": "0.4.0-dev.40",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.40/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.40/extension.mpe"
 }
