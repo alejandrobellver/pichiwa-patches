@@ -1,3 +1,9 @@
+## [0.4.0-dev.37](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.36...v0.4.0-dev.37) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** inject original signature into manifest to enable MicroG-RE spoofing ([8da55b3](https://github.com/alejandrobellver/pichiwa-patches/commit/8da55b3d42d066e10d3f60ffcf8849109adbebe6))
+
 ## [0.4.0-dev.36](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.35...v0.4.0-dev.36) (2026-07-15)
 
 ### Bug Fixes

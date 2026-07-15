@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-dev.36",
+  "version": "0.4.0-dev.37",
   "patches": [
     {
       "name": "Anti Detector",
