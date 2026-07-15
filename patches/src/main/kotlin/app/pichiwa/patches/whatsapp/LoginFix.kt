@@ -10,8 +10,8 @@ import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 import com.android.tools.smali.dexlib2.iface.reference.StringReference
 
 @Suppress("unused")
-val loginBypass = bytecodePatch(
-    name = "Login Bypass",
+val loginFix = bytecodePatch(
+    name = "Login Fix",
     description = "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
     default = true
 ) {
