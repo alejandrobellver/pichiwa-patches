@@ -42,35 +42,22 @@ val loginFix = bytecodePatch(
 
         // --- 2. Force GoogleApiAvailability success (obfuscation-safe) ---
         classDefForEach { def ->
-            val type = def.type
-            if (type == "Lcom/google/android/gms/common/GooglePlayServicesUtil;" || 
-                type == "Lcom/google/android/gms/common/GoogleApiAvailability;" || 
-                type == "Lcom/google/android/gms/common/GoogleApiAvailabilityLight;") {
-                def.methods.forEach { method ->
-                    // isGooglePlayServicesAvailable(Context) -> SUCCESS (0)
-                    if (method.parameters == listOf("Landroid/content/Context;") && method.returnType == "I") {
-                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                        mutableMethod.addInstructions(0, """
-                            const/4 v0, 0x0
-                            return v0
-                        """)
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                var isTarget = false
+                impl.instructions.forEach { instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        if ((instr.reference as StringReference).string == " requires Google Play services, but their signature is invalid.") {
+                            isTarget = true
+                        }
                     }
-                    // makeGooglePlayServicesAvailable(Activity) -> SUCCESS (0)
-                    if (method.parameters == listOf("Landroid/app/Activity;") && method.returnType == "I") {
-                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                        mutableMethod.addInstructions(0, """
-                            const/4 v0, 0x0
-                            return v0
-                        """)
-                    }
-                    // getErrorResolutionPendingIntent(Context, int, String) -> null
-                    if (method.returnType == "Landroid/app/PendingIntent;") {
-                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                        mutableMethod.addInstructions(0, """
-                            const/4 v0, 0x0
-                            return-object v0
-                        """)
-                    }
+                }
+                if (isTarget) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    mutableMethod.addInstructions(0, """
+                        const/4 v0, 0x0
+                        return v0
+                    """)
                 }
             }
         }
