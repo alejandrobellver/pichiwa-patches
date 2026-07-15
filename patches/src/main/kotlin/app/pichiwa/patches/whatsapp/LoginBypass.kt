@@ -10,9 +10,9 @@ import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 import com.android.tools.smali.dexlib2.iface.reference.StringReference
 
 @Suppress("unused")
-val antiBan = bytecodePatch(
-    name = "SMS Verification Bypass",
-    description = "Bypasses SMS verification bans by spoofing signatures, installers, and hiding GMS. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
+val loginBypass = bytecodePatch(
+    name = "Login Bypass",
+    description = "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
