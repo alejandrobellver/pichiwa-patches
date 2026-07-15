@@ -10,7 +10,7 @@ import com.android.tools.smali.dexlib2.iface.reference.StringReference
 @Suppress("unused")
 val loginFix = bytecodePatch(
     name = "Login Fix",
-    description = "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
+    description = "Bypasses verification bans by redirecting all GMS communication to microG-RE. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
@@ -73,36 +73,38 @@ val loginFix = bytecodePatch(
             }
         }
 
-        // --- 3. Redirect Play Integrity Binding ---
+        // --- 3. Global String Replacement for MicroG-RE ---
+        // Redirects all Play Services and Play Store communications to microG-RE.
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
-                var hasIntegrityAction = false
-                var vendingInstructionIndex = -1
-                var vendingRegister = -1
-
-                impl.instructions.forEachIndexed { index, instruction ->
-                    if (instruction is ReferenceInstruction) {
-                        val ref = instruction.reference
-                        if (ref is StringReference) {
-                            if (ref.string == "com.google.android.play.core.expressintegrityservice.BIND_EXPRESS_INTEGRITY_SERVICE") {
-                                hasIntegrityAction = true
+                
+                val replacements = mutableListOf<Pair<Int, String>>()
+                
+                impl.instructions.forEachIndexed { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        val str = (instr.reference as StringReference).string
+                        if (str == "com.google.android.gms") {
+                            if (instr is OneRegisterInstruction) {
+                                replacements.add(index to "app.revanced.android.gms")
                             }
-                            if (hasIntegrityAction && ref.string == "com.android.vending") {
-                                vendingInstructionIndex = index
-                                if (instruction is OneRegisterInstruction) {
-                                    vendingRegister = instruction.registerA
-                                }
+                        } else if (str == "com.android.vending") {
+                            if (instr is OneRegisterInstruction) {
+                                replacements.add(index to "app.revanced.android.vending")
                             }
                         }
                     }
                 }
-
-                if (hasIntegrityAction && vendingInstructionIndex != -1 && vendingRegister != -1) {
-                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.returnType == method.returnType }
-                    mutableMethod?.addInstructions(vendingInstructionIndex + 1, """
-                        const-string v$vendingRegister, "app.revanced.android.vending"
-                    """)
+                
+                if (replacements.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    replacements.reversed().forEach { (index, newStr) ->
+                        val instr = impl.instructions.elementAt(index) as OneRegisterInstruction
+                        val reg = instr.registerA
+                        mutableMethod.addInstructions(index + 1, """
+                            const-string v$reg, "$newStr"
+                        """)
+                    }
                 }
             }
         }
