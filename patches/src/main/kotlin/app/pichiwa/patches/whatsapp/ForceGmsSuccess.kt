@@ -19,7 +19,8 @@ val forceGmsSuccess = bytecodePatch(
             def.methods.forEach { method ->
                 if (method.name == "A00" && method.parameters == listOf("Landroid/content/Context;", "I") && method.returnType == "I") {
                     // Overwrite the method to immediately return SUCCESS (0).
-                    method.addInstructions(0, """
+                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    mutableMethod?.addInstructions(0, """
                         const/4 v1, 0x0
                         return v1
                     """)

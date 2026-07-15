@@ -86,21 +86,24 @@ val antiBan = bytecodePatch(
             def.methods.forEach { method ->
                 // isGooglePlayServicesAvailable(Context) -> SUCCESS (0)
                 if (method.name == "isGooglePlayServicesAvailable" && method.parameters == listOf("Landroid/content/Context;") && method.returnType == "I") {
-                    method.addInstructions(0, """
+                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    mutableMethod?.addInstructions(0, """
                         const/4 v0, 0x0
                         return v0
                     """)
                 }
                 // makeGooglePlayServicesAvailable(Activity) -> SUCCESS (0)
                 if (method.name == "makeGooglePlayServicesAvailable" && method.parameters == listOf("Landroid/app/Activity;") && method.returnType == "I") {
-                    method.addInstructions(0, """
+                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    mutableMethod?.addInstructions(0, """
                         const/4 v0, 0x0
                         return v0
                     """)
                 }
                 // getErrorResolutionPendingIntent(Context, int) -> null (no intent)
                 if (method.name == "getErrorResolutionPendingIntent" && method.parameters == listOf("Landroid/content/Context;", "I") && method.returnType == "Landroid/app/PendingIntent;") {
-                    method.addInstructions(0, """
+                    val mutableMethod = mutableClassDefBy(def).methods.firstOrNull { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    mutableMethod?.addInstructions(0, """
                         const/4 v0, 0x0
                         return-object v0
                     """)
@@ -108,6 +111,7 @@ val antiBan = bytecodePatch(
             }
         }
 
+        classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
                 var hasIntegrityAction = false
