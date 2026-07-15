@@ -17,30 +17,6 @@ val loginFix = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        // --- 1. Safely Spoof Installer and Initiating Package Names ---
-        classDefForEach { def ->
-            def.methods.forEach { method ->
-                val impl = method.implementation ?: return@forEach
-                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
-                    val ref = (instr as? ReferenceInstruction)?.reference?.toString()
-                    if (ref == "Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;" ||
-                        ref == "Landroid/content/pm/InstallSourceInfo;->getInitiatingPackageName()Ljava/lang/String;"
-                    ) index else null
-                }
-                
-                if (matches.isNotEmpty()) {
-                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    matches.reversed().forEach { invokeIdx ->
-                        val moveResult = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
-                        val reg = moveResult.registerA
-                        mutableMethod.addInstructions(invokeIdx + 2, """
-                            const-string v$reg, "com.android.vending"
-                        """)
-                    }
-                }
-            }
-        }
-
         // --- 2. Bypass Signature Verifier Locally ---
         classDefForEach { def ->
             def.methods.forEach { method ->
@@ -89,7 +65,7 @@ val loginFix = bytecodePatch(
                 val matches = impl.instructions.mapIndexedNotNull { index, instr ->
                     if (instr is ReferenceInstruction && instr.reference is StringReference) {
                         val str = (instr.reference as StringReference).string
-                        if (str == "com.android.vending") index to "app.revanced.android.vending"
+                        if (str == "com.android.vending") index to "com.whatsapp.dummy"
                         else null
                     } else null
                 }
