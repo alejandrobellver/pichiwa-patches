@@ -1,3 +1,9 @@
+## [0.4.0-dev.42](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.41...v0.4.0-dev.42) (2026-07-15)
+
+### Bug Fixes
+
+* **whatsapp:** actually apply the hash spoofing fix to resolve VerifyError ([0745650](https://github.com/alejandrobellver/pichiwa-patches/commit/07456502987650a01035fc251a1af2a5d8956069))
+
 ## [0.4.0-dev.41](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.40...v0.4.0-dev.41) (2026-07-15)
 
 ### Bug Fixes
