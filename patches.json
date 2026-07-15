@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-dev.22",
+  "version": "0.4.0-dev.23",
   "patches": [
     {
       "name": "Anti Detector",
@@ -95,6 +95,21 @@
       "name": "Copy Statuses",
       "description": "Allow copying text from contact statuses.",
       "use": false,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Force GMS Success",
+      "description": "Ensures every GooglePlayServicesUtil.A00 call returns SUCCESS (0) to avoid update prompts.",
+      "use": true,
       "dependencies": [],
       "compatiblePackages": [
         {

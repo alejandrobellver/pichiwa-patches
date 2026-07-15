@@ -21,9 +21,9 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.4.0-dev.22](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.22)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
+> **[v0.4.0-dev.23](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.23)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;19 patches total
 <details open>
-<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
+<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;19 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -40,6 +40,7 @@ Or manually add this repository URL as a patch source in Morphe:
 | [Anti Revoke](#anti-revoke) | Prevent others from deleting their messages or statuses. |  |
 | [Anti View Once](#anti-view-once) | View ephemeral media without limits and allow screenshots. |  |
 | [Copy Statuses](#copy-statuses) | Allow copying text from contact statuses. |  |
+| [Force GMS Success](#force-gms-success) | Ensures every GooglePlayServicesUtil.A00 call returns SUCCESS (0) to avoid update prompts. |  |
 | [Freeze Last Seen](#freeze-last-seen) | Freeze the last seen time. |  |
 | [Ghost Mode](#ghost-mode) | Do not receive or send messages while active. |  |
 | [HD Media](#hd-media) | Send images and videos without compression. |  |
