@@ -1,3 +1,9 @@
+## [0.4.0-dev.29](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.28...v0.4.0-dev.29) (2026-07-15)
+
+### New Features
+
+* **whatsapp:** globally redirect GMS and Vending to microG-RE ([a49883b](https://github.com/alejandrobellver/pichiwa-patches/commit/a49883b225f5b666ee0a1f5b832983856e487070))
+
 ## [0.4.0-dev.28](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.27...v0.4.0-dev.28) (2026-07-15)
 
 ### Bug Fixes
