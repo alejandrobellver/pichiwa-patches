@@ -1,3 +1,9 @@
+## [0.4.0-dev.26](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.25...v0.4.0-dev.26) (2026-07-15)
+
+### Bug Fixes
+
+* remove global GMS spoofing as it may cause native aborts ([4c5eacb](https://github.com/alejandrobellver/pichiwa-patches/commit/4c5eacb3c37d12f0c0effaaf688d43bd59fe3c10))
+
 ## [0.4.0-dev.25](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.24...v0.4.0-dev.25) (2026-07-15)
 
 ### Bug Fixes
