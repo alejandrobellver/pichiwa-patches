@@ -1,3 +1,9 @@
+## [0.4.0-dev.27](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.26...v0.4.0-dev.27) (2026-07-15)
+
+### Bug Fixes
+
+* remove express integrity bypass which caused native crash ([f93ed89](https://github.com/alejandrobellver/pichiwa-patches/commit/f93ed8949fd669de733bcc9904495668009353ca))
+
 ## [0.4.0-dev.26](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.25...v0.4.0-dev.26) (2026-07-15)
 
 ### Bug Fixes

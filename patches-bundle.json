@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-15T02:57:07",
-  "description": "## [0.4.0-dev.26](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.25...v0.4.0-dev.26) (2026-07-15)\n\n### Bug Fixes\n\n* remove global GMS spoofing as it may cause native aborts ([4c5eacb](https://github.com/alejandrobellver/pichiwa-patches/commit/4c5eacb3c37d12f0c0effaaf688d43bd59fe3c10))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.26/patches-0.4.0-dev.26.mpp",
+  "created_at": "2026-07-15T03:07:21",
+  "description": "## [0.4.0-dev.27](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.26...v0.4.0-dev.27) (2026-07-15)\n\n### Bug Fixes\n\n* remove express integrity bypass which caused native crash ([f93ed89](https://github.com/alejandrobellver/pichiwa-patches/commit/f93ed8949fd669de733bcc9904495668009353ca))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.27/patches-0.4.0-dev.27.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.26",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.26/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.26/extension.mpe"
+  "version": "0.4.0-dev.27",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.27/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.27/extension.mpe"
 }
