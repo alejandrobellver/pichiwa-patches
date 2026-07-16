@@ -1,3 +1,9 @@
+## [0.4.0-dev.52](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.51...v0.4.0-dev.52) (2026-07-16)
+
+### Bug Fixes
+
+* **whatsapp:** eliminate PackageInfo spoofing completely - caused VerifyError in X.1ZI - use direct string comparison forcing instead ([20217b4](https://github.com/alejandrobellver/pichiwa-patches/commit/20217b469499705665dd556985a4a2ff7274334e))
+
 ## [0.4.0-dev.51](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.50...v0.4.0-dev.51) (2026-07-16)
 
 ### Bug Fixes
