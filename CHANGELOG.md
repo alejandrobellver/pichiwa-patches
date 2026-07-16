@@ -1,3 +1,9 @@
+## [0.4.0-dev.53](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.52...v0.4.0-dev.53) (2026-07-16)
+
+### New Features
+
+* **whatsapp:** redirect GMS service binding to MicroG-RE for Play Integrity interception ([f640cf9](https://github.com/alejandrobellver/pichiwa-patches/commit/f640cf98458565e3532ef119603a1e9487566bf6))
+
 ## [0.4.0-dev.52](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.51...v0.4.0-dev.52) (2026-07-16)
 
 ### Bug Fixes
