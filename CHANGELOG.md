@@ -1,3 +1,9 @@
+## [0.4.0-dev.49](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.48...v0.4.0-dev.49) (2026-07-16)
+
+### Bug Fixes
+
+* **whatsapp:** switch to direct hash spoofing to eliminate VerifyError completely and fix vending redirect ([d9a1e37](https://github.com/alejandrobellver/pichiwa-patches/commit/d9a1e3785c02a32b9bfc28c56b2bbce649cff31f))
+
 ## [0.4.0-dev.48](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.47...v0.4.0-dev.48) (2026-07-16)
 
 ### Bug Fixes

@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-16T02:37:44",
-  "description": "## [0.4.0-dev.48](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.47...v0.4.0-dev.48) (2026-07-16)\n\n### Bug Fixes\n\n* **whatsapp:** fix syntax error in joinToString and restore invoke-static/range for spoofPackageInfo ([18b4f34](https://github.com/alejandrobellver/pichiwa-patches/commit/18b4f34c9514dc28e9acbf7db821f53b67d025ba))\n* **whatsapp:** re-enable GMS checks to allow MicroG-RE to intercept Play Integrity calls ([bcbb484](https://github.com/alejandrobellver/pichiwa-patches/commit/bcbb48411e3e35bdb5e6606dd424aea7f0a8b063))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.48/patches-0.4.0-dev.48.mpp",
+  "created_at": "2026-07-16T02:47:58",
+  "description": "## [0.4.0-dev.49](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.48...v0.4.0-dev.49) (2026-07-16)\n\n### Bug Fixes\n\n* **whatsapp:** switch to direct hash spoofing to eliminate VerifyError completely and fix vending redirect ([d9a1e37](https://github.com/alejandrobellver/pichiwa-patches/commit/d9a1e3785c02a32b9bfc28c56b2bbce649cff31f))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.49/patches-0.4.0-dev.49.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.48",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.48/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.48/extension.mpe"
+  "version": "0.4.0-dev.49",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.49/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.49/extension.mpe"
 }
