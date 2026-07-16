@@ -56,8 +56,6 @@ val loginFix = bytecodePatch(
         }
         
         // --- 2. Force local hash comparison to pass ---
-        // WhatsApp compares the SHA-256 hash of its own cert against a hardcoded constant.
-        // We find the string comparison result and force it to true.
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
@@ -67,7 +65,6 @@ val loginFix = bytecodePatch(
                         val str = (instr.reference as StringReference).string
                         if (str == "8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M" ||
                             str == "-5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI") {
-                            // Find the move-result (boolean) after the equals() call
                             for (i in index + 1 until minOf(index + 5, impl.instructions.count())) {
                                 val next = impl.instructions.elementAt(i)
                                 if (next.opcode.name == "move-result" && next is OneRegisterInstruction) {
@@ -85,7 +82,47 @@ val loginFix = bytecodePatch(
             }
         }
         
-        // --- 3. Redirect com.android.vending to MicroG-RE ---
+        // --- 3. Redirect GMS service binding to MicroG-RE ---
+        // WhatsApp calls Intent.setPackage("com.google.android.gms") to bind to GMS for attestation.
+        // We redirect this to app.revanced.android.gms so MicroG-RE handles the request instead.
+        // Only patches methods that also call Intent.setPackage (service binding), not class-level GMS refs.
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                
+                val setPackageRef = "Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;"
+                val hasSetPackage = impl.instructions.any { instr ->
+                    instr is ReferenceInstruction && instr.reference.toString() == setPackageRef
+                }
+                if (!hasSetPackage) return@forEach
+                
+                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        val str = (instr.reference as StringReference).string
+                        if (str == "com.google.android.gms" && instr is OneRegisterInstruction) {
+                            // Only redirect if the next non-line instruction is setPackage
+                            val nextMeaningful = (index + 1 until minOf(index + 5, impl.instructions.count()))
+                                .map { impl.instructions.elementAt(it) }
+                                .firstOrNull { it.opcode.name != "nop" }
+                            val isSetPackage = nextMeaningful is ReferenceInstruction &&
+                                nextMeaningful.reference.toString() == setPackageRef
+                            if (isSetPackage) index to instr.registerA else null
+                        } else null
+                    } else null
+                }
+                
+                if (matches.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    matches.reversed().forEach { (idx, reg) ->
+                        mutableMethod.addInstructions(idx + 1, """
+                            const-string v$reg, "app.revanced.android.gms"
+                        """)
+                    }
+                }
+            }
+        }
+        
+        // --- 4. Redirect com.android.vending to MicroG-RE companion ---
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
