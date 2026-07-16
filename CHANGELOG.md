@@ -1,3 +1,9 @@
+## [0.4.0-dev.47](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.46...v0.4.0-dev.47) (2026-07-16)
+
+### Bug Fixes
+
+* **whatsapp:** Fix Kotlin string interpolation syntax in injected Smali labels ([e4f651f](https://github.com/alejandrobellver/pichiwa-patches/commit/e4f651f9a90980cc2cb08da82ad84a66a14111fb))
+
 ## [0.4.0-dev.46](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.45...v0.4.0-dev.46) (2026-07-16)
 
 ### Bug Fixes
