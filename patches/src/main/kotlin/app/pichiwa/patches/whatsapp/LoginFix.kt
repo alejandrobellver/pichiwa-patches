@@ -16,7 +16,6 @@ val loginFix = bytecodePatch(
 ) {
     compatibleWith(WHATSAPP)
 
-
     execute {
         // --- 1. Fake GMS Checks (Disable GMS logically) ---
         classDefForEach { def ->
@@ -73,8 +72,6 @@ val loginFix = bytecodePatch(
                 }
             }
         }
-
-
         
         // --- 3. Spoof Signature Hashes ---
         classDefForEach { def ->
@@ -116,10 +113,17 @@ val loginFix = bytecodePatch(
                 }
                 
                 // B) Spoof SHA-256 Base64 for Local Telemetry Check
+                // Replace ANY base64 encoding that resulted in our signature hash (old or new v3)
+                // Note: The previous logic specifically looked for 8P1s... but on Android 13+ WhatsApp uses V3 signing 
+                // which produces a different SHA-256: -5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI
+                // Let's replace all encodeToString results that match either of those, or simply 
+                // hook where it creates the SHA-256 hash.
+                
                 var hasHash = false
                 impl.instructions.forEach { instr ->
                     if (instr is ReferenceInstruction && instr.reference is StringReference) {
-                        if ((instr.reference as StringReference).string == "8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M") {
+                        val s = (instr.reference as StringReference).string
+                        if (s == "8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M" || s == "-5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI") {
                             hasHash = true
                         }
                     }
@@ -167,5 +171,60 @@ val loginFix = bytecodePatch(
                 }
             }
         }
+        
+        // --- 5. PackageInfo.signatures Spoofing ---
+        // If Play Integrity is crashing or rejecting, we need to explicitly inject the signature into PackageInfo
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                
+                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                    val ref = (instr as? ReferenceInstruction)?.reference?.toString()
+                    if (ref == "Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;" && instr.opcode.name.startsWith("invoke-virtual")) {
+                        index
+                    } else null
+                }
+                
+                if (matches.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    matches.reversed().forEach { invokeIdx ->
+                        val invokeInstr = impl.instructions.elementAt(invokeIdx)
+                        val vC = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerC else (invokeInstr as com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction).startRegister
+                        val vD = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerD else vC + 1
+                        val vE = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerE else vC + 2
+                        
+                        val moveResultInstr = impl.instructions.elementAtOrNull(invokeIdx + 1) as? OneRegisterInstruction ?: return@forEach
+                        val vResult = moveResultInstr.registerA
+                        
+                        // We need a stable base64 encoded certificate to inject
+                        // Using the v3 cert from Android 13+
+                        val certBase64 = "MII2Q+dUL+/qdhwaJ3zt2TaP6n4rEd2qqm7bZDxrJu9gBEx71h+ZPKcg5Ca/cwwbxr16NM1TfCfW1RoQek4mMCHze2msCAOpQ9eGo9Z4dG00RzM92P30K1uL12d5zL85P86Vj5qV7sUaJ2K8eNf3yY+eZ4b1tL2yF8rA3xP6mH1rS3wA5zR8Q+fE2pK1nG9tM7uK4qH5xL2qF9wA6yP3oO7tI9xM4qR0bL8zC6wH4xN2rY3+L3uE5mJ7yU2pDALBgcqhkjOOAQDBQAwfDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFDASBgNVBAcTC1NhbnRhIENsYXJhMRYwFAYDVQQKEw1XaGF0c0FwcCBJbmMuMRQwEgYDVQQLEwtFbmdpbmVlcmluZzEUMBIGA1UEAxMLQnJpYW4gQWN0b24wHhcNMTAwNjI1MjMwNzE2WhcNNDQwMjE1MjMwNzE2WjB8MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExFjAUBgNVBAoTDVdoYXRzQXBwIEluYy4xFDASBgNVBAsTC0VuZ2luZWVyaW5nMRQwEgYDVQQDEwtCcmlhbiBBY3RvbjCCAbgwggEsBgcqhkjOOAQBMIIBHwKBgQD9f1OBHXUSKVLfSpwu7OTn9hG3UjzvRADDHj+AtlEmaUVdQCJR+1k9jVj6v8X1ujD2y5tVbNeBO4AdNG/yZmC3a5lQpaSfn+gEexAiwk+7qdf+t8Yb+DtX58aophUPBPuD9tPFHsMCNVQTWhaRMvZ1864rYdcq7/IiAxmd0UgBxwIVAJdgUI8VIwvMspK5gqLrhAvwWBz1AoGBAPfhoIXWmz3ey7yrXDa4V7l5lK+7+jrqgvlXTAs9B4JnUVlXjrrUWU/mcQcQgYC0SRZxI+hMKBYTt88JMozIpuE8FnqLVHyNKOCjrh4rs6Z1kW6jfwv6ITVi8ftiegEkO8yk8b6oUZCJqIPf4VrlnwaSi2ZegHtVJWQBTDv+z0kqA4GFAAKBgQDRGYtLgWh7zyRtQainJfCpiaUbzjJuhMgo4fVWZIvXHaSHBU1t5w//S0lDK2hiqkj8KpMWGywVov9eZxZy37V26dEqr/c2m5qZ0E+ynSu7sqUD7kGx/zeIcGT0H+KAVgkGNQCo5Uc0koLRWYHNtYoIvt5R3X6YZylbPftF/8ayWTALBgcqhkjOOAQDBQADLwAwLAIUAKYCp0d6z4QQdyN74JDfQ2WCyi8CFDUM4CaNB+ceVXdKtOrNTQcc0e+t"
+                        mutableMethod.addInstructions(invokeIdx + 2, """
+                            if-nez v$vResult, :skip_spoof_$invokeIdx
+                            iget-object v$vD, v$vResult, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
+                            if-nez v$vD, :skip_spoof_$invokeIdx
+                            invoke-static {v$vD}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+                            move-result v$vE
+                            if-nez v$vE, :skip_spoof_$invokeIdx
+                            
+                            const-string v$vD, "MIIDMjCCAvCgAwIBAgIETCU2pDALBgcqhkjOOAQDBQAwfDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFDASBgNVBAcTC1NhbnRhIENsYXJhMRYwFAYDVQQKEw1XaGF0c0FwcCBJbmMuMRQwEgYDVQQLEwtFbmdpbmVlcmluZzEUMBIGA1UEAxMLQnJpYW4gQWN0b24wHhcNMTAwNjI1MjMwNzE2WhcNNDQwMjE1MjMwNzE2WjB8MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExFjAUBgNVBAoTDVdoYXRzQXBwIEluYy4xFDASBgNVBAsTC0VuZ2luZWVyaW5nMRQwEgYDVQQDEwtCcmlhbiBBY3RvbjCCAbgwggEsBgcqhkjOOAQBMIIBHwKBgQD9f1OBHXUSKVLfSpwu7OTn9hG3UjzvRADDHj+AtlEmaUVdQCJR+1k9jVj6v8X1ujD2y5tVbNeBO4AdNG/yZmC3a5lQpaSfn+gEexAiwk+7qdf+t8Yb+DtX58aophUPBPuD9tPFHsMCNVQTWhaRMvZ1864rYdcq7/IiAxmd0UgBxwIVAJdgUI8VIwvMspK5gqLrhAvwWBz1AoGBAPfhoIXWmz3ey7yrXDa4V7l5lK+7+jrqgvlXTAs9B4JnUVlXjrrUWU/mcQcQgYC0SRZxI+hMKBYTt88JMozIpuE8FnqLVHyNKOCjrh4rs6Z1kW6jfwv6ITVi8ftiegEkO8yk8b6oUZCJqIPf4VrlnwaSi2ZegHtVJWQBTDv+z0kqA4GFAAKBgQDRGYtLgWh7zyRtQainJfCpiaUbzjJuhMgo4fVWZIvXHaSHBU1t5w//S0lDK2hiqkj8KpMWGywVov9eZxZy37V26dEqr/c2m5qZ0E+ynSu7sqUD7kGx/zeIcGT0H+KAVgkGNQCo5Uc0koLRWYHNtYoIvt5R3X6YZylbPftF/8ayWTALBgcqhkjOOAQDBQADLwAwLAIUAKYCp0d6z4QQdyN74JDfQ2WCyi8CFDUM4CaNB+ceVXdKtOrNTQcc0e+t"
+                            const/4 v$vE, 0x0
+                            invoke-static {v$vD, v$vE}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+                            move-result-object v$vD
+                            
+                            new-instance v$vC, Landroid/content/pm/Signature;
+                            invoke-direct {v$vC, v$vD}, Landroid/content/pm/Signature;-><init>([B)V
+                            
+                            iget-object v$vD, v$vResult, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
+                            const/4 v$vE, 0x0
+                            aput-object v$vC, v$vD, v$vE
+                            
+                            :skip_spoof_$invokeIdx
+                        """)
+                    }
+                }
+            }
+        }
     }
 }
+
