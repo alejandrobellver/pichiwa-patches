@@ -1,3 +1,9 @@
+## [0.4.0-dev.51](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.50...v0.4.0-dev.51) (2026-07-16)
+
+### Bug Fixes
+
+* **whatsapp:** switch to surgical string comparison instead of PackageInfo or generic Base64 spoofing to avoid VerifyError and data corruption ([40b7e27](https://github.com/alejandrobellver/pichiwa-patches/commit/40b7e27438b237163938cde389dc7f21dcc6fd2f))
+
 ## [0.4.0-dev.50](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.49...v0.4.0-dev.50) (2026-07-16)
 
 ### Bug Fixes
