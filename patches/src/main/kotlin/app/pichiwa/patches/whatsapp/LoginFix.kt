@@ -64,7 +64,7 @@ val loginFix = bytecodePatch(
                 val matches = impl.instructions.mapIndexedNotNull { index, instr ->
                     if (instr is ReferenceInstruction && instr.reference is StringReference) {
                         val str = (instr.reference as StringReference).string
-                        if (str == "com.android.vending") index to "com.whatsapp.dummy"
+                        if (str == "com.android.vending") index to "app.revanced.android.vending"
                         else null
                     } else null
                 }
@@ -82,29 +82,62 @@ val loginFix = bytecodePatch(
             }
         }
         
-                // --- 5. PackageInfo.signatures Spoofing ---
-        // If Play Integrity is crashing or rejecting, we need to explicitly inject the signature into PackageInfo
+                // --- 5. Spoof Signature Hashes Directly ---
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
                 
-                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                // A) Spoof SHA-1 Hex for X-Android-Cert header
+                var certReg = -1
+                impl.instructions.forEachIndexed { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        if ((instr.reference as StringReference).string == "X-Android-Cert") {
+                            val nextInstr = impl.instructions.elementAtOrNull(index + 1)
+                            if (nextInstr is OneRegisterInstruction && nextInstr.opcode.name.startsWith("const-string")) {
+                                certReg = nextInstr.registerA
+                            } else if (instr is OneRegisterInstruction) {
+                                certReg = instr.registerA
+                            }
+                        }
+                    }
+                }
+                
+                if (certReg != -1) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                        val ref = (instr as? ReferenceInstruction)?.reference?.toString()
+                        if (ref == "Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V" && instr.opcode.name.startsWith("invoke-virtual")) {
+                            val invokeInstr = instr
+                            val vD = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerD else (invokeInstr as com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction).startRegister + 1
+                            val vE = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerE else (invokeInstr as com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction).startRegister + 2
+                            if (vD == certReg) index to vE else null
+                        } else null
+                    }
+                    
+                    matches.reversed().forEach { (idx, vE) ->
+                        mutableMethod.addInstructions(idx, """
+                            const-string v$vE, "38a0f7d505fe18fec64fbf343ecaaaf310dbd799"
+                        """)
+                    }
+                }
+                
+                // B) Spoof SHA-256 Base64 for local signature check
+                val matchesBase64 = impl.instructions.mapIndexedNotNull { index, instr ->
                     val ref = (instr as? ReferenceInstruction)?.reference?.toString()
-                    if (ref == "Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;" && instr.opcode.name.startsWith("invoke-virtual")) {
+                    if (ref == "Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;" && instr.opcode.name.startsWith("invoke-static")) {
                         index
                     } else null
                 }
                 
-                if (matches.isNotEmpty()) {
+                if (matchesBase64.isNotEmpty()) {
                     val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    matches.reversed().forEach { invokeIdx ->
+                    matchesBase64.reversed().forEach { invokeIdx ->
                         val nextInstr = impl.instructions.elementAtOrNull(invokeIdx + 1)
                         if (nextInstr != null && nextInstr.opcode.name == "move-result-object") {
                             val vResult = (nextInstr as OneRegisterInstruction).registerA
-                            mutableMethod.addInstructions(invokeIdx + 2, listOf(
-                                "invoke-static/range {v${vResult} .. v${vResult}}, Lapp/pichiwa/extension/extension/WExtension;->spoofPackageInfo(Landroid/content/pm/PackageInfo;)Landroid/content/pm/PackageInfo;",
-                                "move-result-object v${vResult}"
-                            ).joinToString("\n"))
+                            mutableMethod.addInstructions(invokeIdx + 2, """
+                                const-string v${vResult}, "8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M"
+                            """)
                         }
                     }
                 }
