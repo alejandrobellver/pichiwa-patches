@@ -1,3 +1,10 @@
+## [0.4.0-dev.45](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.44...v0.4.0-dev.45) (2026-07-16)
+
+### Bug Fixes
+
+* **whatsapp:** completely spoof PackageInfo.signatures and V3 SHA-256 hashes for Play Integrity ([1b1d331](https://github.com/alejandrobellver/pichiwa-patches/commit/1b1d3311dbbdec910eb40ec9426f7e0c01b2f6c7))
+* **whatsapp:** completely spoof PackageInfo.signatures and V3 SHA-256 hashes for Play Integrity ([24b933c](https://github.com/alejandrobellver/pichiwa-patches/commit/24b933ce76bfcb93e1029bf4c96aea50044c2762))
+
 ## [0.4.0-dev.44](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.43...v0.4.0-dev.44) (2026-07-15)
 
 ### Bug Fixes
