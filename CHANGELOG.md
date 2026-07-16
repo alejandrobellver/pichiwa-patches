@@ -1,3 +1,16 @@
+## [0.4.0-dev.54](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.53...v0.4.0-dev.54) (2026-07-16)
+
+### Bug Fixes
+
+* remove broken manifest patch ([980f02b](https://github.com/alejandrobellver/pichiwa-patches/commit/980f02bb4455693d77e8e5858dbfde4e650d3c7b))
+* remove broken xmlDefForEach from LoginFix.kt ([7d7a9ea](https://github.com/alejandrobellver/pichiwa-patches/commit/7d7a9ea4906ced2d038a51d4f109d3f244a986e6))
+* restore MorpheApp maven registry ([8909ec0](https://github.com/alejandrobellver/pichiwa-patches/commit/8909ec03171e42be44155a41fb79d728e987bc7c))
+* **whatsapp:** restore local signature hash spoofing alongside surgical setPackage redirection ([4d7cf5a](https://github.com/alejandrobellver/pichiwa-patches/commit/4d7cf5a853ddc777e0d7f3b1a7fc2bcc72e7e0d2))
+
+### New Features
+
+* **whatsapp:** inject fake-signature into AndroidManifest for MicroG-RE ([45a957c](https://github.com/alejandrobellver/pichiwa-patches/commit/45a957cbfc5f23dc39bb60b87e7325065b89926b))
+
 ## [0.4.0-dev.53](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.52...v0.4.0-dev.53) (2026-07-16)
 
 ### New Features
