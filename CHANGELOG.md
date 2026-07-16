@@ -1,3 +1,10 @@
+## [0.4.0-dev.46](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.45...v0.4.0-dev.46) (2026-07-16)
+
+### Bug Fixes
+
+* **whatsapp:** fix VerifyError and refactor PackageInfo spoofing to Java extension ([2e56882](https://github.com/alejandrobellver/pichiwa-patches/commit/2e568823326391074f7cf992816fb342cfaf9c5c))
+* **whatsapp:** Inline PackageInfo signature spoofing in pure Smali ([97d41f6](https://github.com/alejandrobellver/pichiwa-patches/commit/97d41f66546fdd7a1af096d41d68fa95cc3b268b))
+
 ## [0.4.0-dev.45](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.44...v0.4.0-dev.45) (2026-07-16)
 
 ### Bug Fixes

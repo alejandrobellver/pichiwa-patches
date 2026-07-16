@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-16T00:23:31",
-  "description": "## [0.4.0-dev.45](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.44...v0.4.0-dev.45) (2026-07-16)\n\n### Bug Fixes\n\n* **whatsapp:** completely spoof PackageInfo.signatures and V3 SHA-256 hashes for Play Integrity ([1b1d331](https://github.com/alejandrobellver/pichiwa-patches/commit/1b1d3311dbbdec910eb40ec9426f7e0c01b2f6c7))\n* **whatsapp:** completely spoof PackageInfo.signatures and V3 SHA-256 hashes for Play Integrity ([24b933c](https://github.com/alejandrobellver/pichiwa-patches/commit/24b933ce76bfcb93e1029bf4c96aea50044c2762))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.45/patches-0.4.0-dev.45.mpp",
+  "created_at": "2026-07-16T01:46:31",
+  "description": "## [0.4.0-dev.46](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.45...v0.4.0-dev.46) (2026-07-16)\n\n### Bug Fixes\n\n* **whatsapp:** fix VerifyError and refactor PackageInfo spoofing to Java extension ([2e56882](https://github.com/alejandrobellver/pichiwa-patches/commit/2e568823326391074f7cf992816fb342cfaf9c5c))\n* **whatsapp:** Inline PackageInfo signature spoofing in pure Smali ([97d41f6](https://github.com/alejandrobellver/pichiwa-patches/commit/97d41f66546fdd7a1af096d41d68fa95cc3b268b))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.46/patches-0.4.0-dev.46.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.45",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.45/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.45/extension.mpe"
+  "version": "0.4.0-dev.46",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.46/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.46/extension.mpe"
 }
