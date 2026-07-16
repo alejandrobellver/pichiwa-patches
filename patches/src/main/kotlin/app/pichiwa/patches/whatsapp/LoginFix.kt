@@ -118,7 +118,7 @@ val loginFix = bytecodePatch(
                         var vC = 0
                         var vD = 1
                         var vE = 2
-                        if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.formats.Instruction35c) {
+if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.formats.Instruction35c) {
                             vC = invokeInstr.registerC
                             vD = invokeInstr.registerD
                             vE = invokeInstr.registerE
@@ -127,6 +127,12 @@ val loginFix = bytecodePatch(
                             vD = invokeInstr.startRegister + 1
                             vE = invokeInstr.startRegister + 2
                         } else {
+                            return@forEach
+                        }
+                        
+                        // Smali instructions like invoke-static and const/4 only support registers v0 to v15.
+                        // Skip if registers are out of bounds.
+                        if (vC > 15 || vD > 15 || vE > 15) {
                             return@forEach
                         }
                         
@@ -139,7 +145,7 @@ val loginFix = bytecodePatch(
                         }
                         
                         mutableMethod.addInstructions(invokeIdx + 2, """
-                            if-eqz v$vResult, :cond_skip_spoof_${"$"}{invokeIdx}
+                            if-eqz v$vResult, :cond_skip_spoof_$invokeIdx
                             
                             const-string v$vC, "MIIDMjCCAvCgAwIBAgIETCU2pDALBgcqhkjOOAQDBQAwfDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFDASBgNVBAcTC1NhbnRhIENsYXJhMRYwFAYDVQQKEw1XaGF0c0FwcCBJbmMuMRQwEgYDVQQLEwtFbmdpbmVlcmluZzEUMBIGA1UEAxMLQnJpYW4gQWN0b24wHhcNMTAwNjI1MjMwNzE2WhcNNDQwMjE1MjMwNzE2WjB8MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExFjAUBgNVBAoTDVdoYXRzQXBwIEluYy4xFDASBgNVBAsTC0VuZ2luZWVyaW5nMRQwEgYDVQQDEwtCcmlhbiBBY3RvbjCCAbgwggEsBgcqhkjOOAQBMIIBHwKBgQD9f1OBHXUSKVLfSpwu7OTn9hG3UjzvRADDHj+AtlEmaUVdQCJR+1k9jVj6v8X1ujD2y5tVbNeBO4AdNG/yZmC3a5lQpaSfn+gEexAiwk+7qdf+t8Yb+DtX58aophUPBPuD9tPFHsMCNVQTWhaRMvZ1864rYdcq7/IiAxmd0UgBxwIVAJdgUI8VIwvMspK5gqLrhAvwWBz1AoGBAPfhoIXWmz3ey7yrXDa4V7l5lK+7+jrqgvlXTAs9B4JnUVlXjrrUWU/mcQcQgYC0SRZxI+hMKBYTt88JMozIpuE8FnqLVHyNKOCjrh4rs6Z1kW6jfwv6ITVi8ftiegEkO8yk8b6oUZCJqIPf4VrlnwaSi2ZegHtVJWQBTDv+z0kqA4GFAAKBgQDRGYtLgWh7zyRtQainJfCpiaUbzjJuhMgo4fVWZIvXHaSHBU1t5w//S0lDK2hiqkj8KpMWGywVov9eZxZy37V26dEqr/c2m5qZ0E+ynSu7sqUD7kGx/zeIcGT0H+KAVgkGNQCo5Uc0koLRWYHNtYoIvt5R3X6YZylbPftF/8ayWTALBgcqhkjOOAQDBQADLwAwLAIUAKYCp0d6z4QQdyN74JDfQ2WCyi8CFDUM4CaNB+ceVXdKtOrNTQcc0e+t"
                             
@@ -151,15 +157,15 @@ val loginFix = bytecodePatch(
                             invoke-direct {v$vD, v$vC}, Landroid/content/pm/Signature;-><init>([B)V
                             
                             iget-object v$vC, v$vResult, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
-                            if-eqz v$vC, :cond_skip_spoof_${"$"}{invokeIdx}
+                            if-eqz v$vC, :cond_skip_spoof_$invokeIdx
                             
                             array-length v$vE, v$vC
-                            if-lez v$vE, :cond_skip_spoof_${"$"}{invokeIdx}
+                            if-lez v$vE, :cond_skip_spoof_$invokeIdx
                             
                             const/4 v$vE, 0x0
                             aput-object v$vD, v$vC, v$vE
                             
-                            :cond_skip_spoof_${"$"}{invokeIdx}
+                            :cond_skip_spoof_$invokeIdx
                         """.trimIndent())
                     }
                 }
