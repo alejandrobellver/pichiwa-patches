@@ -80,31 +80,71 @@ val loginFix = bytecodePatch(
             }
         }
         
-        // --- 5. PackageInfo.signatures Spoofing ---
+        // --- 5. Spoof Signature Hashes Directly ---
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
                 
-                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
-                    val ref = (instr as? ReferenceInstruction)?.reference?.toString()
-                    if (ref == "Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;" && instr.opcode.name.startsWith("invoke-virtual")) {
-                        index
+                // A) Spoof SHA-1 Hex for X-Android-Cert header
+                var certReg = -1
+                impl.instructions.forEachIndexed { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        if ((instr.reference as StringReference).string == "X-Android-Cert") {
+                            val nextInstr = impl.instructions.elementAtOrNull(index + 1)
+                            if (nextInstr is OneRegisterInstruction && nextInstr.opcode.name.startsWith("const-string")) {
+                                certReg = nextInstr.registerA
+                            } else if (instr is OneRegisterInstruction) {
+                                certReg = instr.registerA
+                            }
+                        }
+                    }
+                }
+                
+                if (certReg != -1) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                        val ref = (instr as? ReferenceInstruction)?.reference?.toString()
+                        if (ref == "Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V" && instr.opcode.name.startsWith("invoke-virtual")) {
+                            val invokeInstr = instr
+                            val vD = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerD else (invokeInstr as com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction).startRegister + 1
+                            val vE = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerE else (invokeInstr as com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction).startRegister + 2
+                            if (vD == certReg) index to vE else null
+                        } else null
+                    }
+                    
+                    matches.reversed().forEach { (idx, vE) ->
+                        mutableMethod.addInstructions(idx, """
+                            const-string v$vE, "38a0f7d505fe18fec64fbf343ecaaaf310dbd799"
+                        """)
+                    }
+                }
+                
+                // B) Spoof local SHA-256 string comparisons
+                val matchesStringComp = impl.instructions.mapIndexedNotNull { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        val str = (instr.reference as StringReference).string
+                        if (str == "8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M") {
+                            var moveResultIdx = -1
+                            var vZ = -1
+                            for (i in index + 1 until impl.instructions.count()) {
+                                val nextInstr = impl.instructions.elementAt(i)
+                                if (nextInstr.opcode.name.startsWith("move-result")) {
+                                    moveResultIdx = i
+                                    vZ = (nextInstr as OneRegisterInstruction).registerA
+                                    break
+                                }
+                            }
+                            if (moveResultIdx != -1) moveResultIdx to vZ else null
+                        } else null
                     } else null
                 }
                 
-                if (matches.isNotEmpty()) {
+                if (matchesStringComp.isNotEmpty()) {
                     val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    matches.reversed().forEach { invokeIdx ->
-                        val nextInstr = impl.instructions.elementAtOrNull(invokeIdx + 1)
-                        if (nextInstr != null && nextInstr.opcode.name == "move-result-object") {
-                            val vResult = (nextInstr as OneRegisterInstruction).registerA
-                            if (vResult <= 15) {
-                                mutableMethod.addInstructions(invokeIdx + 2, listOf(
-                                    "invoke-static {v${vResult}}, Lapp/pichiwa/extension/extension/WExtension;->spoofPackageInfo(Landroid/content/pm/PackageInfo;)Landroid/content/pm/PackageInfo;",
-                                    "move-result-object v${vResult}"
-                                ).joinToString("\n"))
-                            }
-                        }
+                    matchesStringComp.reversed().forEach { (moveResultIdx, vZ) ->
+                        mutableMethod.addInstructions(moveResultIdx + 1, """
+                            const/4 v$vZ, 0x1
+                        """)
                     }
                 }
             }
