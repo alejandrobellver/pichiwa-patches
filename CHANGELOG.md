@@ -1,3 +1,9 @@
+## [0.4.0-dev.50](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.49...v0.4.0-dev.50) (2026-07-16)
+
+### Bug Fixes
+
+* **whatsapp:** restore Java spoofing with filter to fix Base64 corruption and VerifyError ([52415f6](https://github.com/alejandrobellver/pichiwa-patches/commit/52415f6e3b9e1af990cd2bac23abb8441ecd31a3))
+
 ## [0.4.0-dev.49](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.48...v0.4.0-dev.49) (2026-07-16)
 
 ### Bug Fixes
