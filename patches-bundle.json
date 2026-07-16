@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-16T01:52:07",
-  "description": "## [0.4.0-dev.47](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.46...v0.4.0-dev.47) (2026-07-16)\n\n### Bug Fixes\n\n* **whatsapp:** Fix Kotlin string interpolation syntax in injected Smali labels ([e4f651f](https://github.com/alejandrobellver/pichiwa-patches/commit/e4f651f9a90980cc2cb08da82ad84a66a14111fb))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.47/patches-0.4.0-dev.47.mpp",
+  "created_at": "2026-07-16T02:37:44",
+  "description": "## [0.4.0-dev.48](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.47...v0.4.0-dev.48) (2026-07-16)\n\n### Bug Fixes\n\n* **whatsapp:** fix syntax error in joinToString and restore invoke-static/range for spoofPackageInfo ([18b4f34](https://github.com/alejandrobellver/pichiwa-patches/commit/18b4f34c9514dc28e9acbf7db821f53b67d025ba))\n* **whatsapp:** re-enable GMS checks to allow MicroG-RE to intercept Play Integrity calls ([bcbb484](https://github.com/alejandrobellver/pichiwa-patches/commit/bcbb48411e3e35bdb5e6606dd424aea7f0a8b063))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.48/patches-0.4.0-dev.48.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.47",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.47/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.47/extension.mpe"
+  "version": "0.4.0-dev.48",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.48/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.48/extension.mpe"
 }

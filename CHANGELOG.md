@@ -1,3 +1,10 @@
+## [0.4.0-dev.48](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.47...v0.4.0-dev.48) (2026-07-16)
+
+### Bug Fixes
+
+* **whatsapp:** fix syntax error in joinToString and restore invoke-static/range for spoofPackageInfo ([18b4f34](https://github.com/alejandrobellver/pichiwa-patches/commit/18b4f34c9514dc28e9acbf7db821f53b67d025ba))
+* **whatsapp:** re-enable GMS checks to allow MicroG-RE to intercept Play Integrity calls ([bcbb484](https://github.com/alejandrobellver/pichiwa-patches/commit/bcbb48411e3e35bdb5e6606dd424aea7f0a8b063))
+
 ## [0.4.0-dev.47](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.46...v0.4.0-dev.47) (2026-07-16)
 
 ### Bug Fixes
