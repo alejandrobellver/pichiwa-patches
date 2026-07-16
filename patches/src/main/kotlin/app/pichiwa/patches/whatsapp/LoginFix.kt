@@ -102,10 +102,9 @@ val loginFix = bytecodePatch(
                         if (nextInstr != null && nextInstr.opcode.name == "move-result-object") {
                             val vResult = (nextInstr as OneRegisterInstruction).registerA
                             mutableMethod.addInstructions(invokeIdx + 2, listOf(
-                                "invoke-static {v${vResult}}, Lapp/pichiwa/extension/extension/WExtension;->spoofPackageInfo(Landroid/content/pm/PackageInfo;)Landroid/content/pm/PackageInfo;",
+                                "invoke-static/range {v${vResult} .. v${vResult}}, Lapp/pichiwa/extension/extension/WExtension;->spoofPackageInfo(Landroid/content/pm/PackageInfo;)Landroid/content/pm/PackageInfo;",
                                 "move-result-object v${vResult}"
-                            ).joinToString("
-"))
+                            ).joinToString("\n"))
                         }
                     }
                 }
