@@ -188,7 +188,6 @@ val loginFix = bytecodePatch(
                 }
             }
         }
-    }
         
         // --- 5. Spoof Installer Package Name ---
         // Forces getInstallerPackageName to return "com.android.vending"
