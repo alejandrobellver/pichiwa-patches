@@ -1,3 +1,9 @@
+## [0.4.0-dev.61](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.60...v0.4.0-dev.61) (2026-07-17)
+
+### Bug Fixes
+
+* **anti-detector:** check returnType before patching to avoid NPE on non-boolean methods ([40c48be](https://github.com/alejandrobellver/pichiwa-patches/commit/40c48be75098645de8c889e745eb098e49589cf0))
+
 ## [0.4.0-dev.60](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.59...v0.4.0-dev.60) (2026-07-17)
 
 ### Bug Fixes
