@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-17T05:56:11",
-  "description": "## [0.4.0-dev.59](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.58...v0.4.0-dev.59) (2026-07-17)\n\n### Bug Fixes\n\n* **whatsapp:** rewrite LoginFix with Fingerprint to avoid VerifyError ([f64f762](https://github.com/alejandrobellver/pichiwa-patches/commit/f64f762760bf0747ba82982b299af31bbc250baf))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.59/patches-0.4.0-dev.59.mpp",
+  "created_at": "2026-07-17T06:36:59",
+  "description": "## [0.4.0-dev.60](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.59...v0.4.0-dev.60) (2026-07-17)\n\n### Bug Fixes\n\n* **login:** wrap fingerprints in runCatching to avoid crash on missing strings ([e21dd1e](https://github.com/alejandrobellver/pichiwa-patches/commit/e21dd1e54e56428918a2c85e70769e9b12f2079c))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.60/patches-0.4.0-dev.60.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.59",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.59/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.59/extension.mpe"
+  "version": "0.4.0-dev.60",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.60/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.60/extension.mpe"
 }

@@ -1,3 +1,9 @@
+## [0.4.0-dev.60](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.59...v0.4.0-dev.60) (2026-07-17)
+
+### Bug Fixes
+
+* **login:** wrap fingerprints in runCatching to avoid crash on missing strings ([e21dd1e](https://github.com/alejandrobellver/pichiwa-patches/commit/e21dd1e54e56428918a2c85e70769e9b12f2079c))
+
 ## [0.4.0-dev.59](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.58...v0.4.0-dev.59) (2026-07-17)
 
 ### Bug Fixes
