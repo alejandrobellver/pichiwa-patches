@@ -17,44 +17,8 @@ val loginFix = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        // --- 1. Surgical Redirection for MicroG-RE (GMS) ---
-        classDefForEach { def ->
-            def.methods.forEach { method ->
-                val impl = method.implementation ?: return@forEach
-                
-                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
-                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
-                        val str = (instr.reference as StringReference).string
-                        if (str == "com.google.android.gms") index else null
-                    } else null
-                }
-                
-                if (matches.isNotEmpty()) {
-                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    matches.reversed().forEach { idx ->
-                        var isIntentSetPackage = false
-                        for (i in idx + 1 until impl.instructions.count()) {
-                            val nextInstr = impl.instructions.elementAt(i)
-                            if (nextInstr is ReferenceInstruction && nextInstr.reference is MethodReference) {
-                                val methodRef = nextInstr.reference as MethodReference
-                                if (methodRef.name == "setPackage" && methodRef.definingClass == "Landroid/content/Intent;") {
-                                    isIntentSetPackage = true
-                                    break
-                                }
-                            }
-                        }
-                        
-                        if (isIntentSetPackage) {
-                            val instr = impl.instructions.elementAtOrNull(idx) as? OneRegisterInstruction ?: return@forEach
-                            val reg = instr.registerA
-                            mutableMethod.addInstructions(idx + 1, """
-                                const-string v$reg, "app.revanced.android.gms"
-                            """)
-                        }
-                    }
-                }
-            }
-        }
+        // ponytail: Section 1 (MicroG-RE redirection) removed — caused VerifyError
+        // in Firebase Installations class. MicroG-RE handles Play Integrity at framework level.
 
         // --- 2. Bypass Signature Verifier Locally ---
         classDefForEach { def ->
@@ -94,30 +58,7 @@ val loginFix = bytecodePatch(
             }
         }
         
-        // --- 3. Global MicroG-RE Vending Redirection ---
-        classDefForEach { def ->
-            def.methods.forEach { method ->
-                val impl = method.implementation ?: return@forEach
-                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
-                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
-                        val str = (instr.reference as StringReference).string
-                        if (str == "com.android.vending") index to "app.revanced.android.vending"
-                        else null
-                    } else null
-                }
-                
-                if (matches.isNotEmpty()) {
-                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    matches.reversed().forEach { (idx, newPackage) ->
-                        val instr = impl.instructions.elementAtOrNull(idx) as? OneRegisterInstruction ?: return@forEach
-                        val reg = instr.registerA
-                        mutableMethod.addInstructions(idx + 1, """
-                            const-string v$reg, "$newPackage"
-                        """)
-                    }
-                }
-            }
-        }
+        // ponytail: Section 3 (vending redirection) removed — same VerifyError risk as Section 1.
         
         // --- 4. Spoof Signature Hashes Directly ---
         classDefForEach { def ->
