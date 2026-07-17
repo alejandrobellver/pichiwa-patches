@@ -1,3 +1,9 @@
+## [0.4.0-dev.57](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.56...v0.4.0-dev.57) (2026-07-17)
+
+### Bug Fixes
+
+* **whatsapp:** remove LoginFix sections 1 & 3 causing VerifyError in Firebase classes ([b86e6d5](https://github.com/alejandrobellver/pichiwa-patches/commit/b86e6d5623f167c5a216650194371c0cfd4a1dbf))
+
 ## [0.4.0-dev.56](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.55...v0.4.0-dev.56) (2026-07-17)
 
 ### Bug Fixes
