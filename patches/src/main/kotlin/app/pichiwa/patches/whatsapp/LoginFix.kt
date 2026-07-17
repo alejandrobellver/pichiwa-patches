@@ -245,7 +245,7 @@ val loginFix = bytecodePatch(
                     }
                     matches.reversed().forEach { (moveResultIdx, vZ) ->
                         mutableMethod.addInstructions(moveResultIdx + 1, """
-                            const/4 v$vZ, 0x1
+                            const/16 v$vZ, 0x1
                         """)
                     }
                 }
