@@ -1,3 +1,9 @@
+## [0.4.0-dev.62](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.61...v0.4.0-dev.62) (2026-07-17)
+
+### Bug Fixes
+
+* **whatsapp:** disable LoginFix by default - fingerprints match wrong methods causing NPE ([34aec28](https://github.com/alejandrobellver/pichiwa-patches/commit/34aec281e64b8ba0627f881088ba3eb98368d137))
+
 ## [0.4.0-dev.61](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.60...v0.4.0-dev.61) (2026-07-17)
 
 ### Bug Fixes

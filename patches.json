@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-dev.61",
+  "version": "0.4.0-dev.62",
   "patches": [
     {
       "name": "Anti Detector",
@@ -199,7 +199,7 @@
     {
       "name": "Login Fix",
       "description": "Bypasses verification bans by spoofing signature hashes. REQUIRED: Install microG-RE for Play Integrity.",
-      "use": true,
+      "use": false,
       "dependencies": [],
       "compatiblePackages": [
         {

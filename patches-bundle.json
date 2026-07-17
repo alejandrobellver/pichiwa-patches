@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-17T06:49:05",
-  "description": "## [0.4.0-dev.61](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.60...v0.4.0-dev.61) (2026-07-17)\n\n### Bug Fixes\n\n* **anti-detector:** check returnType before patching to avoid NPE on non-boolean methods ([40c48be](https://github.com/alejandrobellver/pichiwa-patches/commit/40c48be75098645de8c889e745eb098e49589cf0))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.61/patches-0.4.0-dev.61.mpp",
+  "created_at": "2026-07-17T06:58:41",
+  "description": "## [0.4.0-dev.62](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.61...v0.4.0-dev.62) (2026-07-17)\n\n### Bug Fixes\n\n* **whatsapp:** disable LoginFix by default - fingerprints match wrong methods causing NPE ([34aec28](https://github.com/alejandrobellver/pichiwa-patches/commit/34aec281e64b8ba0627f881088ba3eb98368d137))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.62/patches-0.4.0-dev.62.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.61",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.61/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.61/extension.mpe"
+  "version": "0.4.0-dev.62",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.62/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.62/extension.mpe"
 }
