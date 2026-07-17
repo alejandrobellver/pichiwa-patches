@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-17T05:43:09",
-  "description": "## [0.4.0-dev.57](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.56...v0.4.0-dev.57) (2026-07-17)\n\n### Bug Fixes\n\n* **whatsapp:** remove LoginFix sections 1 & 3 causing VerifyError in Firebase classes ([b86e6d5](https://github.com/alejandrobellver/pichiwa-patches/commit/b86e6d5623f167c5a216650194371c0cfd4a1dbf))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.57/patches-0.4.0-dev.57.mpp",
+  "created_at": "2026-07-17T05:52:33",
+  "description": "## [0.4.0-dev.58](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.57...v0.4.0-dev.58) (2026-07-17)\n\n### Bug Fixes\n\n* **whatsapp:** disable all LoginFix sections - all classDefForEach scans cause VerifyError ([67a66cc](https://github.com/alejandrobellver/pichiwa-patches/commit/67a66cca76af7bc7ecfbf110f64c847038b56cdf))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.58/patches-0.4.0-dev.58.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.57",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.57/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.57/extension.mpe"
+  "version": "0.4.0-dev.58",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.58/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.58/extension.mpe"
 }

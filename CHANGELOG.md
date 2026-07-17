@@ -1,3 +1,9 @@
+## [0.4.0-dev.58](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.57...v0.4.0-dev.58) (2026-07-17)
+
+### Bug Fixes
+
+* **whatsapp:** disable all LoginFix sections - all classDefForEach scans cause VerifyError ([67a66cc](https://github.com/alejandrobellver/pichiwa-patches/commit/67a66cca76af7bc7ecfbf110f64c847038b56cdf))
+
 ## [0.4.0-dev.57](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.56...v0.4.0-dev.57) (2026-07-17)
 
 ### Bug Fixes
