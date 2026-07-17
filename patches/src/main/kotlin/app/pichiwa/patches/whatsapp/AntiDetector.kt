@@ -15,35 +15,37 @@ val antiDetector = bytecodePatch(
     compatibleWith(WHATSAPP)
 
     execute {
-        // Root detection — methods containing "/system/bin/su"
-        // ponytail: hooks first match only; matchAll if multiple root checks
-        Fingerprint(
-            filters = listOf(string("/system/bin/su"))
-        ).let { match ->
-            match.method.addInstructions(0, """
-                const/4 v0, 0x0
-                return v0
-            """)
+        // ponytail: check returnType before patching — non-boolean methods
+        // used in registration flow will NPE if patched to return 0.
+
+        runCatching {
+            Fingerprint(
+                filters = listOf(string("/system/bin/su"))
+            ).let { match ->
+                if (match.method.returnType == "Z") {
+                    match.method.addInstructions(0, "const/4 v0, 0x0\nreturn v0")
+                }
+            }
         }
 
-        // Emulator detection — contains "Android SDK built for x86"
-        Fingerprint(
-            filters = listOf(string("Android SDK built for x86"))
-        ).let { match ->
-            match.method.addInstructions(0, """
-                const/4 v0, 0x0
-                return v0
-            """)
+        runCatching {
+            Fingerprint(
+                filters = listOf(string("Android SDK built for x86"))
+            ).let { match ->
+                if (match.method.returnType == "Z") {
+                    match.method.addInstructions(0, "const/4 v0, 0x0\nreturn v0")
+                }
+            }
         }
 
-        // Custom ROM detection — contains "cyanogen"
-        Fingerprint(
-            filters = listOf(string("cyanogen"))
-        ).let { match ->
-            match.method.addInstructions(0, """
-                const/4 v0, 0x0
-                return v0
-            """)
+        runCatching {
+            Fingerprint(
+                filters = listOf(string("cyanogen"))
+            ).let { match ->
+                if (match.method.returnType == "Z") {
+                    match.method.addInstructions(0, "const/4 v0, 0x0\nreturn v0")
+                }
+            }
         }
     }
 }
