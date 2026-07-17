@@ -10,7 +10,7 @@ import app.pichiwa.patches.shared.Constants.WHATSAPP
 val loginFix = bytecodePatch(
     name = "Login Fix",
     description = "Bypasses verification bans by spoofing signature hashes. REQUIRED: Install microG-RE for Play Integrity.",
-    default = true
+    default = false
 ) {
     compatibleWith(WHATSAPP)
 
