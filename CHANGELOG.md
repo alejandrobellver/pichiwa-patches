@@ -1,3 +1,10 @@
+## [0.4.0-dev.55](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.54...v0.4.0-dev.55) (2026-07-17)
+
+### Bug Fixes
+
+* **whatsapp:** add installer spoofing and additional hash forcing to LoginFix ([d98b726](https://github.com/alejandrobellver/pichiwa-patches/commit/d98b726cbafdedea2493153d6908ce7bf3e728f6))
+* **whatsapp:** move LoginFix sections 5/6 inside execute block to fix compilation ([ac51f09](https://github.com/alejandrobellver/pichiwa-patches/commit/ac51f09ec386ddcf442a5c1b73c5d082b17895df))
+
 ## [0.4.0-dev.54](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.53...v0.4.0-dev.54) (2026-07-16)
 
 ### Bug Fixes
