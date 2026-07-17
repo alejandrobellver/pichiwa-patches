@@ -189,4 +189,68 @@ val loginFix = bytecodePatch(
             }
         }
     }
+        
+        // --- 5. Spoof Installer Package Name ---
+        // Forces getInstallerPackageName to return "com.android.vending"
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                impl.instructions.forEachIndexed { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is MethodReference) {
+                        val ref = instr.reference as MethodReference
+                        if (ref.name == "getInstallerPackageName" && ref.definingClass == "Landroid/content/pm/PackageManager;") {
+                            val nextInstr = impl.instructions.elementAtOrNull(index + 1)
+                            if (nextInstr?.opcode?.name == "move-result-object") {
+                                val reg = (nextInstr as OneRegisterInstruction).registerA
+                                val mutableMethod = mutableClassDefBy(def).methods.first {
+                                    it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType
+                                }
+                                mutableMethod.addInstructions(index + 2, """
+                                    const-string v$reg, "com.android.vending"
+                                """)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // --- 6. Additional Signature Hash Comparison Forcing ---
+        // Also force comparisons for SDK>=33 hash values not covered in section 4
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                val knownHashes = setOf(
+                    "38a0f7d505fe18fec64fbf343ecaaaf310dbd799",
+                    "8b0debf9516af037c9be2f539584b97fe9781764",
+                    "-5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI",
+                )
+                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        val str = (instr.reference as StringReference).string
+                        if (str in knownHashes) {
+                            for (i in index + 1 until impl.instructions.count()) {
+                                val nextInstr = impl.instructions.elementAt(i)
+                                if (nextInstr.opcode.name.startsWith("move-result")) {
+                                    val reg = (nextInstr as OneRegisterInstruction).registerA
+                                    return@mapIndexedNotNull i to reg
+                                }
+                            }
+                        }
+                    }
+                    null
+                }
+                if (matches.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first {
+                        it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType
+                    }
+                    matches.reversed().forEach { (moveResultIdx, vZ) ->
+                        mutableMethod.addInstructions(moveResultIdx + 1, """
+                            const/4 v$vZ, 0x1
+                        """)
+                    }
+                }
+            }
+        }
+    }
 }
