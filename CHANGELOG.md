@@ -1,3 +1,9 @@
+## [0.4.0-dev.59](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.58...v0.4.0-dev.59) (2026-07-17)
+
+### Bug Fixes
+
+* **whatsapp:** rewrite LoginFix with Fingerprint to avoid VerifyError ([f64f762](https://github.com/alejandrobellver/pichiwa-patches/commit/f64f762760bf0747ba82982b299af31bbc250baf))
+
 ## [0.4.0-dev.58](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.57...v0.4.0-dev.58) (2026-07-17)
 
 ### Bug Fixes
