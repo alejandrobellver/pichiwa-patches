@@ -1,3 +1,9 @@
+## [0.4.0-dev.56](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.55...v0.4.0-dev.56) (2026-07-17)
+
+### Bug Fixes
+
+* **whatsapp:** use const/16 instead of const/4 in LoginFix section 6 for broader register compatibility ([339ac76](https://github.com/alejandrobellver/pichiwa-patches/commit/339ac7650007ab6409426f5c13956ce46be77da8))
+
 ## [0.4.0-dev.55](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.54...v0.4.0-dev.55) (2026-07-17)
 
 ### Bug Fixes
