@@ -1,3 +1,9 @@
+## [0.4.0-dev.63](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.62...v0.4.0-dev.63) (2026-07-18)
+
+### Bug Fixes
+
+* rewrite LoginFix with classDefForEach for duplicates ([3a13467](https://github.com/alejandrobellver/pichiwa-patches/commit/3a134676bb369b0ae5cb0e2e5ed484fe68e633a4))
+
 ## [0.4.0-dev.62](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.61...v0.4.0-dev.62) (2026-07-17)
 
 ### Bug Fixes
