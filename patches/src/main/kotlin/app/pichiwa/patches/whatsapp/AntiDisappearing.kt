@@ -10,23 +10,21 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val antiDisappearing = bytecodePatch(
-    name = "Anti Desaparecer",
-    description = "Mantiene los mensajes temporales visibles.",
+    name = "Anti Disappearing",
+    description = "Keep disappearing messages visible.",
     default = false
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
+        Fingerprint(returnType = "V", 
             filters = listOf(string("expire_timestamp"))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->shouldPreventDisappearing()Z
-                move-result v0
-                if-nez v0, :original
                 return-void
                 :original
             """)
         }
     }
 }
+

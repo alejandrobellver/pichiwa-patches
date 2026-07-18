@@ -10,19 +10,18 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val removeForwardLimit = bytecodePatch(
-    name = "Sin límite de reenvío",
-    description = "Reenvía mensajes a contactos ilimitados.",
+    name = "No Forward Limit",
+    description = "Forward messages to unlimited contacts.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
         Fingerprint(
-            filters = listOf(string("UserActions/userActionForwardMessage"))
+            filters = listOf(string("UserActionsMessageForwarding/userActionForwardMessage"))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->getForwardLimit()I
-                move-result v0
+                const v0, 0x7fffffff
                 :original
             """)
         }

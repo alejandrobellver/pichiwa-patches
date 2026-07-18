@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Generates the patches section of README.md from patches-list.json
+Generates the patches section of README.md from patches.json
 and injects it between <!-- PATCHES_START --> / <!-- PATCHES_END --> markers.
 
 Spoilers are expanded (open by default) if:
   1. Total patch count <= AUTO_EXPAND_THRESHOLD.
   2. The README marker explicitly says: <!-- PATCHES_START EXPANDED -->
 
-python3 generate_patches_readme.py <owner/repo> <branch> [patches-list.json] [README.md]
+python3 generate_patches_readme.py <owner/repo> <branch> [patches.json] [README.md]
 """
 
 import json
@@ -23,7 +23,7 @@ if len(sys.argv) < 3:
 
 repo_full   = sys.argv[1]
 branch      = sys.argv[2]
-json_path   = Path(sys.argv[3]) if len(sys.argv) > 3 else Path("patches-list.json")
+json_path   = Path(sys.argv[3]) if len(sys.argv) > 3 else Path("patches.json")
 readme_path = Path(sys.argv[4]) if len(sys.argv) > 4 else Path("README.md")
 
 
@@ -55,14 +55,15 @@ for patch in data["patches"]:
             universal[patch["name"]] = patch
         continue
     for pkg_entry in cp:
-        pkg  = pkg_entry["packageName"]
-        name = pkg_entry.get("name") or pkg  # fall back to package name if no label
+        pkg  = pkg_entry.get("name")
+        if not pkg: continue
+        name = pkg
         if pkg not in by_pkg:
             by_pkg[pkg] = {
                 "name":    name,
                 "emoji":   pkg_emoji(pkg),
                 "patches": {},
-                "targets": pkg_entry.get("targets", []),
+                "targets": [{"version": v} for v in pkg_entry.get("versions", [])],
             }
         # Deduplicate patches that appear across multiple packages
         if patch["name"] not in by_pkg[pkg]["patches"]:

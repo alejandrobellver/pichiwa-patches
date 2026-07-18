@@ -10,23 +10,21 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val enableCopyStatus = bytecodePatch(
-    name = "Copiar estados",
-    description = "Permite copiar texto de estados de contactos.",
+    name = "Copy Statuses",
+    description = "Allow copying text from contact statuses.",
     default = false
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
-            filters = listOf(string("conversation/copymessage"))
+        Fingerprint(returnType = "V", 
+            filters = listOf(string("conversation/copymessage/npe"))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->shouldEnableStatusCopy()Z
-                move-result v0
-                if-nez v0, :original
                 return-void
                 :original
             """)
         }
     }
 }
+

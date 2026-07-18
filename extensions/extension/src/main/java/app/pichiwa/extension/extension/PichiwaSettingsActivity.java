@@ -27,25 +27,25 @@ public class PichiwaSettingsActivity extends Activity {
         int pad = dp(16);
         root.setPadding(pad, pad, pad, pad);
 
-        addHeader(root, "Privacidad");
-        addToggle(root, "Ocultar lectura", "No enviar ticks azules", "hide_read_receipts");
-        addToggle(root, "Ocultar entregado", "No enviar doble check gris", "hide_delivered");
-        addToggle(root, "Ocultar escritura", "No mostrar \"escribiendo...\"", "hide_typing");
-        addToggle(root, "Anti-View Once", "Ver medios efímeros sin límite", "anti_view_once");
-        addToggle(root, "Anti Revoke", "Evitar que borren mensajes", "anti_revoke");
-        addToggle(root, "Anti Editar", "Evitar que editen mensajes", "anti_edit");
-        addToggle(root, "Anti Desaparecer", "Mantener mensajes temporales", "anti_disappearing");
-        addToggle(root, "Freeze Last Seen", "Congelar última conexión", "freeze_last_seen");
-        addToggle(root, "DND Mode", "No marcar mensajes como leídos", "dnd_mode");
+        addHeader(root, "Privacy");
+        addToggle(root, "Hide Read Receipts", "Do not send blue ticks", "hide_read_receipts");
+        addToggle(root, "Hide Delivered", "Do not send second tick", "hide_delivered");
+        addToggle(root, "Hide Typing", "Do not show \"typing...\"", "hide_typing");
+        addToggle(root, "Anti-View Once", "View ephemeral media without limits", "anti_view_once");
+        addToggle(root, "Anti Revoke", "Prevent others from deleting messages", "anti_revoke");
+        addToggle(root, "Anti Edit", "Prevent others from editing messages", "anti_edit");
+        addToggle(root, "Anti Disappearing", "Keep temporary messages visible", "anti_disappearing");
+        addToggle(root, "Freeze Last Seen", "Freeze your last seen status", "freeze_last_seen");
+        addToggle(root, "Ghost Mode", "Do not receive or send messages", "dnd_mode");
 
         addHeader(root, "Media");
-        addToggle(root, "HD Media", "Enviar sin compresión", "hd_media");
+        addToggle(root, "HD Media", "Send media without compression", "hd_media");
         addToggle(root, "Descargar estados", "Guardar estados de otros", "download_status");
         addToggle(root, "Sin límite reenvío", "Reenviar a contactos ilimitados", "remove_forward_limit");
 
         addHeader(root, "UI");
-        addToggle(root, "Ocultar reenviado", "Quitar etiqueta \"reenviado\"", "hide_forwarded_tag");
-        addToggle(root, "Copiar estados", "Permitir copiar texto de estados", "enable_copy_status");
+        addToggle(root, "Hide Forwarded", "Quitar etiqueta \"reenviado\"", "hide_forwarded_tag");
+        addToggle(root, "Copy Statuses", "Permitir copiar texto de estados", "enable_copy_status");
 
         scroll.addView(root);
         setContentView(scroll);

@@ -10,23 +10,21 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val hideTypingIndicator = bytecodePatch(
-    name = "Ocultar escritura",
+    name = "Hide Typing",
     description = "Escribe sin mostrar \"escribiendo...\".",
     default = true
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
-            filters = listOf(string("HandleMeComposing/sendComposing"))
+        Fingerprint(returnType = "V", 
+            filters = listOf(string("HandleMeComposing/sendComposing; toJid="))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->isTypingAllowed()Z
-                move-result v0
-                if-nez v0, :original
                 return-void
                 :original
             """)
         }
     }
 }
+

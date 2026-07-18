@@ -10,23 +10,21 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val antiEditMessage = bytecodePatch(
-    name = "Anti Editar",
-    description = "Evita que otros editen mensajes enviados.",
+    name = "Anti Edit",
+    description = "Prevent others from editing sent messages.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
-        Fingerprint(
-            filters = listOf(string("MessageEditInfoStore/insertEditInfo/missing"))
+        Fingerprint(returnType = "V", 
+            filters = listOf(string("MessageEditInfoStore/insertEditInfo/missing information in the FMessage"))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->shouldAllowEdit()Z
-                move-result v0
-                if-nez v0, :original
                 return-void
                 :original
             """)
         }
     }
 }
+

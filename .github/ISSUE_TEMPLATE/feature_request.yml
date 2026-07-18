@@ -10,8 +10,8 @@ body:
 
         Before creating a new feature request, please keep the following in mind:
 
-        - **Do not submit a duplicate feature request**: Search for existing feature requests [here](https://github.com/PichiWHO/pichiwa-patches/issues?q=label%3A%22Feature+request%22).
-        - **Review the contribution guidelines**: Make sure your feature request adheres to it. You can find the guidelines [here](https://github.com/PichiWHO/pichiwa-patches/blob/main/CONTRIBUTING.md).
+        - **Do not submit a duplicate feature request**: Search for existing feature requests [here](https://github.com/alejandrobellver/pichiwa-patches/issues?q=label%3A%22Feature+request%22).
+        - **Review the contribution guidelines**: Make sure your feature request adheres to it. You can find the guidelines [here](https://github.com/alejandrobellver/pichiwa-patches/blob/main/CONTRIBUTING.md).
   - type: textarea
     attributes:
       label: Feature description

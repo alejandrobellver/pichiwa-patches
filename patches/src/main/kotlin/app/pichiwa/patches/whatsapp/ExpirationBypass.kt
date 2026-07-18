@@ -10,8 +10,8 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val expirationBypass = bytecodePatch(
-    name = "Anti Expiracion",
-    description = "Evita la verificacion forzada de version y expiracion de WhatsApp.",
+    name = "Anti Expiration",
+    description = "Bypass WhatsApp forced version and expiration verification.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
@@ -23,8 +23,9 @@ val expirationBypass = bytecodePatch(
             filters = listOf(string("software_forced_expiration"))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->getFutureDate()Ljava/util/Date;
-                move-result-object v0
+                new-instance v0, Ljava/util/Date;
+                const-wide v1, 0x3bb27668d80L
+                invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
                 return-object v0
             """)
         }

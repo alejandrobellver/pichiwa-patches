@@ -11,22 +11,18 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 @Suppress("unused")
 val mediaQuality = bytecodePatch(
     name = "HD Media",
-    description = "Envía imágenes y video sin compresión.",
+    description = "Send images and videos without compression.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
         Fingerprint(
-            filters = listOf(string("ProcessVideoQuality("))
+            filters = listOf(string("ProcessVideoQuality(videoLimitMb="))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->useHighQualityMedia()Z
-                move-result v0
-                if-nez v0, :original
                 const/4 v0, 0x1
                 return v0
-                :original
             """)
         }
     }

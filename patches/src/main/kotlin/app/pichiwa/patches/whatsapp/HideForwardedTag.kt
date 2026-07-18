@@ -10,7 +10,7 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 
 @Suppress("unused")
 val hideForwardedTag = bytecodePatch(
-    name = "Ocultar reenviado",
+    name = "Hide Forwarded",
     description = "Quita la etiqueta \"reenviado\" de los mensajes.",
     default = false
 ) {
@@ -18,14 +18,11 @@ val hideForwardedTag = bytecodePatch(
 
     execute {
         Fingerprint(
-            filters = listOf(string("chatInfo/incrementUnseenImportantMessageCount"))
+            filters = listOf(string("chatInfo/incrementUnseenImportantMessageCount "))
         ).let { match ->
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->canForwardTagBeHidden()Z
-                move-result v0
-                if-nez v0, :original
-                return-void
-                :original
+                const/4 v0, 0x0
+                return v0
             """)
         }
     }

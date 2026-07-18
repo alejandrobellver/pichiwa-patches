@@ -131,3 +131,4 @@ local.properties
 
 # Build script with local credentials
 build.ps1
+set_java_home.ps1

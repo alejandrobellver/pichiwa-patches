@@ -11,20 +11,19 @@ private const val EXT = "Lapp/pichiwa/extension/extension/WExtension;"
 @Suppress("unused")
 val antiRevoke = bytecodePatch(
     name = "Anti Revoke",
-    description = "Evita que otros borren sus mensajes o estados.",
+    description = "Prevent others from deleting their messages or statuses.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
         Fingerprint(
-            filters = listOf(string("msgstore/edit/revoke"))
+            filters = listOf(string("msgstore/revoke/missing-old-id "))
         ).let { match ->
+            val returnType = match.method.returnType
+            val returnInst = if (returnType == "V") "return-void" else "const/4 v0, 0x0\n                return v0"
             match.method.addInstructions(0, """
-                invoke-static {}, $EXT->shouldAllowRevoke()Z
-                move-result v0
-                if-nez v0, :original
-                return-void
+                $returnInst
                 :original
             """)
         }

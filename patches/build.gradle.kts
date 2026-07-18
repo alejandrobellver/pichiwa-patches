@@ -4,10 +4,10 @@ patches {
     about {
         name = "PichiWA Patches"
         description = "Parches Morphe para WhatsApp — privacidad, anti-view-once, y más"
-        source = "git@github.com:PichiWHO/pichiwa-patches.git"
-        author = "Pichi"
-        contact = "https://github.com/PichiWHO/pichiwa-patches"
-        website = "https://github.com/PichiWHO/pichiwa-patches"
+        source = "git@github.com:alejandrobellver/pichiwa-patches.git"
+        author = "alejandrobellver"
+        contact = "https://github.com/alejandrobellver/pichiwa-patches"
+        website = "https://github.com/alejandrobellver/pichiwa-patches"
         license = "GPLv3"
     }
 }

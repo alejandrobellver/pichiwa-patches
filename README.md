@@ -2,6 +2,10 @@
 
 Morphe patches for WhatsApp.
 
+# 🚨 EXPERIMENTAL: UNDER DEVELOPMENT 🚨
+## This project is currently a Work In Progress and DOES NOT WORK.
+### Please do not use it yet.
+
 > Not functional yet - work in progress.
 
 ## ⚠️ Disclaimer
@@ -16,29 +20,41 @@ Meta (WhatsApp) can detect client modifications. Use these patches at your own r
 Or manually add this repository URL as a patch source in Morphe:  
 `https://github.com/alejandrobellver/pichiwa-patches`
 
-## 🩹 Patches (19)
+<!-- PATCHES_START EXPANDED -->
+> **[v0.4.0-dev.62](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.62)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
+<details open>
+<summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
+<br>
 
-| Patch | Description | Default |
-|-------|-------------|---------|
-| AntiDetector | Bypass root/emulator/custom ROM detection | ✅ |
-| AntiDisappearing | Keep disappearing messages visible | ❌ |
-| AntiEditMessage | Prevent others from editing sent messages | ✅ |
-| AntiRevoke | Prevent others from deleting messages/statuses | ✅ |
-| AntiViewOnce | View once media without limits, allow screenshots | ✅ |
-| DNDMode | Don't mark messages as read when opening chats | ❌ |
-| DownloadStatus | Download photo/video status updates | ✅ |
-| EnableCopyStatus | Copy text from contact statuses | ❌ |
-| ExpirationBypass | Bypass forced verification and expiration | ✅ |
-| FreezeLastSeen | Freeze last seen timestamp | ❌ |
-| HideForwardedTag | Remove "forwarded" label from messages | ❌ |
-| HideReadReceipts | Hide blue ticks when reading messages | ✅ |
-| HideTypingIndicator | Hide "typing..." indicator | ✅ |
-| MediaQuality | Send HD images/videos without compression | ✅ |
-| RemoveCommunitiesTab | Remove the Communities tab | ❌ |
-| RemoveForwardLimit | Remove forward message limit | ✅ |
-| RemoveUpdatesTab | Remove the Updates tab | ❌ |
-| SettingsMenu | PichiWA settings in Home overflow menu | ✅ |
-| SpoofInstaller | Fake Google Play as installer source | ✅ |
+**🎯 Supported versions:**
+
+| 2.26.27.4 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Anti Detector](#anti-detector) | Bypass root, emulator, and custom ROM detection. |  |
+| [Anti Disappearing](#anti-disappearing) | Keep disappearing messages visible. |  |
+| [Anti Edit](#anti-edit) | Prevent others from editing sent messages. |  |
+| [Anti Expiration](#anti-expiration) | Bypass WhatsApp forced version and expiration verification. |  |
+| [Anti Revoke](#anti-revoke) | Prevent others from deleting their messages or statuses. |  |
+| [Anti View Once](#anti-view-once) | View ephemeral media without limits and allow screenshots. |  |
+| [Copy Statuses](#copy-statuses) | Allow copying text from contact statuses. |  |
+| [Freeze Last Seen](#freeze-last-seen) | Freeze the last seen time. |  |
+| [Ghost Mode](#ghost-mode) | Do not receive or send messages while active. |  |
+| [HD Media](#hd-media) | Send images and videos without compression. |  |
+| [Hide Forwarded](#hide-forwarded) | Quita la etiqueta "reenviado" de los mensajes. |  |
+| [Hide Read Receipts](#hide-read-receipts) | Read messages without sending blue ticks. |  |
+| [Hide Typing](#hide-typing) | Escribe sin mostrar "escribiendo...". |  |
+| [Login Fix](#login-fix) | Bypasses verification bans by spoofing signature hashes. REQUIRED: Install microG-RE for Play Integrity. |  |
+| [No Forward Limit](#no-forward-limit) | Forward messages to unlimited contacts. |  |
+| [Remove Communities](#remove-communities) | Hide the communities tab. |  |
+| [Remove Updates](#remove-updates) | Hide the updates/statuses tab. |  |
+| [Settings Menu](#settings-menu) | Add the Pichiwa menu in settings. |  |
+
+</details>
+
+<!-- PATCHES_END -->
 
 ## 🛠️ Development
 
@@ -46,7 +62,7 @@ Or manually add this repository URL as a patch source in Morphe:
 # Build patches (.mpp) and extension (.mpe)
 ./gradlew :patches:build :extensions:extension:build
 
-# Optional: generate patches-list.json
+# Optional: generate patches.json
 ./gradlew :patches:generatePatchesList
 
 # Output:

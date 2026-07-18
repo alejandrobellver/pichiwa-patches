@@ -23,10 +23,10 @@
         "preset": "conventionalcommits",
         "presetConfig": {
             "types": [
-                { "type": "fix", "section": "🐛 Bug Fixes", "hidden": false },
-                { "type": "feat", "section": "✨ New Features", "hidden": false },
-                { "type": "bump", "section": "🚀 Updated App Support", "hidden": false },
-                { "type": "perf", "section": "🔧 Improvements",  "hidden": false },
+                { "type": "fix", "section": "Bug Fixes", "hidden": false },
+                { "type": "feat", "section": "New Features", "hidden": false },
+                { "type": "bump", "section": "Updated App Support", "hidden": false },
+                { "type": "perf", "section": "Improvements",  "hidden": false },
                 { "type": "build", "hidden": true }
             ]
         }
@@ -37,7 +37,8 @@
         "releaseJson": {
           "path": "patches-bundle.json",
           "downloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${version}/patches-${version}.mpp",
-          "signatureUrlTemplate": ""
+          "signatureUrlTemplate": "",
+          "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${version}/extension.mpe"
         }
       }
     ],
@@ -46,8 +47,9 @@
       "@semantic-release/exec",
       {
         "prepareCmd": "./gradlew generatePatchesList \
-          && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json \
-          && python3 .github/scripts/generate_patches_readme.py alejandrobellver/pichiwa-patches $GITHUB_REF_NAME patches-list.json README.md"
+          && jq '.version=\"${nextRelease.version}\"' patches.json > patches.json.tmp && mv patches.json.tmp patches.json \
+          && jq '.extension_download_url=\"https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${nextRelease.version}/extension.mpe\" | .extensionDownloadUrlTemplate=\"https://github.com/alejandrobellver/pichiwa-patches/releases/download/v${nextRelease.version}/extension.mpe\"' patches-bundle.json > patches-bundle.json.tmp && mv patches-bundle.json.tmp patches-bundle.json \
+          && python3 .github/scripts/generate_patches_readme.py alejandrobellver/pichiwa-patches $GITHUB_REF_NAME patches.json README.md"
       }
     ],
     [
@@ -57,7 +59,7 @@
           "CHANGELOG.md",
           "gradle.properties",
           "patches-bundle.json",
-          "patches-list.json",
+          "patches.json",
           "README.md"
         ],
         "message": "chore: Release v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
@@ -69,6 +71,13 @@
         "assets": [
           {
             "path": "patches/build/libs/patches-!(*sources*|*javadoc*).mpp?(.asc)"
+          },
+          {
+            "path": "extensions/extension/build/morphe/extensions/extension.mpe",
+            "name": "extension.mpe"
+          },
+          {
+            "path": "patches.json"
           }
         ],
         "successComment": false
