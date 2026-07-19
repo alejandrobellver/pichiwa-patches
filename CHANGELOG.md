@@ -1,3 +1,9 @@
+## [0.4.0-dev.64](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.63...v0.4.0-dev.64) (2026-07-19)
+
+### Bug Fixes
+
+* **whatsapp:** rewrite LoginFix based on forensic analysis ([8507caf](https://github.com/alejandrobellver/pichiwa-patches/commit/8507caf72b794387200b75f5afa1a5cf36c3930d))
+
 ## [0.4.0-dev.63](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.62...v0.4.0-dev.63) (2026-07-18)
 
 ### Bug Fixes
