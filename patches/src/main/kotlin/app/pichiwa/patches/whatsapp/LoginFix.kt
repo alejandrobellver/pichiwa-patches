@@ -5,44 +5,50 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.string
 import app.pichiwa.patches.shared.Constants.WHATSAPP
-import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
-import com.android.tools.smali.dexlib2.iface.reference.StringReference
 
 @Suppress("unused")
 val loginFix = bytecodePatch(
     name = "Login Fix",
-    description = "Bypasses verification bans by spoofing signature hashes.",
+    description = "Bypasses verification bans by spoofing signature hashes. REQUIRED: Install microG-RE for Play Integrity.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
-        // Track which fingerprints matched for reporting
-        var patchedCount = 0
+        // ponytail: each fingerprint wrapped in runCatching — hash strings may not
+        // exist as const-string in all versions. Silently skip if not found.
 
-        // ponytail: classDefForEach to catch DUPLICATE classes with same hash string
-        // (Hze + Hza both have "8P1sW0EP...", M30 + M2z both have "-5INOBvu...")
-        classDefForEach { def ->
-            val mutableDef = mutableClassDefBy(def)
-            mutableDef.methods.forEach { method ->
-                if (method.name == "<clinit>" || method.name == "<init>") return@forEach
-                if (method.returnType != "Z") return@forEach
-                val impl = method.implementation ?: return@forEach
-                val hasHash = impl.instructions.any { instr ->
-                    instr is ReferenceInstruction && instr.reference is StringReference &&
-                        (instr.reference as StringReference).string in HASHES
-                }
-                if (hasHash) {
-                    method.addInstructions(0, """
-                        const/4 v0, 0x1
-                        return v0
-                    """)
-                    patchedCount++
-                }
+        // Spoof Play Store SHA-256 hash comparison (Hze + Hza)
+        runCatching {
+            Fingerprint(
+                filters = listOf(string("8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M"))
+            ).let { match ->
+                val rt = match.method.returnType
+                if (rt == "Z") match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
             }
         }
 
-        // Patch GoogleSignatureVerifier — unique multi-string fingerprint
+        // Spoof Play Store SHA-256 hash comparison API 33+ (M30 + M2z)
+        runCatching {
+            Fingerprint(
+                filters = listOf(string("-5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI"))
+            ).let { match ->
+                val rt = match.method.returnType
+                if (rt == "Z") match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
+            }
+        }
+
+        // Spoof Play Store dev-keys SHA-256 hash (debug builds)
+        runCatching {
+            Fingerprint(
+                filters = listOf(string("GXWy8XF3vIml3_MfnmSmyuKBpT3B0dWbHRR_4cgq-gA"))
+            ).let { match ->
+                val rt = match.method.returnType
+                if (rt == "Z") match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
+            }
+        }
+
+        // Spoof GoogleSignatureVerifier (I7w)
         runCatching {
             Fingerprint(
                 filters = listOf(
@@ -50,25 +56,25 @@ val loginFix = bytecodePatch(
                     string("GoogleSignatureVerifier")
                 )
             ).let { match ->
-                if (match.method.returnType == "Z") {
-                    match.method.addInstructions(0, """
-                        const/4 v0, 0x1
-                        return v0
-                    """)
-                    patchedCount++
-                }
+                val rt = match.method.returnType
+                if (rt == "Z") match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
             }
         }
 
-        // NOTE: Facebook AppManager gatekeeper (0e8.A00 with "Provider package signature
-        // does not match") returns Bundle, not boolean. Skip for now.
+        // Spoof Wear OS signature verifier (I8c — "ClockWork" certs)
+        runCatching {
+            Fingerprint(
+                filters = listOf(string("ClockWork"))
+            ).let { match ->
+                val rt = match.method.returnType
+                if (rt == "Z") match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
+            }
+        }
+
+        // ponytail: SHA-1 hashes (38a0f7d5..., 8b0debf9...) do NOT exist as
+        // const-string in this APK version — cannot fingerprint.
+        // ponytail: getInstallerPackageName is a method ref, not a const-string
+        // — string() filter cannot find it. Use WExtension.spoofPackageInfo
+        // for runtime installer spoofing.
     }
 }
-
-private val HASHES = setOf(
-    "8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M",
-    "-5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI",
-    "GXWy8XF3vIml3_MfnmSmyuKBpT3B0dWbHRR_4cgq-gA",
-    "8b0debf9516af037c9be2f539584b97fe9781764",
-    "38a0f7d505fe18fec64fbf343ecaaaf310dbd799"
-)
