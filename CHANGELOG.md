@@ -1,3 +1,9 @@
+## [0.4.0-dev.65](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.64...v0.4.0-dev.65) (2026-07-19)
+
+### Bug Fixes
+
+* **whatsapp:** add emulator detection, root detection, and Genymotion bypasses to LoginFix ([09c8ce3](https://github.com/alejandrobellver/pichiwa-patches/commit/09c8ce37ecaae6cf1b011b50e93c021bac309659))
+
 ## [0.4.0-dev.64](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.63...v0.4.0-dev.64) (2026-07-19)
 
 ### Bug Fixes
