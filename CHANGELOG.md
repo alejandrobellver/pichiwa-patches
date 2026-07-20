@@ -1,3 +1,9 @@
+## [0.4.0-dev.66](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.65...v0.4.0-dev.66) (2026-07-20)
+
+### Bug Fixes
+
+* rewrite LoginFix based on analysis report ([a492b36](https://github.com/alejandrobellver/pichiwa-patches/commit/a492b369c1e2f00537a2311872371260ddcfbd7c))
+
 ## [0.4.0-dev.65](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.64...v0.4.0-dev.65) (2026-07-19)
 
 ### Bug Fixes

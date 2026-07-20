@@ -21,7 +21,7 @@ Or manually add this repository URL as a patch source in Morphe:
 `https://github.com/alejandrobellver/pichiwa-patches`
 
 <!-- PATCHES_START EXPANDED -->
-> **[v0.4.0-dev.65](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.65)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
+> **[v0.4.0-dev.66](https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.4.0-dev.66)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
 <details open>
 <summary>📦 com.whatsapp&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
 <br>
@@ -46,7 +46,7 @@ Or manually add this repository URL as a patch source in Morphe:
 | [Hide Forwarded](#hide-forwarded) | Quita la etiqueta "reenviado" de los mensajes. |  |
 | [Hide Read Receipts](#hide-read-receipts) | Read messages without sending blue ticks. |  |
 | [Hide Typing](#hide-typing) | Escribe sin mostrar "escribiendo...". |  |
-| [Login Fix](#login-fix) | Bypasses verification bans. REQUIRED: Install microG-RE for Play Integrity. |  |
+| [Login Fix](#login-fix) | Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass. |  |
 | [No Forward Limit](#no-forward-limit) | Forward messages to unlimited contacts. |  |
 | [Remove Communities](#remove-communities) | Hide the communities tab. |  |
 | [Remove Updates](#remove-updates) | Hide the updates/statuses tab. |  |
