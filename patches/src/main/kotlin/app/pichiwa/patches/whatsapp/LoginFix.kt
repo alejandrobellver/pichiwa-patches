@@ -1,135 +1,282 @@
 package app.pichiwa.patches.whatsapp
 
-import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
-import app.morphe.patcher.string
 import app.pichiwa.patches.shared.Constants.WHATSAPP
+import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
+import com.android.tools.smali.dexlib2.iface.reference.MethodReference
+import com.android.tools.smali.dexlib2.iface.reference.StringReference
 
 @Suppress("unused")
 val loginFix = bytecodePatch(
     name = "Login Fix",
-    description = "Bypasses verification bans. REQUIRED: Install microG-RE for Play Integrity.",
+    description = "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
     default = true
 ) {
     compatibleWith(WHATSAPP)
 
     execute {
-        // ponytail: each fingerprint wrapped in runCatching — strings may not
-        // exist as const-string in all versions. Silently skip if not found.
+        // --- 1. Fix Registration NPE (X.DFX.A02 NullPointerException) ---
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                
+                var labelCount = 0
+                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is MethodReference) {
+                        val methodRef = instr.reference as MethodReference
+                        if (methodRef.definingClass == "Ljava/util/Set;" && methodRef.name == "iterator") {
+                            // Check if this method also contains Collections.unmodifiableMap
+                            var hasUnmodifiableMap = false
+                            for (i in index + 1 until impl.instructions.count()) {
+                                val nextInstr = impl.instructions.elementAt(i)
+                                if (nextInstr is ReferenceInstruction && nextInstr.reference is MethodReference) {
+                                    val nextMethodRef = nextInstr.reference as MethodReference
+                                    if (nextMethodRef.definingClass == "Ljava/util/Collections;" && nextMethodRef.name == "unmodifiableMap") {
+                                        hasUnmodifiableMap = true
+                                        break
+                                    }
+                                }
+                            }
+                            
+                            if (hasUnmodifiableMap) {
+                                var setReg = -1
+                                if (instr is OneRegisterInstruction) {
+                                     setReg = instr.registerA
+                                } else if (instr is com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction) {
+                                     setReg = instr.startRegister
+                                } else if (instr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) {
+                                     setReg = instr.registerC
+                                }
+                                if (setReg != -1) {
+                                    return@mapIndexedNotNull index to setReg
+                                }
+                            }
+                        }
+                    }
+                    null
+                }
 
-        // ── Signature spoofing (return true) ──
-
-        // Play Store SHA-256 hash comparison (Hze + Hza)
-        runCatching {
-            Fingerprint(
-                filters = listOf(string("8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M"))
-            ).let { match ->
-                if (match.method.returnType == "Z")
-                    match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
+                if (matches.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    matches.reversed().forEach { (idx, setReg) ->
+                        val label = "cond_skip_null_set_${labelCount++}"
+                        mutableMethod.addInstructions(idx, """
+                            if-nez v$setReg, :$label
+                            new-instance v$setReg, Ljava/util/HashSet;
+                            invoke-direct {v$setReg}, Ljava/util/HashSet;-><init>()V
+                            :$label
+                        """)
+                    }
+                }
             }
         }
 
-        // Play Store SHA-256 hash comparison API 33+ (M30 + M2z)
-        runCatching {
-            Fingerprint(
-                filters = listOf(string("-5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI"))
-            ).let { match ->
-                if (match.method.returnType == "Z")
-                    match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
+        // --- 2. Disable AntiDetector System (X.00L) ---
+        classDefForEach { def ->
+            var isAntiDetector = false
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                impl.instructions.forEach { instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        if ((instr.reference as StringReference).string == "/system/app/Superuser.apk") {
+                            isAntiDetector = true
+                        }
+                    }
+                }
+            }
+
+            if (isAntiDetector) {
+                def.methods.forEach { method ->
+                    if (method.returnType == "Z") {
+                        val impl = method.implementation ?: return@forEach
+                        val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                            if (instr.opcode.name == "return") {
+                                val returnReg = (instr as OneRegisterInstruction).registerA
+                                index to returnReg
+                            } else null
+                        }
+                        
+                        if (matches.isNotEmpty()) {
+                            val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                            matches.reversed().forEach { (idx, returnReg) ->
+                                mutableMethod.addInstructions(idx, """
+                                    const/4 v$returnReg, 0x0
+                                """)
+                            }
+                        }
+                    }
+                }
             }
         }
 
-        // Play Store dev-keys SHA-256 hash (debug builds)
-        runCatching {
-            Fingerprint(
-                filters = listOf(string("GXWy8XF3vIml3_MfnmSmyuKBpT3B0dWbHRR_4cgq-gA"))
-            ).let { match ->
-                if (match.method.returnType == "Z")
-                    match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
+        // --- 3. Play Store / GMS Signature Verification Bypass ---
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                
+                // A) Bypass local SHA-256 string comparisons (Play Store / App signature)
+                val matchesStringComp = impl.instructions.mapIndexedNotNull { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        val str = (instr.reference as StringReference).string
+                        if (str == "8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M" || str == "-5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI") {
+                            var moveResultIdx = -1
+                            var vZ = -1
+                            for (i in index + 1 until impl.instructions.count()) {
+                                val nextInstr = impl.instructions.elementAt(i)
+                                if (nextInstr.opcode.name.startsWith("move-result")) {
+                                    moveResultIdx = i
+                                    vZ = (nextInstr as OneRegisterInstruction).registerA
+                                    break
+                                }
+                            }
+                            if (moveResultIdx != -1) moveResultIdx to vZ else null
+                        } else null
+                    } else null
+                }
+                
+                if (matchesStringComp.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    matchesStringComp.reversed().forEach { (moveResultIdx, vZ) ->
+                        mutableMethod.addInstructions(moveResultIdx + 1, """
+                            const/4 v$vZ, 0x1
+                        """)
+                    }
+                }
+
+                // B) Bypass GMS signature check (Google Play Services)
+                var targetMoveResultIndex = -1
+                var targetRegister = -1
+                
+                impl.instructions.forEachIndexed { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        if ((instr.reference as StringReference).string == " requires Google Play services, but their signature is invalid.") {
+                            for (i in index downTo 0) {
+                                val prevInstr = impl.instructions.elementAt(i)
+                                if (prevInstr.opcode.name == "invoke-static") {
+                                    val ref = (prevInstr as ReferenceInstruction).reference
+                                    if (ref is MethodReference && ref.returnType == "Z") {
+                                        val moveInstr = impl.instructions.elementAt(i + 1)
+                                        if (moveInstr.opcode.name.startsWith("move-result") && moveInstr is OneRegisterInstruction) {
+                                            targetMoveResultIndex = i + 1
+                                            targetRegister = moveInstr.registerA
+                                        }
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                if (targetMoveResultIndex != -1 && targetRegister != -1) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    mutableMethod.addInstructions(targetMoveResultIndex + 1, """
+                        const/4 v$targetRegister, 0x1
+                    """)
+                }
             }
         }
 
-        // GoogleSignatureVerifier (I7w)
-        runCatching {
-            Fingerprint(
-                filters = listOf(
-                    string("Package has more than one signature."),
-                    string("GoogleSignatureVerifier")
-                )
-            ).let { match ->
-                if (match.method.returnType == "Z")
-                    match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
+        // --- 4. MicroG-RE Redirections ---
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                
+                // A) Global Vending Redirection
+                val matchesVending = impl.instructions.mapIndexedNotNull { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        val str = (instr.reference as StringReference).string
+                        if (str == "com.android.vending") index to "app.revanced.android.vending"
+                        else null
+                    } else null
+                }
+                
+                if (matchesVending.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    matchesVending.reversed().forEach { (idx, newPackage) ->
+                        val instr = impl.instructions.elementAtOrNull(idx) as? OneRegisterInstruction ?: return@forEach
+                        val reg = instr.registerA
+                        mutableMethod.addInstructions(idx + 1, """
+                            const-string v$reg, "$newPackage"
+                        """)
+                    }
+                }
+
+                // B) Surgical GMS Redirection (only with Intent.setPackage)
+                val matchesGms = impl.instructions.mapIndexedNotNull { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        val str = (instr.reference as StringReference).string
+                        if (str == "com.google.android.gms") index else null
+                    } else null
+                }
+                
+                if (matchesGms.isNotEmpty()) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    matchesGms.reversed().forEach { idx ->
+                        var isIntentSetPackage = false
+                        for (i in idx + 1 until impl.instructions.count()) {
+                            val nextInstr = impl.instructions.elementAt(i)
+                            if (nextInstr is ReferenceInstruction && nextInstr.reference is MethodReference) {
+                                val methodRef = nextInstr.reference as MethodReference
+                                if (methodRef.name == "setPackage" && methodRef.definingClass == "Landroid/content/Intent;") {
+                                    isIntentSetPackage = true
+                                    break
+                                }
+                            }
+                        }
+                        
+                        if (isIntentSetPackage) {
+                            val instr = impl.instructions.elementAtOrNull(idx) as? OneRegisterInstruction ?: return@forEach
+                            val reg = instr.registerA
+                            mutableMethod.addInstructions(idx + 1, """
+                                const-string v$reg, "app.revanced.android.gms"
+                            """)
+                        }
+                    }
+                }
             }
         }
 
-        // Wear OS signature verifier (I8c — "ClockWork" certs)
-        runCatching {
-            Fingerprint(
-                filters = listOf(string("ClockWork"))
-            ).let { match ->
-                if (match.method.returnType == "Z")
-                    match.method.addInstructions(0, "const/4 v0, 0x1\n                return v0")
+        // --- 5. X-Android-Cert / AppIdentity Spoofing ---
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                
+                var certReg = -1
+                impl.instructions.forEachIndexed { index, instr ->
+                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                        if ((instr.reference as StringReference).string == "X-Android-Cert") {
+                            val nextInstr = impl.instructions.elementAtOrNull(index + 1)
+                            if (nextInstr is OneRegisterInstruction && nextInstr.opcode.name.startsWith("const-string")) {
+                                certReg = nextInstr.registerA
+                            } else if (instr is OneRegisterInstruction) {
+                                certReg = instr.registerA
+                            }
+                        }
+                    }
+                }
+                
+                if (certReg != -1) {
+                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                    val matches = impl.instructions.mapIndexedNotNull { index, instr ->
+                        val ref = (instr as? ReferenceInstruction)?.reference?.toString()
+                        if (ref == "Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V" && instr.opcode.name.startsWith("invoke-virtual")) {
+                            val invokeInstr = instr
+                            val vD = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerD else (invokeInstr as com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction).startRegister + 1
+                            val vE = if (invokeInstr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) invokeInstr.registerE else (invokeInstr as com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction).startRegister + 2
+                            if (vD == certReg) index to vE else null
+                        } else null
+                    }
+                    
+                    matches.reversed().forEach { (idx, vE) ->
+                        mutableMethod.addInstructions(idx, """
+                            const-string v$vE, "38a0f7d505fe18fec64fbf343ecaaaf310dbd799"
+                        """)
+                    }
+                }
             }
         }
-
-        // ── Emulator / root detection bypass (return false / return-void) ──
-
-        // 00L.A0C — emulator detection ("sdk_gphone64_arm64" unique to A0C)
-        runCatching {
-            Fingerprint(
-                filters = listOf(string("sdk_gphone64_arm64"))
-            ).let { match ->
-                if (match.method.returnType == "Z")
-                    match.method.addInstructions(0, "const/4 v0, 0x0\n                return v0")
-            }
-        }
-
-        // 00L.A0F or JA8.A0P — root detection ("test-keys" + Superuser.apk + su paths)
-        // catpcha: both methods share these strings; Fingerprint returns the first match.
-        runCatching {
-            Fingerprint(
-                filters = listOf(string("/system/xbin/su"))
-            ).let { match ->
-                if (match.method.returnType == "Z")
-                    match.method.addInstructions(0, "const/4 v0, 0x0\n                return v0")
-            }
-        }
-
-        // JA8.A0P — comprehensive root detection ("/su/bin/su" unique to JA8)
-        runCatching {
-            Fingerprint(
-                filters = listOf(string("/su/bin/su"))
-            ).let { match ->
-                if (match.method.returnType == "Z")
-                    match.method.addInstructions(0, "const/4 v0, 0x0\n                return v0")
-            }
-        }
-
-        // L6w.1.C5w — device info / root detection (void method, return-void)
-        runCatching {
-            Fingerprint(
-                returnType = "V",
-                filters = listOf(string("ExtraDeviceInfoCollector.populateData"))
-            ).let { match ->
-                match.method.addInstructions(0, "return-void")
-            }
-        }
-
-        // Ib4.1.BpW — Genymotion superuser + QEMU debug lib detection (void, return-void)
-        runCatching {
-            Fingerprint(
-                returnType = "V",
-                filters = listOf(string("/dev/com.genymotion.superuser.daemon"))
-            ).let { match ->
-                match.method.addInstructions(0, "return-void")
-            }
-        }
-
-        // ponytail: SHA-1 hashes (38a0f7d5..., 8b0debf9...) do NOT exist as
-        // const-string in this APK version — cannot fingerprint.
-        // ponytail: getInstallerPackageName is a method ref, not a const-string
-        // — string() filter cannot find it. Use WExtension.spoofPackageInfo
-        // for runtime installer spoofing.
     }
 }
