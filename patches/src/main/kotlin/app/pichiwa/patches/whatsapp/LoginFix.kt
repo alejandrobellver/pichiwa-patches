@@ -73,6 +73,31 @@ val loginFix = bytecodePatch(
             }
         }
 
+        // --- 1.5 Fix getInstallerPackageName null crash (6xM.A00) ---
+        classDefForEach { def ->
+            def.methods.forEach { method ->
+                val impl = method.implementation ?: return@forEach
+                if (method.name == "A00" && method.parameters.size == 2 && method.parameters[0] == "Landroid/content/Context;" && method.parameters[1] == "Ljava/lang/String;" && method.returnType == "Ljava/lang/String;") {
+                    var isPackageNameUtility = false
+                    impl.instructions.forEach { instr ->
+                        if (instr is ReferenceInstruction && instr.reference is MethodReference) {
+                            if ((instr.reference as MethodReference).name == "startsWith") {
+                                isPackageNameUtility = true
+                            }
+                        }
+                    }
+                    if (isPackageNameUtility) {
+                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                        mutableMethod.addInstructions(0, """
+                            if-nez p1, :cond_skip_null_p1
+                            const-string p1, "unknown"
+                            :cond_skip_null_p1
+                        """.trimIndent())
+                    }
+                }
+            }
+        }
+
         // --- 2. Disable AntiDetector System (X.00L) ---
         classDefForEach { def ->
             var isAntiDetector = false
@@ -146,35 +171,23 @@ val loginFix = bytecodePatch(
                 }
 
                 // B) Bypass GMS signature check (Google Play Services)
-                var targetMoveResultIndex = -1
-                var targetRegister = -1
-                
-                impl.instructions.forEachIndexed { index, instr ->
-                    if (instr is ReferenceInstruction && instr.reference is StringReference) {
-                        if ((instr.reference as StringReference).string == " requires Google Play services, but their signature is invalid.") {
-                            for (i in index downTo 0) {
-                                val prevInstr = impl.instructions.elementAt(i)
-                                if (prevInstr.opcode.name == "invoke-static") {
-                                    val ref = (prevInstr as ReferenceInstruction).reference
-                                    if (ref is MethodReference && ref.returnType == "Z") {
-                                        val moveInstr = impl.instructions.elementAt(i + 1)
-                                        if (moveInstr.opcode.name.startsWith("move-result") && moveInstr is OneRegisterInstruction) {
-                                            targetMoveResultIndex = i + 1
-                                            targetRegister = moveInstr.registerA
-                                        }
-                                        break
-                                    }
-                                }
+                // Looks for GoogleSignatureVerifier which contains "Package has more than one signature."
+                if (method.name == "A01" && method.returnType == "Z" && method.parameters.size == 2) {
+                    var isGmsVerifier = false
+                    impl.instructions.forEach { instr ->
+                        if (instr is ReferenceInstruction && instr.reference is StringReference) {
+                            if ((instr.reference as StringReference).string == "Package has more than one signature.") {
+                                isGmsVerifier = true
                             }
                         }
                     }
-                }
-                
-                if (targetMoveResultIndex != -1 && targetRegister != -1) {
-                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    mutableMethod.addInstructions(targetMoveResultIndex + 1, """
-                        const/16 v$targetRegister, 0x1
-                    """.trimIndent())
+                    if (isGmsVerifier) {
+                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                        mutableMethod.addInstructions(0, """
+                            const/16 v0, 0x1
+                            return v0
+                        """.trimIndent())
+                    }
                 }
             }
         }
