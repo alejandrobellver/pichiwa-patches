@@ -1,3 +1,9 @@
+## [0.4.0-dev.72](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.71...v0.4.0-dev.72) (2026-07-21)
+
+### New Features
+
+* **whatsapp:** implement XML resource patching for network security config to allow MITM interception (overridePins) ([79df2e1](https://github.com/alejandrobellver/pichiwa-patches/commit/79df2e170af88e69177fed20a3b3d75443af731d))
+
 ## [0.4.0-dev.71](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.70...v0.4.0-dev.71) (2026-07-21)
 
 ### Bug Fixes

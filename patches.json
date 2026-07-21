@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-dev.71",
+  "version": "0.4.0-dev.72",
   "patches": [
     {
       "name": "Anti Detector",
@@ -199,6 +199,21 @@
     {
       "name": "Login Fix",
       "description": "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "name": "com.whatsapp",
+          "versions": [
+            "2.26.27.4"
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Network Security Config",
+      "description": "Habilita la intercepci�n de red (MITM) agregando un archivo limpio de configuraci�n.",
       "use": true,
       "dependencies": [],
       "compatiblePackages": [
