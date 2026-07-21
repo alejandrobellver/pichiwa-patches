@@ -1,3 +1,9 @@
+## [0.4.0-dev.70](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.69...v0.4.0-dev.70) (2026-07-21)
+
+### Bug Fixes
+
+* **whatsapp:** resolve remaining Dalvik VerifyError by using precise method matching and relative label safety ([31dce5a](https://github.com/alejandrobellver/pichiwa-patches/commit/31dce5adaad68fc9ce19cabd807f857d0b35b98c))
+
 ## [0.4.0-dev.69](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.68...v0.4.0-dev.69) (2026-07-21)
 
 ### Bug Fixes

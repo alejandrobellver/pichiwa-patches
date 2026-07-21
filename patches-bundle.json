@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-07-21T08:12:28",
-  "description": "## [0.4.0-dev.69](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.68...v0.4.0-dev.69) (2026-07-21)\n\n### Bug Fixes\n\n* **whatsapp:** fix Dalvik VerifyError caused by uninitialized HashSet ([eb219e8](https://github.com/alejandrobellver/pichiwa-patches/commit/eb219e82e6e0cfb46778c8fc65c256e4b034832b))",
-  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.69/patches-0.4.0-dev.69.mpp",
+  "created_at": "2026-07-21T08:25:59",
+  "description": "## [0.4.0-dev.70](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.69...v0.4.0-dev.70) (2026-07-21)\n\n### Bug Fixes\n\n* **whatsapp:** resolve remaining Dalvik VerifyError by using precise method matching and relative label safety ([31dce5a](https://github.com/alejandrobellver/pichiwa-patches/commit/31dce5adaad68fc9ce19cabd807f857d0b35b98c))",
+  "download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.70/patches-0.4.0-dev.70.mpp",
   "signature_download_url": "",
-  "version": "0.4.0-dev.69",
-  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.69/extension.mpe",
-  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.69/extension.mpe"
+  "version": "0.4.0-dev.70",
+  "extension_download_url": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.70/extension.mpe",
+  "extensionDownloadUrlTemplate": "https://github.com/alejandrobellver/pichiwa-patches/releases/download/v0.4.0-dev.70/extension.mpe"
 }
