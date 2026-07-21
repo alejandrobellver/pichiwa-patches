@@ -19,54 +19,15 @@ val loginFix = bytecodePatch(
     execute {
         // --- 1. Fix Registration NPE (X.DFX.A02 NullPointerException) ---
         classDefForEach { def ->
-            def.methods.forEach { method ->
-                val impl = method.implementation ?: return@forEach
-                
-                var labelCount = 0
-                val matches = impl.instructions.mapIndexedNotNull { index, instr ->
-                    if (instr is ReferenceInstruction && instr.reference is MethodReference) {
-                        val methodRef = instr.reference as MethodReference
-                        if (methodRef.definingClass == "Ljava/util/Set;" && methodRef.name == "iterator") {
-                            // Check if this method also contains Collections.unmodifiableMap
-                            var hasUnmodifiableMap = false
-                            for (i in index + 1 until impl.instructions.count()) {
-                                val nextInstr = impl.instructions.elementAt(i)
-                                if (nextInstr is ReferenceInstruction && nextInstr.reference is MethodReference) {
-                                    val nextMethodRef = nextInstr.reference as MethodReference
-                                    if (nextMethodRef.definingClass == "Ljava/util/Collections;" && nextMethodRef.name == "unmodifiableMap") {
-                                        hasUnmodifiableMap = true
-                                        break
-                                    }
-                                }
-                            }
-                            
-                            if (hasUnmodifiableMap) {
-                                var setReg = -1
-                                if (instr is OneRegisterInstruction) {
-                                     setReg = instr.registerA
-                                } else if (instr is com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction) {
-                                     setReg = instr.startRegister
-                                } else if (instr is com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction) {
-                                     setReg = instr.registerC
-                                }
-                                if (setReg != -1) {
-                                    return@mapIndexedNotNull index to setReg
-                                }
-                            }
-                        }
-                    }
-                    null
-                }
-
-                if (matches.isNotEmpty()) {
-                    val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                    matches.reversed().forEach { (idx, setReg) ->
-                        val label = "cond_skip_null_set_${labelCount++}"
-                        mutableMethod.addInstructions(idx, """
-                            if-nez v$setReg, :$label
+            if (def.type == "LX/DFX;") {
+                def.methods.forEach { method ->
+                    if (method.name == "A02" && method.parameters.size == 1 && method.parameters[0].type == "Ljava/util/Set;") {
+                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
+                        mutableMethod.addInstructions(0, """
+                            if-nez p0, :cond_skip_null_p0
                             invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
-                            move-result-object v$setReg
-                            :$label
+                            move-result-object p0
+                            :cond_skip_null_p0
                         """.trimIndent())
                     }
                 }
@@ -140,6 +101,7 @@ val loginFix = bytecodePatch(
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
+                if (method.name == "<clinit>") return@forEach
                 
                 // A) Bypass local SHA-256 string comparisons (Play Store / App signature)
                 val matchesStringComp = impl.instructions.mapIndexedNotNull { index, instr ->
@@ -148,7 +110,7 @@ val loginFix = bytecodePatch(
                         if (str == "8P1sW0EPJcslw7UzRsiXL64w-O50Ed-RBICtay1g24M" || str == "-5INOBvuGyCT8n3I8T2ZTaYp3JGIfQUps1yaLcT0psI") {
                             var moveResultIdx = -1
                             var vZ = -1
-                            for (i in index + 1 until impl.instructions.count()) {
+                            for (i in index + 1 until minOf(index + 5, impl.instructions.count())) {
                                 val nextInstr = impl.instructions.elementAt(i)
                                 if (nextInstr.opcode.name.startsWith("move-result")) {
                                     moveResultIdx = i
