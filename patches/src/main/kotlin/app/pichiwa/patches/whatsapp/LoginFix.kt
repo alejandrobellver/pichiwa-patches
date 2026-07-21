@@ -132,25 +132,6 @@ val loginFix = bytecodePatch(
                     }
                 }
 
-                // B) Bypass GMS signature check (Google Play Services)
-                // Looks for GoogleSignatureVerifier which contains "Package has more than one signature."
-                if (method.name == "A01" && method.returnType == "Z" && method.parameters.size == 2) {
-                    var isGmsVerifier = false
-                    impl.instructions.forEach { instr ->
-                        if (instr is ReferenceInstruction && instr.reference is StringReference) {
-                            if ((instr.reference as StringReference).string == "Package has more than one signature.") {
-                                isGmsVerifier = true
-                            }
-                        }
-                    }
-                    if (isGmsVerifier) {
-                        val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
-                        mutableMethod.addInstructions(0, """
-                            const/16 v0, 0x1
-                            return v0
-                        """.trimIndent())
-                    }
-                }
             }
         }
 
