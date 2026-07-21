@@ -1,3 +1,9 @@
+## [0.4.0-dev.71](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.70...v0.4.0-dev.71) (2026-07-21)
+
+### Bug Fixes
+
+* **whatsapp:** remove aggressive GMS signature verification bypass to prevent breaking internal Play Services integration, aligning with GBWhatsApp stability analysis ([23b43a6](https://github.com/alejandrobellver/pichiwa-patches/commit/23b43a661539959753771971d952334f439a16e2))
+
 ## [0.4.0-dev.70](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.69...v0.4.0-dev.70) (2026-07-21)
 
 ### Bug Fixes
