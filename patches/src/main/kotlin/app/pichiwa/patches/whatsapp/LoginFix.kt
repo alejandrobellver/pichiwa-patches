@@ -77,7 +77,7 @@ val loginFix = bytecodePatch(
         classDefForEach { def ->
             def.methods.forEach { method ->
                 val impl = method.implementation ?: return@forEach
-                if (method.name == "A00" && method.parameters.size == 2 && method.parameters[0] == "Landroid/content/Context;" && method.parameters[1] == "Ljava/lang/String;" && method.returnType == "Ljava/lang/String;") {
+                if (method.name == "A00" && method.parameters.size == 2 && method.parameters[0].type == "Landroid/content/Context;" && method.parameters[1].type == "Ljava/lang/String;" && method.returnType == "Ljava/lang/String;") {
                     var isPackageNameUtility = false
                     impl.instructions.forEach { instr ->
                         if (instr is ReferenceInstruction && instr.reference is MethodReference) {
