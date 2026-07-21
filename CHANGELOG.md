@@ -1,3 +1,9 @@
+## [0.4.0-dev.69](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.68...v0.4.0-dev.69) (2026-07-21)
+
+### Bug Fixes
+
+* **whatsapp:** fix Dalvik VerifyError caused by uninitialized HashSet ([eb219e8](https://github.com/alejandrobellver/pichiwa-patches/commit/eb219e82e6e0cfb46778c8fc65c256e4b034832b))
+
 ## [0.4.0-dev.68](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.67...v0.4.0-dev.68) (2026-07-21)
 
 ### Bug Fixes
