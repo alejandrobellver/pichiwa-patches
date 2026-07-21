@@ -67,7 +67,7 @@ val loginFix = bytecodePatch(
                             new-instance v$setReg, Ljava/util/HashSet;
                             invoke-direct {v$setReg}, Ljava/util/HashSet;-><init>()V
                             :$label
-                        """)
+                        """.trimIndent())
                     }
                 }
             }
@@ -102,8 +102,8 @@ val loginFix = bytecodePatch(
                             val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
                             matches.reversed().forEach { (idx, returnReg) ->
                                 mutableMethod.addInstructions(idx, """
-                                    const/4 v$returnReg, 0x0
-                                """)
+                                    const/16 v$returnReg, 0x0
+                                """.trimIndent())
                             }
                         }
                     }
@@ -140,8 +140,8 @@ val loginFix = bytecodePatch(
                     val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
                     matchesStringComp.reversed().forEach { (moveResultIdx, vZ) ->
                         mutableMethod.addInstructions(moveResultIdx + 1, """
-                            const/4 v$vZ, 0x1
-                        """)
+                            const/16 v$vZ, 0x1
+                        """.trimIndent())
                     }
                 }
 
@@ -173,8 +173,8 @@ val loginFix = bytecodePatch(
                 if (targetMoveResultIndex != -1 && targetRegister != -1) {
                     val mutableMethod = mutableClassDefBy(def).methods.first { it.name == method.name && it.parameters == method.parameters && it.returnType == method.returnType }
                     mutableMethod.addInstructions(targetMoveResultIndex + 1, """
-                        const/4 v$targetRegister, 0x1
-                    """)
+                        const/16 v$targetRegister, 0x1
+                    """.trimIndent())
                 }
             }
         }
@@ -200,7 +200,7 @@ val loginFix = bytecodePatch(
                         val reg = instr.registerA
                         mutableMethod.addInstructions(idx + 1, """
                             const-string v$reg, "$newPackage"
-                        """)
+                        """.trimIndent())
                     }
                 }
 
@@ -232,7 +232,7 @@ val loginFix = bytecodePatch(
                             val reg = instr.registerA
                             mutableMethod.addInstructions(idx + 1, """
                                 const-string v$reg, "app.revanced.android.gms"
-                            """)
+                            """.trimIndent())
                         }
                     }
                 }
@@ -273,7 +273,7 @@ val loginFix = bytecodePatch(
                     matches.reversed().forEach { (idx, vE) ->
                         mutableMethod.addInstructions(idx, """
                             const-string v$vE, "38a0f7d505fe18fec64fbf343ecaaaf310dbd799"
-                        """)
+                        """.trimIndent())
                     }
                 }
             }
