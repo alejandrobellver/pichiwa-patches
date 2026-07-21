@@ -1,3 +1,9 @@
+## [0.4.0-dev.67](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.66...v0.4.0-dev.67) (2026-07-21)
+
+### Bug Fixes
+
+* resolve smali compiler exception by correcting const opcodes and trimming indent ([f7bc577](https://github.com/alejandrobellver/pichiwa-patches/commit/f7bc57735fdc35b83f316c6a7e6639f817f4c165))
+
 ## [0.4.0-dev.66](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.65...v0.4.0-dev.66) (2026-07-20)
 
 ### Bug Fixes
