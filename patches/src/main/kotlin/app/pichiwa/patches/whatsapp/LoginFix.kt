@@ -64,8 +64,8 @@ val loginFix = bytecodePatch(
                         val label = "cond_skip_null_set_${labelCount++}"
                         mutableMethod.addInstructions(idx, """
                             if-nez v$setReg, :$label
-                            new-instance v$setReg, Ljava/util/HashSet;
-                            invoke-direct {v$setReg}, Ljava/util/HashSet;-><init>()V
+                            invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+                            move-result-object v$setReg
                             :$label
                         """.trimIndent())
                     }
