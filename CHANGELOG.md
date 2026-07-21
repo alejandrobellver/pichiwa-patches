@@ -1,3 +1,10 @@
+## [0.4.0-dev.68](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.67...v0.4.0-dev.68) (2026-07-21)
+
+### Bug Fixes
+
+* **whatsapp:** fix MethodParameter compilation error in LoginFix.kt ([4672d38](https://github.com/alejandrobellver/pichiwa-patches/commit/4672d389d3f58ea04954560a2596dbda663d7843))
+* **whatsapp:** resolve getInstallerPackageName and signature verification crashes ([ad3fb79](https://github.com/alejandrobellver/pichiwa-patches/commit/ad3fb79a88d0d5b646caa7f53d1fcaa9b8cd4397))
+
 ## [0.4.0-dev.67](https://github.com/alejandrobellver/pichiwa-patches/compare/v0.4.0-dev.66...v0.4.0-dev.67) (2026-07-21)
 
 ### Bug Fixes
